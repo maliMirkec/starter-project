@@ -1,0 +1,38 @@
+{
+  "name": "starter-project",
+  "version": "1.0.0",
+  "description": "Gulp; .editorconfig; .jshintrc; .gitignore; SCSS: reset, locks, system fonts;",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maliMirkec/starter-project.git"
+  },
+  "keywords": [
+    "cita",
+    "scaffold",
+    "skeleton"
+  ],
+  "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maliMirkec/starter-project/issues"
+  },
+  "homepage": "https://github.com/maliMirkec/starter-project#readme",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-bump": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-critical-css": "latest",
+    "gulp-cssimport": "latest",
+    "gulp-remove-empty-lines": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-strip-css-comments": "latest",
+    "require-dir": "latest",
+    "run-sequence": "latest"
+  }
+}
