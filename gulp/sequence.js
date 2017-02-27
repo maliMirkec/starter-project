@@ -1,12 +1,8 @@
 'use strict';
 
 var gulp = require('gulp');
-var runSequence = require('run-sequence');
+var gulpSequence = require('gulp-sequence');
 
-gulp.task('sequence-dist', ['sass'], function() {
-    return runSequence('sass', 'critical', 'autoprefix', 'minify');
-});
+gulp.task('sequence:dist', gulpSequence('css:sass', 'css:critical', 'css:autoprefix', 'css:minify'));
 
-gulp.task('sequence-dev', ['sass'], function() {
-    return runSequence('sass', 'critical');
-});
+gulp.task('sequence:dev', gulpSequence('css:sass', 'css:critical'));

@@ -4,15 +4,15 @@ var gulp = require('gulp');
 var bump = require('gulp-bump');
 
 // Will patch the version
-gulp.task('bump-patch', function() {
-  gulp.src(['./package.json', 'bower.json'])
+gulp.task('bump:patch', function() {
+  return gulp.src(['./package.json', 'bower.json'])
   .pipe(bump())
   .pipe(gulp.dest('./'));
 });
 
 // Will patch the version
-gulp.task('bump-minor', function() {
-  gulp.src(['./package.json', 'bower.json'])
+gulp.task('bump:minor', function() {
+  return gulp.src(['./package.json', 'bower.json'])
   .pipe(bump({
     type: 'minor'
   }))
@@ -20,8 +20,8 @@ gulp.task('bump-minor', function() {
 });
 
 // Will patch the version
-gulp.task('bump-major', function() {
-  gulp.src(['./package.json', 'bower.json'])
+gulp.task('bump:major', function() {
+  return gulp.src(['./package.json', 'bower.json'])
   .pipe(bump({
     type: 'major'
   }))
