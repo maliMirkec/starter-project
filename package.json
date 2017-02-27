@@ -1,6 +1,6 @@
 {
   "name": "starter-project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gulp; .editorconfig; .jshintrc; .gitignore; SCSS: reset, locks, system fonts;",
   "main": "index.html",
   "scripts": {
@@ -26,13 +26,13 @@
     "gulp-autoprefixer": "latest",
     "gulp-bump": "latest",
     "gulp-clean-css": "latest",
-    "gulp-critical-css": "latest",
+    "gulp-critical-css": "github:malimirkec/gulp-critical-css",
     "gulp-cssimport": "latest",
     "gulp-remove-empty-lines": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
+    "gulp-sequence": "latest",
     "gulp-strip-css-comments": "latest",
-    "require-dir": "latest",
-    "run-sequence": "latest"
+    "require-dir": "latest"
   }
 }
