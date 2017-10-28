@@ -1,23 +1,0 @@
-* {
-  critical: this;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box; }
-
-html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
-
-html {
-  critical: this;
-  font-size: 0.8rem; }
-  @media screen and (min-width: 20em) {
-    html {
-      critical: this;
-      font-size: calc(0.8rem + 0.4 * (100vw - 20em) / 55); } }
-  @media screen and (min-width: 75em) {
-    html {
-      critical: this;
-      font-size: 1.2rem; } }
-
-body {
-  background-color: aliceblue; }
