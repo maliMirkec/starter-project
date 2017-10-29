@@ -1,4 +1,8 @@
-@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin css-locks($properties, $min-vw, $max-vw, $min-value, $max-value) {
   @each $property in $properties {
     #{$property}: $min-value;
   }
@@ -16,14 +20,16 @@
   }
 }
 
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
-
-@function em($pixels, $context: $default-font-size) {
-  @return #{$pixels / $context}em;
+@function rem($size: 20px, $media: 'desktop') {
+  @if $media == 'desktop' {
+    @return calc(#{strip-unit($size / $font-size-desktop)} * 1rem);
+  } @else if $media == 'mobile' {
+    @return calc(#{strip-unit($size / $font-size-mobile)} * 1rem);
+  } @else {
+    @return 1rem;
+  }
 }
 
 html {
-  @include fluid-type(font-size, 20em, 75em, 0.8rem, 1.2rem);
+  @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 }

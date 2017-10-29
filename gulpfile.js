@@ -1,22 +1,20 @@
 'use strict';
 
 var gulp = require('gulp');
-
 var requireDir = require('require-dir');
 var gulpSequence = require('gulp-sequence');
+global.bs = require('browser-sync').create();
 
 requireDir('./gulp');
 
-gulp.task('default:dev', ['sequence:dev']);
-
-gulp.task('watch:dev', function() {
-  gulp.watch('./src/css/**/*.scss', ['sequence:dev']);
+gulp.task('default:sequence', function(callback) {
+  gulpSequence('css', 'critical', 'html')(callback);
 });
 
-gulp.task('default:dist', ['sequence:dist']);
+gulp.task('default', ['default:sequence']);
 
-gulp.task('watch:dist', function() {
-  gulp.watch('./src/css/**/*.scss', ['sequence:dist']);
+gulp.task('dev:sequence', function(callback) {
+  gulpSequence('css', 'html:dev', 'browser:sync', 'watch')(callback);
 });
 
-gulp.task('default', ['html:minify', 'sequence:dist'])
+gulp.task('dev', ['dev:sequence']);
