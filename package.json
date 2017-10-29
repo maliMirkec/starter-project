@@ -26,13 +26,18 @@
     "gulp-autoprefixer": "latest",
     "gulp-bump": "latest",
     "gulp-clean-css": "latest",
-    "gulp-critical-css": "github:malimirkec/gulp-critical-css",
     "gulp-cssimport": "latest",
     "gulp-remove-empty-lines": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-sequence": "latest",
     "gulp-strip-css-comments": "latest",
-    "require-dir": "latest"
+    "gulp-stylelint": "^5.0.0",
+    "penthouse": "^1.0.6",
+    "require-dir": "latest",
+    "stylelint-config-sass-guidelines": "^3.1.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.1.0",
+    "yarn": "latest"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [{
+      "match": "\\.scss?$",
+      "cmd": "open . && cd ${workspaceRoot} && stylefmt -c .stylelintrc ${file}"
+    }]
+  }
+}
