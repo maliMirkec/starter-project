@@ -21,13 +21,17 @@
     "url": "https://github.com/maliMirkec/starter-project/issues"
   },
   "homepage": "https://github.com/maliMirkec/starter-project#readme",
-  "devDependencies": {
+  "dependencies": {
     "browser-sync": "latest",
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-plugin-import": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-bump": "latest",
     "gulp-clean-css": "latest",
     "gulp-cssimport": "latest",
+    "gulp-eslint": "latest",
     "gulp-htmlmin": "latest",
     "gulp-minify-inline": "latest",
     "gulp-penthouse": "latest",

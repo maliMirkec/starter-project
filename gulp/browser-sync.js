@@ -1,14 +1,12 @@
-'use strict';
-
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 // Static server
-gulp.task('browser:sync', function () {
+gulp.task('browser:sync', () => {
   global.bs.init({
     server: {
-      baseDir: './dist/'
-    }
+      baseDir: './dist/',
+    },
   });
 
-  gulp.watch('./dist/*.html').on('change', global.bs.reload);
+  return gulp.watch('./dist/*.html').on('change', global.bs.reload);
 });
