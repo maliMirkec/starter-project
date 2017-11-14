@@ -48,6 +48,7 @@
     "gulp-replace": "latest",
     "gulp-sass": "latest",
     "gulp-sequence": "latest",
+    "gulp-standard": "^10.1.1",
     "gulp-strip-css-comments": "latest",
     "gulp-stylelint": "latest",
     "gulp-uglify": "latest",
