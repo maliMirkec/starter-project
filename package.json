@@ -43,6 +43,7 @@
     "gulp-minify-inline": "latest",
     "gulp-penthouse": "latest",
     "gulp-pug": "latest",
+    "gulp-real-favicon": "^0.2.2",
     "gulp-remove-empty-lines": "latest",
     "gulp-rename": "latest",
     "gulp-replace": "latest",
