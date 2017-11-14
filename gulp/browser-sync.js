@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+const gulp = require('gulp')
 
 // Static server
 gulp.task('browser:sync', () => {
@@ -6,7 +6,7 @@ gulp.task('browser:sync', () => {
     server: {
       baseDir: './dist/'
     }
-  });
+  })
 
-  return gulp.watch('./dist/*.html').on('change', global.bs.reload);
-});
+  return gulp.watch('./dist/*.html').on('change', global.bs.reload)
+})

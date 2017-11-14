@@ -12,6 +12,7 @@
   const defaults = {
     selector: '.js-classily'
   }
+
   /**
    * Merge defaults with user options
    * @param {Object} defaults Default settings
@@ -36,10 +37,13 @@
   }
 
   /**
-   * Helper Functions
    @private
+   * Find target elements and toggle classes
+   * @param {Object} cur Current element (that users clicks on)
+   * @param {String} sel Selectors for finding target elements
+   * @param {String} cl Classes ti toggle on target elements
    */
-  const doToggle = function (cur, sel, cl) {
+  const toggleFunction = function (cur, sel, cl) {
     const $tar = Array.prototype.slice.call(document.querySelectorAll(sel))
 
     if (sel.indexOf('this') !== -1) {
@@ -54,26 +58,26 @@
   }
 
   /**
-   * Helper Functions
    @private
+   * Get config parameters from data attributes and pass them to toggle function
+   * @param {Object} event Event object (click)
    */
-  const toggleClass = function (e) {
-    // Helper function, not directly acessible by instance object
-    if (e.currentTarget.getAttribute('data-prevent') === 'default') {
-      e.preventDefault()
+  const toggleEvent = function (event) {
+    if (event.currentTarget.getAttribute('data-prevent') === 'default') {
+      event.preventDefault()
     }
 
-    const selectors = e.currentTarget.getAttribute('data-target').split(',')
-    const classes = e.currentTarget.getAttribute('data-class').split(',')
+    const selectors = event.currentTarget.getAttribute('data-target').split(',')
+    const classes = event.currentTarget.getAttribute('data-class').split(',')
 
     if (selectors.length === classes.length) {
       selectors.forEach((currentSelector, j) => {
-        doToggle(e.currentTarget, currentSelector.trim(), classes[j].trim())
+        toggleFunction(event.currentTarget, currentSelector.trim(), classes[j].trim())
       })
     } else {
       const targetSelector = selectors.map(selectorItem => selectorItem.trim()).join(',')
       const targetClass = classes.map(classItem => classItem.trim()).join(',')
-      doToggle(e.currentTarget, targetSelector, targetClass)
+      toggleFunction(event.currentTarget, targetSelector, targetClass)
     }
   }
 
@@ -84,7 +88,7 @@
    */
   function Classily (options) {
     this.options = extend(defaults, options)
-    this.init() // Initialization Code Here
+    this.init()
   }
 
   /**
@@ -94,26 +98,23 @@
    */
   Classily.prototype = {
     init () {
-      // find all matching DOM elements.
-      // makes `.selectors` object available to instance.
+      // Find all matching DOM elements
       this.selectors = document.querySelectorAll(this.options.selector)
 
       for (let i = 0; i < this.selectors.length; i += 1) {
         const selector = this.selectors[i]
-        // Do something w/ each matched selector node.
-        selector.addEventListener('click', toggleClass)
-        // do something
+        // Attach click event on matching DOM element and call toggle event
+        selector.addEventListener('click', toggleEvent)
       }
-    }, // #! init
+    },
     destroy () {
-      // Remove any event listeners and undo any "init" actions here...
+      // Find all matching DOM elements
       this.selectors = document.querySelectorAll(this.options.selector)
 
       for (let i = 0; i < this.selectors.length; i += 1) {
         const selector = this.selectors[i]
-        // Do something w/ each matched selector node.
-        selector.removeEventListener('click', toggleClass)
-        // do something
+        // Dettach click event on matching DOM element
+        selector.removeEventListener('click', toggleEvent)
       }
     }
   }
