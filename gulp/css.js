@@ -1,13 +1,10 @@
-'use strict';
+const gulp = require('gulp')
+const gulpStylelint = require('gulp-stylelint')
+const sass = require('gulp-sass')
+const cssimport = require('gulp-cssimport')
+const autoprefixer = require('gulp-autoprefixer')
 
-var gulp = require('gulp');
-var gulpStylelint = require('gulp-stylelint');
-var sass = require('gulp-sass');
-var cssimport = require('gulp-cssimport');
-var autoprefixer = require('gulp-autoprefixer');
-
-gulp.task('css:sass', function() {
-  return gulp.src('./src/css/style.scss')
+gulp.task('css:sass', () => gulp.src('./src/css/style.scss')
   .pipe(gulpStylelint({
     reporters: [
       {
@@ -23,25 +20,20 @@ gulp.task('css:sass', function() {
     cascade: false
   }))
   .pipe(gulp.dest('./dist/css/'))
-  .pipe(global.bs.stream());
-});
+  .pipe(global.bs.stream()))
 
-var cleanCSS = require('gulp-clean-css');
-var rename = require('gulp-rename');
+const cleanCSS = require('gulp-clean-css')
+const rename = require('gulp-rename')
 
-gulp.task('css:minify', function() {
-  return gulp.src(['./dist/css/**/*.css', '!./dist/css/**/*.min.css'])
+gulp.task('css:minify', () => gulp.src(['./dist/css/**/*.css', '!./dist/css/**/*.min.css'])
   .pipe(cleanCSS())
   .pipe(rename({
     suffix: '.min'
   }))
-  .pipe(gulp.dest('./dist/css/'));
-});
+  .pipe(gulp.dest('./dist/css/')))
 
-var gulpSequence = require('gulp-sequence');
+const gulpSequence = require('gulp-sequence')
 
-gulp.task('css', function(callback) {
-  gulpSequence('css:sass', 'css:minify')(callback);
-});
-
-
+gulp.task('css', (callback) => {
+  gulpSequence('css:sass', 'css:minify')(callback)
+})
