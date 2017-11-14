@@ -10,7 +10,7 @@ gulp.task('penthouse', () => gulp.src('./dist/css/style.css')
     height: 768,
     keepLargerMediaQueries: true,
     strict: false,
-    blockJSRequests: false,
+    blockJSRequests: false
   }))
   .pipe(gulp.dest('./')));
 

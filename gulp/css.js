@@ -9,15 +9,15 @@ gulp.task('css:sass', () => gulp.src('./src/css/style.scss')
     reporters: [
       {
         formatter: 'string',
-        console: true,
-      },
-    ],
+        console: true
+      }
+    ]
   }))
   .pipe(sass().on('error', sass.logError))
   .pipe(cssimport())
   .pipe(autoprefixer({
     browsers: ['last 5 versions'],
-    cascade: false,
+    cascade: false
   }))
   .pipe(gulp.dest('./dist/css/'))
   .pipe(global.bs.stream()));
@@ -28,7 +28,7 @@ const rename = require('gulp-rename');
 gulp.task('css:minify', () => gulp.src(['./dist/css/**/*.css', '!./dist/css/**/*.min.css'])
   .pipe(cleanCSS())
   .pipe(rename({
-    suffix: '.min',
+    suffix: '.min'
   }))
   .pipe(gulp.dest('./dist/css/')));
 

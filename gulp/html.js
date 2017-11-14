@@ -9,7 +9,7 @@ const fs = require('fs');
 gulp.task('html', () => gulp.src('./src/html/*.pug')
   .pipe(pug())
   .pipe(htmlmin({
-    collapseWhitespace: true,
+    collapseWhitespace: true
   }))
   .pipe(minifyInline())
   .pipe(replace(/<criticalcss><\/criticalcss>/g, () => {
@@ -17,14 +17,14 @@ gulp.task('html', () => gulp.src('./src/html/*.pug')
     return `<style>${fileContent}</style>`;
   }))
   .pipe(rename({
-    extname: '.html',
+    extname: '.html'
   }))
   .pipe(gulp.dest('./dist/')));
 
 gulp.task('html:dev', () => gulp.src('./src/html/*.pug')
   .pipe(pug())
   .pipe(rename({
-    extname: '.html',
+    extname: '.html'
   }))
   .pipe(replace(/<CriticalCSS><\/CriticalCSS>/g, ''))
   .pipe(gulp.dest('./dist/')));

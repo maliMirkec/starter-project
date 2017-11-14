@@ -9,13 +9,13 @@ gulp.task('bump:patch', () => gulp.src(['./package.json', 'bower.json'])
 // Will patch the version
 gulp.task('bump:minor', () => gulp.src(['./package.json', 'bower.json'])
   .pipe(bump({
-    type: 'minor',
+    type: 'minor'
   }))
   .pipe(gulp.dest('./')));
 
 // Will patch the version
 gulp.task('bump:major', () => gulp.src(['./package.json', 'bower.json'])
   .pipe(bump({
-    type: 'major',
+    type: 'major'
   }))
   .pipe(gulp.dest('./')));
