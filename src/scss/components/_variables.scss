@@ -2,6 +2,12 @@
 $font-size--desktop: 16px;
 $font-size--mobile: 13px;
 
+// Modular scale config
+$modularscale: (
+  base: 1rem,
+  ratio: $major-third
+);
+
 // Media query definitions
 $mq--mobile: 480px;
 $mq--desktop: 960px;

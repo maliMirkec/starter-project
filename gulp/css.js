@@ -4,7 +4,7 @@ const sass = require('gulp-sass')
 const cssimport = require('gulp-cssimport')
 const autoprefixer = require('gulp-autoprefixer')
 
-gulp.task('css:sass', () => gulp.src('./src/css/style.scss')
+gulp.task('css:sass', () => gulp.src('./src/scss/style.scss')
   .pipe(gulpStylelint({
     reporters: [
       {
@@ -13,7 +13,9 @@ gulp.task('css:sass', () => gulp.src('./src/css/style.scss')
       }
     ]
   }))
-  .pipe(sass().on('error', sass.logError))
+  .pipe(sass({
+    includePaths: ['./node_modules/modularscale-sass/stylesheets', './src/scss/', './src/scss/components']
+  }).on('error', sass.logError))
   .pipe(cssimport())
   .pipe(autoprefixer({
     browsers: ['last 5 versions'],

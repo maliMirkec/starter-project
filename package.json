@@ -52,6 +52,7 @@
     "gulp-stylelint": "latest",
     "gulp-uglify": "latest",
     "gulp-util": "latest",
+    "modularscale-sass": "^3.0.3",
     "require-dir": "latest",
     "stylelint-config-sass-guidelines": "latest",
     "stylelint-config-standard": "latest",
