@@ -6,7 +6,7 @@ global.bs = require('browser-sync').create()
 requireDir('./gulp')
 
 gulp.task('default:sequence', (callback) => {
-  gulpSequence('js', 'css:sass', 'penthouse', 'css:minify', 'favicon', 'html:dist')(callback)
+  gulpSequence('gfx', 'js', 'css:sass', 'css:minify', 'critical', 'favicon', 'html:dist')(callback)
 })
 
 gulp.task('default', ['default:sequence'])
