@@ -2,19 +2,16 @@ const gulp = require('gulp')
 const pug = require('gulp-pug')
 const htmlmin = require('gulp-htmlmin')
 const rename = require('gulp-rename')
-const replace = require('gulp-replace')
-const minifyInline = require('gulp-minify-inline')
-const fs = require('fs')
+const inlineSource = require('gulp-inline-source')
+const path = require('path')
 
-gulp.task('html', () => gulp.src('./src/html/*.pug')
+gulp.task('html:dist', () => gulp.src('./src/html/*.pug')
   .pipe(pug())
   .pipe(htmlmin({
     collapseWhitespace: true
   }))
-  .pipe(minifyInline())
-  .pipe(replace(/<criticalcss><\/criticalcss>/g, () => {
-    const fileContent = fs.readFileSync('./dist/css/style.critical.min.css', 'utf8')
-    return `<style>${fileContent}</style>`
+  .pipe(inlineSource({
+    rootpath: path.resolve('./dist')
   }))
   .pipe(rename({
     extname: '.html'
@@ -23,8 +20,10 @@ gulp.task('html', () => gulp.src('./src/html/*.pug')
 
 gulp.task('html:dev', () => gulp.src('./src/html/*.pug')
   .pipe(pug())
+  .pipe(inlineSource({
+    rootpath: path.resolve('./dist')
+  }))
   .pipe(rename({
     extname: '.html'
   }))
-  .pipe(replace(/<CriticalCSS><\/CriticalCSS>/g, ''))
   .pipe(gulp.dest('./dist/')))
