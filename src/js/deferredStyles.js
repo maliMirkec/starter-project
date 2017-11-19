@@ -1,5 +1,5 @@
 const loadDeferredStyles = function () {
-  const addStylesNode = document.getElementById('deferred-styles')
+  const addStylesNode = document.getElementById('deferredStyles')
   const replacement = document.createElement('div')
 
   replacement.innerHTML = addStylesNode.textContent
