@@ -4,7 +4,7 @@
   "description": "Gulp; .editorconfig; .jshintrc; .gitignore; SCSS: reset, locks, system fonts;",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",

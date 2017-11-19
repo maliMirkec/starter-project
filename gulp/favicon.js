@@ -11,7 +11,7 @@ const FAVICON_DATA_FILE = './faviconData.json'
 // package (see the check-for-favicon-update task below).
 gulp.task('favicon:generate', (done) => {
   realFavicon.generateFavicon({
-    masterPicture: './src/assets/favicon/starter-project.svg',
+    masterPicture: './src/assets/svg/starter-project.svg',
     dest: './dist/favicon/',
     iconsPath: '/favicon/',
     design: {
@@ -101,5 +101,5 @@ gulp.task('favicon:update', (done) => {
 const gulpSequence = require('gulp-sequence')
 
 gulp.task('favicon', (callback) => {
-  gulpSequence('favicon:generate', 'favicon:inject', 'favicon:update')(callback)
+  gulpSequence('favicon:generate', 'favicon:inject')(callback)
 })

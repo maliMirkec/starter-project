@@ -6,7 +6,7 @@ const replace = require('gulp-replace')
 const minifyInline = require('gulp-minify-inline')
 const fs = require('fs')
 
-gulp.task('html', () => gulp.src('./src/html/*.pug')
+gulp.task('html:dist', () => gulp.src('./src/html/*.pug')
   .pipe(pug())
   .pipe(htmlmin({
     collapseWhitespace: true
