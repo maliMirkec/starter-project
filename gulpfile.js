@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const requireDir = require('require-dir')
 const gulpSequence = require('gulp-sequence')
+const exit = require('gulp-exit')
 const config = require('./config.json')
 global.bs = require('browser-sync').create()
 
@@ -18,8 +19,15 @@ gulp.task('dev:sequence', (callback) => {
 
 gulp.task('dev', ['dev:sequence'])
 
+gulp.task('kill', () => {
+  global.bs.exit()
+
+  gulp.src(config.src)
+    .pipe(exit())
+})
+
 gulp.task('deploy:sequence', (callback) => {
-  gulpSequence('clean', 'favicon', 'gfx', 'fonts', 'js', 'css', 'html:dist', 'critical:dist')(callback)
+  gulpSequence('clean', 'gfx', 'fonts', 'js', 'css', 'html:dist', 'critical:dist', 'kill')(callback)
 })
 
 gulp.task('default', ['deploy:sequence'])
