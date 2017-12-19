@@ -42,6 +42,7 @@
     "gulp-cssimport": "^6.0.0",
     "gulp-eslint": "^4.0.0",
     "gulp-exit": "^0.0.2",
+    "gulp-gzip": "^1.4.0",
     "gulp-htmllint": "^0.0.14",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^4.0.0",
