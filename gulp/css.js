@@ -3,36 +3,22 @@ const gulpStylelint = require('gulp-stylelint')
 const sass = require('gulp-sass')
 const cssimport = require('gulp-cssimport')
 const autoprefixer = require('gulp-autoprefixer')
+const config = require('../config.json')
 
-gulp.task('css:sass', () => gulp.src('./src/scss/style.scss')
-  .pipe(gulpStylelint({
-    reporters: [
-      {
-        formatter: 'string',
-        console: true
-      }
-    ]
-  }))
-  .pipe(sass({
-    includePaths: ['./node_modules/modularscale-sass/stylesheets', './src/scss/', './src/scss/components']
-  }).on('error', sass.logError))
+gulp.task('css:sass', () => gulp.src(`${config.root + config.src + config.css.src}*.scss`)
+  .pipe(gulpStylelint(config.css.styleLintConfig))
+  .pipe(sass(config.css.sassConfig).on('error', sass.logError))
   .pipe(cssimport())
-  .pipe(autoprefixer({
-    browsers: ['last 5 versions'],
-    cascade: false
-  }))
-  .pipe(gulp.dest('./dist/css/'))
-  .pipe(global.bs.stream()))
+  .pipe(autoprefixer(config.css.autoprefixerConfig))
+  .pipe(gulp.dest(config.root + config.dest + config.css.dest)))
 
 const cleanCSS = require('gulp-clean-css')
 const rename = require('gulp-rename')
 
-gulp.task('css:minify', () => gulp.src(['./dist/css/**/*.css', '!./dist/css/**/*.min.css'])
+gulp.task('css:minify', () => gulp.src([`${config.root + config.dest + config.css.dest}**/*.css`, `!${config.root}${config.dest}${config.css.dest}/**/*.min.css`])
   .pipe(cleanCSS())
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(gulp.dest('./dist/css/')))
+  .pipe(rename(config.css.renameConfig))
+  .pipe(gulp.dest(config.root + config.dest + config.css.dest)))
 
 const gulpSequence = require('gulp-sequence')
 

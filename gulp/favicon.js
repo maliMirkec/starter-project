@@ -1,88 +1,26 @@
 const gulp = require('gulp')
 const realFavicon = require('gulp-real-favicon')
 const fs = require('fs')
-
-// File where the favicon markups are stored
-const FAVICON_DATA_FILE = './faviconData.json'
+const config = require('../config.json')
 
 // Generate the icons. This task takes a few seconds to complete.
 // You should run it at least once to create the icons. Then,
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
 gulp.task('favicon:generate', (done) => {
-  realFavicon.generateFavicon({
-    masterPicture: './src/gfx/svg/starter-project.svg',
-    dest: './dist/favicon/',
-    iconsPath: '/favicon/',
-    design: {
-      ios: {
-        pictureAspect: 'backgroundAndMargin',
-        backgroundColor: '#1ebada',
-        margin: '18%',
-        assets: {
-          ios6AndPriorIcons: true,
-          ios7AndLaterIcons: true,
-          precomposedIcons: true,
-          declareOnlyDefaultIcon: true
-        },
-        appName: 'Starter Project'
-      },
-      desktopBrowser: {},
-      windows: {
-        pictureAspect: 'noChange',
-        backgroundColor: '#1ebada',
-        onConflict: 'override',
-        assets: {
-          windows80Ie10Tile: true,
-          windows10Ie11EdgeTiles: {
-            small: true,
-            medium: true,
-            big: true,
-            rectangle: true
-          }
-        },
-        appName: 'Starter Project'
-      },
-      androidChrome: {
-        pictureAspect: 'noChange',
-        themeColor: '#1ebada',
-        manifest: {
-          name: 'Starter Project',
-          display: 'standalone',
-          orientation: 'notSet',
-          onConflict: 'override',
-          declared: true
-        },
-        assets: {
-          legacyIcon: true,
-          lowResolutionIcons: false
-        }
-      },
-      safariPinnedTab: {
-        pictureAspect: 'blackAndWhite',
-        threshold: 42.5,
-        themeColor: '#1ebada'
-      }
-    },
-    settings: {
-      compression: 2,
-      scalingAlgorithm: 'Cubic',
-      errorOnImageTooSmall: false
-    },
-    markupFile: FAVICON_DATA_FILE
-  }, () => {
+  realFavicon.generateFavicon(config.favicon.realFaviconConfig, () => {
     done()
   })
 })
 
-const parsedFaviconData = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE))
+const parsedFaviconData = JSON.parse(fs.readFileSync(config.favicon.realFaviconConfig.markupFile))
 
 // Inject the favicon markups in your HTML pages. You should run
 // this task whenever you modify a page. You can keep this task
 // as is or refactor your existing HTML pipeline.
-gulp.task('favicon:inject', () => gulp.src(['./src/html/partials/favicon.pug'])
+gulp.task('favicon:inject', () => gulp.src([config.root + config.src + config.favicon.src])
   .pipe(realFavicon.injectFaviconMarkups(parsedFaviconData.favicon.html_code))
-  .pipe(gulp.dest('./src/html/partials/')))
+  .pipe(gulp.dest(config.root + config.src + config.favicon.dest)))
 
 // Check for updates on RealFaviconGenerator (think: Apple has just
 // released a new Touch icon along with the latest version of iOS).

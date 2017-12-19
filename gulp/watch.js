@@ -1,7 +1,15 @@
 const gulp = require('gulp')
+const config = require('../config.json')
 
-gulp.task('watch', () => {
-  gulp.watch('./src/js/**/*.js', ['js'])
-  gulp.watch('./src/css/**/*.scss', ['css'])
-  gulp.watch('./src/html/**/*.pug', ['html:dev'])
+gulp.task('watch:dist', () => {
+  gulp.watch(`${config.root + config.src + config.js.src}**/*.js`, ['js'])
+  gulp.watch(`${config.root + config.src + config.css.src}**/*.scss`, ['css'])
+  gulp.watch(`${config.root + config.src + config.html.src}**/*.pug`, ['html:dist'])
+  gulp.watch('./dist/css/style.critical.min.css', ['html:dist'])
+})
+
+gulp.task('watch:dev', () => {
+  gulp.watch(`${config.root + config.src + config.js.src}**/*.js`, ['js'])
+  gulp.watch(`${config.root + config.src + config.css.src}**/*.scss`, ['css'])
+  gulp.watch(`${config.root + config.src + config.html.src}**/*.pug`, ['html:dev'])
 })

@@ -1,3 +1,15 @@
-html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+// Use this if no web font is present in design
+// body {
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+// }
+
+// Use this if using web fonts
+body {
+  font-family: sans-serif;
+}
+
+.fonts-stage-1 body {
+  font-family: LatoSubset, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }

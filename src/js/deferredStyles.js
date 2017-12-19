@@ -7,8 +7,8 @@ const loadDeferredStyles = function () {
   addStylesNode.parentElement.removeChild(addStylesNode)
 }
 
-if (requestAnimationFrame) {
-  requestAnimationFrame(() => {
+if (window.requestAnimationFrame) {
+  window.requestAnimationFrame(() => {
     window.setTimeout(loadDeferredStyles, 0)
   })
 } else {

@@ -1,21 +1,20 @@
 const gulp = require('gulp')
 const criticalCss = require('gulp-penthouse')
 const gulpSequence = require('gulp-sequence')
+const config = require('../config.json')
 
-gulp.task('penthouse', () => gulp.src('./dist/css/style.css')
-  .pipe(criticalCss({
-    out: './dist/css/style.critical.css',
-    url: 'http://localhost:3000',
-    width: 1366,
-    height: 768,
-    keepLargerMediaQueries: true,
-    strict: false,
-    blockJSRequests: false
-  }))
-  .pipe(gulp.dest('./')))
+gulp.task('penthouse', () => gulp.src(config.root + config.dest + config.css.dest + config.penthouse.src)
+  .pipe(criticalCss(config.penthouse.criticalCssConfig))
+  .pipe(gulp.dest(config.root)))
 
-gulp.task('critical:sequence', (callback) => {
+gulp.task('critical-dev:sequence', (callback) => {
   gulpSequence('browser:sync', 'penthouse')(callback)
 })
 
-gulp.task('critical', ['critical:sequence'])
+gulp.task('critical:dev', ['critical-dev:sequence'])
+
+gulp.task('critical-dist:sequence', (callback) => {
+  gulpSequence('critical-dev:sequence', 'css:minify', 'html:dist')(callback)
+})
+
+gulp.task('critical:dist', ['critical-dist:sequence'])
