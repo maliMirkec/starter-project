@@ -18,3 +18,9 @@ gulp.task('critical-dist:sequence', (callback) => {
 })
 
 gulp.task('critical:dist', ['critical-dist:sequence'])
+
+gulp.task('critical-deploy:sequence', (callback) => {
+  gulpSequence('critical-dev:sequence', 'css:minify:deploy', 'html:dist')(callback)
+})
+
+gulp.task('critical:deploy', ['critical-deploy:sequence'])

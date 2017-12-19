@@ -27,7 +27,7 @@ gulp.task('kill', () => {
 })
 
 gulp.task('deploy:sequence', (callback) => {
-  gulpSequence('clean', config.favicon.run ? 'favicon' : '', config.gfx.run ? 'gfx' : '', config.fonts.run ? 'fonts' : '', config.js.run ? 'js' : '', config.css.run ? 'css' : '', config.html.run ? 'html:dist' : '', config.penthouse.run ? 'critical:dist' : '', 'kill')(callback)
+  gulpSequence('clean', config.favicon.run ? 'favicon' : '', config.gfx.run ? 'gfx' : '', config.fonts.run ? 'fonts' : '', config.js.run ? 'js:deploy' : '', config.css.run ? 'css:deploy' : '', config.html.run ? 'html:dist' : '', config.penthouse.run ? 'critical:deploy' : '')(callback)
 })
 
 gulp.task('default', ['deploy:sequence'])
