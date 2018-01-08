@@ -15,7 +15,7 @@
     "scaffold",
     "skeleton"
   ],
-  "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
+  "author": "Silvestar Bistrović <me@silvestarbistrovic.from.hr>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/maliMirkec/starter-project/issues"
@@ -64,6 +64,7 @@
     "jstransformer-markdown-it": "^2.0.0",
     "modularscale-sass": "^3.0.3",
     "require-dir": "^0.3.2",
+    "sassdoc": "^2.5.0",
     "stylelint-config-sass-guidelines": "^4.0.1",
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.1.0",
