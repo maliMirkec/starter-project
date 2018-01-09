@@ -308,7 +308,7 @@
   },
   "sassdoc": {
     "run": true,
-    "config": {
+    "sassdocConfig": {
       "dest": "./dist/docs/sass/",
       "package": {
         "title": "Starter project",
@@ -328,6 +328,22 @@
         "undefined": "Misc"
       },
       "basePath": "http://localhost:3000/docs/sass/"
+    }
+  },
+  "kss": {
+    "run": true,
+    "dest": "styleguide/",
+    "kssConfig": {
+      "title": "Starter Project",
+      "source": "./src/scss/",
+      "destination": "./dist/styleguide/",
+      "css": [
+        "/css/style.css",
+        "/css/foft.css"
+      ],
+      "js" : [
+        "/js/foftFontLoading.js"
+      ]
     }
   },
   "gulp": {
