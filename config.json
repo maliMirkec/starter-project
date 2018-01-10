@@ -299,7 +299,7 @@
       "breakOnError": false,
       "showRuleNames": true,
       "standard": {
-        "globals": [ "requestAnimationFrame", "sessionStorage" ]
+        "globals": ["requestAnimationFrame", "sessionStorage"]
       }
     },
     "renameConfig": {
@@ -336,14 +336,41 @@
     "kssConfig": {
       "title": "Starter Project",
       "source": "./src/scss/",
-      "destination": "./dist/styleguide/",
+      "destination": "./dist/docs/styleguide/",
       "css": [
         "/css/style.css",
         "/css/foft.css"
       ],
-      "js" : [
+      "js": [
         "/js/foftFontLoading.js"
       ]
+    }
+  },
+  "jsdoc": {
+    "run": true,
+    "src": ["README.md", "./src/js/"],
+    "jsdocConfig": {
+      "tags": {
+        "allowUnknownTags": true
+      },
+      "opts": {
+        "destination": "./dist/docs/js/"
+      },
+      "plugins": [
+        "plugins/markdown"
+      ],
+      "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": false,
+        "default": {
+          "outputSourceFiles": true
+        },
+        "path": "ink-docstrap",
+        "theme": "simplex",
+        "navType": "vertical",
+        "linenums": true,
+        "dateFormat": "MMMM Do YYYY, h:mm:ss a"
+      }
     }
   },
   "gulp": {

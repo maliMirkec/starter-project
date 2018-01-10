@@ -48,6 +48,7 @@
     "gulp-imagemin": "^4.0.0",
     "gulp-include": "^2.3.1",
     "gulp-inline-source": "^3.1.0",
+    "gulp-jsdoc3": "^1.0.1",
     "gulp-penthouse": "^0.2.0",
     "gulp-pug": "^3.3.0",
     "gulp-real-favicon": "^0.2.2",
