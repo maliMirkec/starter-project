@@ -22,7 +22,7 @@
       }]
     },
     "sassConfig": {
-      "includePaths": ["./node_modules/modularscale-sass/stylesheets", "./src/scss/", "./src/scss/components"]
+      "includePaths": ["./node_modules/modularscale-sass/stylesheets", "./node_modules/normalize.css/", "./src/scss/", "./src/scss/components"]
     },
     "autoprefixedConfig": {
       "browsers": ["last 5 versions"],
