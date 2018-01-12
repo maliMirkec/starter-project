@@ -1,0 +1,13 @@
+{
+  "extends": ["airbnb-base", "standard"],
+  "globals": {
+    "requestAnimationFrame": true,
+    "sessionStorage": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "amd": true,
+    "commonjs": true
+  }
+}

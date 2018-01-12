@@ -1,0 +1,7 @@
+/dev/
+/dist/
+/node_modules/
+/bower_packages/
+/vendor/
+.DS_Store
+yarn.lock
