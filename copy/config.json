@@ -190,7 +190,7 @@
     "dest": "html/partials",
     "realFaviconConfig": {
       "masterPicture": "./new_src/gfx/svg/starter-project.svg",
-      "dest": "./dist/favicon/",
+      "dest": "./new_dist/favicon/",
       "iconsPath": "/favicon/",
       "design": {
         "ios": {
@@ -263,13 +263,13 @@
     "htmlminConfig": {
       "collapseWhitespace": true
     },
-    "inlineSourcePath": "dist"
+    "inlineSourcePath": "new_dist"
   },
   "penthouse": {
     "run": true,
     "src": "style.css",
     "criticalCssConfig": {
-      "out": "./dist/css/style.critical.css",
+      "out": "./new_dist/css/style.critical.css",
       "url": "http://localhost:3000",
       "width": 1366,
       "height": 768,
@@ -309,7 +309,7 @@
   "sassdoc": {
     "run": true,
     "sassdocConfig": {
-      "dest": "./dist/docs/sass/",
+      "dest": "./new_dist/docs/sass/",
       "package": {
         "title": "Starter project",
         "name": "starter-project",
@@ -336,7 +336,7 @@
     "kssConfig": {
       "title": "Starter Project",
       "source": "./new_src/scss/",
-      "destination": "./dist/docs/styleguide/",
+      "destination": "./new_dist/docs/styleguide/",
       "css": [
         "/css/style.css",
         "/css/foft.css"
@@ -354,7 +354,7 @@
         "allowUnknownTags": true
       },
       "opts": {
-        "destination": "./dist/docs/js/"
+        "destination": "./new_dist/docs/js/"
       },
       "plugins": [
         "plugins/markdown"
