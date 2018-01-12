@@ -1,11 +1,10 @@
 const gulp = require('gulp')
 const criticalCss = require('gulp-penthouse')
 const gulpSequence = require('gulp-sequence')
-const config = require('../config.json')
 
-gulp.task('penthouse', () => gulp.src(config.root + config.dest + config.css.dest + config.penthouse.src)
-  .pipe(criticalCss(config.penthouse.criticalCssConfig))
-  .pipe(gulp.dest(config.root)))
+gulp.task('penthouse', () => gulp.src(global.config.root + global.config.dest + global.config.css.dest + global.config.penthouse.src)
+  .pipe(criticalCss(global.config.penthouse.criticalCssConfig))
+  .pipe(gulp.dest(global.config.root)))
 
 gulp.task('critical-dev:sequence', (callback) => {
   gulpSequence('browser:sync', 'penthouse')(callback)

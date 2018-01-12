@@ -1,6 +1,5 @@
 const gulp = require('gulp')
 const clean = require('gulp-clean')
-const config = require('../config.json')
 
-gulp.task('clean', () => gulp.src(config.root + config.dest, { read: false })
+gulp.task('clean', () => gulp.src(global.config.root + global.config.dest, { read: false })
   .pipe(clean()))

@@ -2,14 +2,13 @@ const gulp = require('gulp')
 const imagemin = require('gulp-imagemin')
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminPngquant = require('imagemin-pngquant')
-const config = require('../config.json')
 
 gulp.task('gfx', () =>
-  gulp.src(`${config.root + config.src + config.gfx.src}**/*`)
+  gulp.src(`${global.config.root + global.config.src + global.config.gfx.src}**/*`)
     .pipe(imagemin([
-      imagemin.gifsicle(config.gfx.gifsicleConfig),
-      imageminMozjpeg(config.gfx.imageminMozjpegConfig),
-      imageminPngquant(config.gfximageminPngquantConfig),
-      imagemin.svgo(config.gfx.svgoConfig)
+      imagemin.gifsicle(global.config.gfx.gifsicleConfig),
+      imageminMozjpeg(global.config.gfx.imageminMozjpegConfig),
+      imageminPngquant(global.config.gfximageminPngquantConfig),
+      imagemin.svgo(global.config.gfx.svgoConfig)
     ]))
-    .pipe(gulp.dest(config.root + config.dest + config.gfx.dest)))
+    .pipe(gulp.dest(global.config.root + global.config.dest + global.config.gfx.dest)))
