@@ -1,26 +1,26 @@
 const gulp = require('gulp')
 const realFavicon = require('gulp-real-favicon')
 const fs = require('fs')
-const config = require('../config.json')
 
 // Generate the icons. This task takes a few seconds to complete.
 // You should run it at least once to create the icons. Then,
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
 gulp.task('favicon:generate', (done) => {
-  realFavicon.generateFavicon(config.favicon.realFaviconConfig, () => {
+  realFavicon.generateFavicon(global.config.favicon.realFaviconConfig, () => {
     done()
   })
 })
 
-const parsedFaviconData = JSON.parse(fs.readFileSync(config.favicon.realFaviconConfig.markupFile))
+const parsedFaviconFile = fs.readFileSync(global.config.favicon.realFaviconConfig.markupFile)
+const parsedFaviconData = JSON.parse(parsedFaviconFile)
 
 // Inject the favicon markups in your HTML pages. You should run
 // this task whenever you modify a page. You can keep this task
 // as is or refactor your existing HTML pipeline.
-gulp.task('favicon:inject', () => gulp.src([config.root + config.src + config.favicon.src])
+gulp.task('favicon:inject', () => gulp.src([global.config.root + global.config.src + global.config.favicon.src])
   .pipe(realFavicon.injectFaviconMarkups(parsedFaviconData.favicon.html_code))
-  .pipe(gulp.dest(config.root + config.src + config.favicon.dest)))
+  .pipe(gulp.dest(global.config.root + global.config.src + global.config.favicon.dest)))
 
 // Check for updates on RealFaviconGenerator (think: Apple has just
 // released a new Touch icon along with the latest version of iOS).

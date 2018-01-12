@@ -1,6 +1,5 @@
 const gulp = require('gulp')
 const jsdoc = require('gulp-jsdoc3')
-const config = require('../config.json')
 
-gulp.task('jsdoc', () => gulp.src(config.jsdoc.src)
-  .pipe(jsdoc(config.jsdoc.jsdocConfig)))
+gulp.task('jsdoc', () => gulp.src(global.config.jsdoc.src)
+  .pipe(jsdoc(global.config.jsdoc.jsdocConfig)))
