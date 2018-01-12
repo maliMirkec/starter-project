@@ -1,0 +1,60 @@
+/// Media query definition for mobile devices, used in css-locks.
+/// @access public
+/// @alias false
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
+/// @group Variables
+/// @ignore false
+/// @link false
+/// @name mq--mobile
+/// @property false
+/// @require false
+/// @see false
+/// @since 1.0.0
+/// @todo false
+/// @type Unit
+$mq--mobile: 480px;
+
+/// Media query definition for desktop devices, used in css-locks.
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
+/// @group Variables
+/// @name mq--desktop
+/// @since 1.0.0
+/// @type Unit
+$mq--desktop: 960px;
+
+/// Default font size on mobile devices, used in css-locks.
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
+/// @group Variables
+/// @name font-size--mobile
+/// @since 1.0.0
+/// @type Unit
+$font-size--mobile: 13px;
+
+/// Default font size on desktop devices, used in css-locks.
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
+/// @group Variables
+/// @name font-size--desktop
+/// @since 1.0.0
+/// @type Unit
+$font-size--desktop: 16px;
+
+/// Configuration for modular scale
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
+/// @group Variables
+/// @name modularscale
+/// @since 1.0.0
+/// @todo Add modular scale variables
+/// @type Unit
+$modularscale: (
+  base: 1rem,
+  ratio: $major-third
+);

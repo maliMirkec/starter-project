@@ -1,29 +1,18 @@
-'use strict';
-
-var gulp = require('gulp');
-var bump = require('gulp-bump');
+const gulp = require('gulp')
+const bump = require('gulp-bump')
+const config = require('../config.json')
 
 // Will patch the version
-gulp.task('bump:patch', function() {
-  return gulp.src(['./package.json', 'bower.json'])
+gulp.task('bump:patch', () => gulp.src([config.root + config.bump.src])
   .pipe(bump())
-  .pipe(gulp.dest('./'));
-});
+  .pipe(gulp.dest(config.root)))
 
 // Will patch the version
-gulp.task('bump:minor', function() {
-  return gulp.src(['./package.json', 'bower.json'])
-  .pipe(bump({
-    type: 'minor'
-  }))
-  .pipe(gulp.dest('./'));
-});
+gulp.task('bump:minor', () => gulp.src([config.root + config.bump.src])
+  .pipe(bump(config.bump.minorConfig))
+  .pipe(gulp.dest(config.root)))
 
 // Will patch the version
-gulp.task('bump:major', function() {
-  return gulp.src(['./package.json', 'bower.json'])
-  .pipe(bump({
-    type: 'major'
-  }))
-  .pipe(gulp.dest('./'));
-});
+gulp.task('bump:major', () => gulp.src([config.root + config.bump.src])
+  .pipe(bump(config.bump.majorConfig))
+  .pipe(gulp.dest(config.root)))

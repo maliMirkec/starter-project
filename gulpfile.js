@@ -1,28 +1,33 @@
-'use strict';
+const gulp = require('gulp')
+const requireDir = require('require-dir')
+const gulpSequence = require('gulp-sequence')
+const exit = require('gulp-exit')
+const config = require('./config.json')
+global.bs = require('browser-sync').create()
 
-var gulp = require('gulp');
+requireDir(config.root + config.gulp.src)
 
-var requireDir = require('require-dir');
-var gulpSequence = require('gulp-sequence');
+gulp.task('dist:sequence', (callback) => {
+  gulpSequence('clean', config.gfx.run ? 'gfx' : '', config.fonts.run ? 'fonts' : '', config.js.run ? 'js' : '', config.jsdoc.run ? 'jsdoc' : '', config.css.run ? 'css' : '', config.sassdoc.run ? 'sassdoc' : '', config.kss.run ? 'kss' : '', config.html.run ? 'html:dist' : '', 'watch:dist', config.penthouse.run ? 'critical:dist' : '')(callback)
+})
 
-requireDir('./gulp');
+gulp.task('dist', ['dist:sequence'])
 
-gulp.task('default:dev', ['sequence:dev']);
+gulp.task('dev:sequence', (callback) => {
+  gulpSequence('clean', config.gfx.run ? 'gfx' : '', config.fonts.run ? 'fonts' : '', config.js.run ? 'js' : '', config.jsdoc.run ? 'jsdoc' : '', config.css.run ? 'css' : '', config.sassdoc.run ? 'sassdoc' : '', config.kss.run ? 'kss' : '', config.html.run ? 'html:dev' : '', 'watch:dev', config.penthouse.run ? 'critical:dev' : '')(callback)
+})
 
-gulp.task('watch:dev', function() {
-  gulp.watch('./src/css/**/*.scss', function() {
-    gulpSequence('css:sass', 'css:critical')(function (err) {
-      if (err) console.log(err)
-    });
-  });
-});
+gulp.task('dev', ['dev:sequence'])
 
-gulp.task('default:dist', ['sequence:dist']);
+gulp.task('kill', () => {
+  global.bs.exit()
 
-gulp.task('watch:dist', function() {
-  gulp.watch('./src/css/**/*.scss', function() {
-    gulpSequence('css:sass', 'css:critical', 'css:autoprefix', 'css:minify')(function (err) {
-      if (err) console.log(err)
-    });
-  });
-});
+  gulp.src(config.src)
+    .pipe(exit())
+})
+
+gulp.task('deploy:sequence', (callback) => {
+  gulpSequence('clean', config.favicon.run ? 'favicon' : '', config.gfx.run ? 'gfx' : '', config.fonts.run ? 'fonts' : '', config.js.run ? 'js:deploy' : '', config.jsdoc.run ? 'jsdoc' : '', config.css.run ? 'css:deploy' : '', config.sassdoc.run ? 'sassdoc' : '', config.kss.run ? 'kss' : '', config.html.run ? 'html:dist' : '', config.penthouse.run ? 'critical:deploy' : '', 'gzip', 'kill')(callback)
+})
+
+gulp.task('default', ['deploy:sequence'])

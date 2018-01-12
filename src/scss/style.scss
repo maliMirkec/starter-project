@@ -1,0 +1,14 @@
+// Plugins
+@import 'modularscale';
+
+// Configuration
+@import 'variables';
+@import 'reset';
+@import 'fonts';
+@import 'locks';
+@import 'typography';
+
+// Customization
+body {
+  background-color: #fff;
+}
