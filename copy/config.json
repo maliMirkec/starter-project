@@ -1,7 +1,7 @@
 {
   "root": "./",
-  "src": "src/",
-  "dest": "dist/",
+  "src": "new_src/",
+  "dest": "new_dist/",
   "bump": {
     "src": "package.json",
     "minorConfig": {
@@ -22,7 +22,7 @@
       }]
     },
     "sassConfig": {
-      "includePaths": ["./node_modules/modularscale-sass/stylesheets", "./src/scss/", "./src/scss/components"]
+      "includePaths": ["./node_modules/modularscale-sass/stylesheets", "./new_src/scss/", "./new_src/scss/components"]
     },
     "autoprefixedConfig": {
       "browsers": ["last 5 versions"],
@@ -189,7 +189,7 @@
     "src": "html/partials/favicon.pug",
     "dest": "html/partials",
     "realFaviconConfig": {
-      "masterPicture": "./src/gfx/svg/starter-project.svg",
+      "masterPicture": "./new_src/gfx/svg/starter-project.svg",
       "dest": "./dist/favicon/",
       "iconsPath": "/favicon/",
       "design": {
@@ -335,7 +335,7 @@
     "dest": "styleguide/",
     "kssConfig": {
       "title": "Starter Project",
-      "source": "./src/scss/",
+      "source": "./new_src/scss/",
       "destination": "./dist/docs/styleguide/",
       "css": [
         "/css/style.css",
@@ -348,7 +348,7 @@
   },
   "jsdoc": {
     "run": true,
-    "src": ["README.md", "./src/js/"],
+    "src": ["README.md", "./new_src/js/"],
     "jsdocConfig": {
       "tags": {
         "allowUnknownTags": true
