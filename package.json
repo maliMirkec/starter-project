@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "build": "gulp",
-    "copy_config": "cp copy/* ../../",
-    "copy_src": "cp src ../../new_src"
+    "copy_config": "cp -r copy/* ../../ && cp -r copy/.* ../../",
+    "copy_src": "cp -r src/* ../../new_src",
+    "postinstall": "npm run copy_config && npm run copy_src"
   },
   "repository": {
     "type": "git",
