@@ -1,6 +1,6 @@
 {
   "name": "starter-project",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "Gulp; .editorconfig; .jshintrc; .gitignore; SCSS: reset, locks, system fonts;",
   "main": "index.html",
   "scripts": {
