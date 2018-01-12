@@ -374,6 +374,6 @@
     }
   },
   "gulp": {
-    "src": "node_modules/starter-project/gulp/"
+    "src": "gulp/"
   }
 }
