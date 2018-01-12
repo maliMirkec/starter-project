@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp",
     "copy_config": "cp -r copy/* ../../ && cp -r copy/.* ../../",
-    "copy_src": "cp -r src ../../new_src",
+    "copy_src": "cp -r src/* ../../new_src",
     "postinstall": "npm run copy_config && npm run copy_src"
   },
   "repository": {
