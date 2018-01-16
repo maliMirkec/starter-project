@@ -1,36 +1,62 @@
-# Starter Project
+# [Starter Project]
 
-![Starter Project Logo - Folder with start button](https://github.com/maliMirkec/starter-project/blob/master/src/gfx/svg/starter-project.svg)
+![Starter Project Logo - Folder with start button](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project.png)
 
-##### A set of latest best practices packed in Gulp tasks
+### A set of gulp task that helps you develop high performant websites using latest best practices.
 
-Welcome to Starter Project, the easiest way to implement latest best practices on your project. It doesn't matter if you have existing project or you start from the scratch, this package has thourough configuration and can be used wherever.
+Welcome to Starter Project, the easiest way to implement latest best practices to your website. It doesn't matter if you have an existing project or you start from the scratch; you can use this package to meet all your needs.
 
-#### Installation
+## Installation
 
 Install using npm
 
-```
+```bash
 npm install starter-project --save
 ```
 
 or yarn
 
-```
+```bash
 yarn add starter-project
 ```
 
 or clone from [Github][Starter Project]
 
-```
+```bash
 git clone https://github.com/maliMirkec/starter-project.git
 ```
 
 **We won't override your project if you already have `src` or `new_src` folder.**
 
-#### What is Starter Project?
+## Initialization
 
-Starter Project is set of gulp tasks that will make your life easier. Here you will find everything that is necessary for developing modern website, including:
+To start developing use
+
+```bash
+gulp dev
+```
+
+To make production build, use
+
+```bash
+gulp
+```
+
+To see the full list of gulp tasks, run
+
+```bash
+gulp --tasks
+```
+
+## Configuration
+
+It is possible to configure every single gulp task. All configuration options are available in [`config.json`](https://github.com/maliMirkec/starter-project/blob/master/config.json) file.
+
+For example, if you want to change the destination path for the compiled resources, you could change `"dest"` option.
+
+## What is Starter Project?
+
+Starter Project is set of gulp tasks that will make your life easier. Here you will find everything that is necessary for developing a modern website, including:
 
 * Browser-sync
 * Sass compiler and linter
@@ -48,7 +74,7 @@ Starter Project is set of gulp tasks that will make your life easier. Here you w
 
 Documentation is still work in progress, stay tuned for more features and docs.
 
-#### Project Structure
+## Project Structure
 
 ```
   |-- .editorconfig
