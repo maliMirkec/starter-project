@@ -22,9 +22,9 @@
 
 @function rem($size: 20px, $media: 'desktop') {
   @if $media == 'desktop' {
-    @return calc(#{strip-unit($size / $font-size-desktop)} * 1rem);
+    @return calc(#{strip-unit($size / $font-size--desktop)} * 1rem);
   } @else if $media == 'mobile' {
-    @return calc(#{strip-unit($size / $font-size-mobile)} * 1rem);
+    @return calc(#{strip-unit($size / $font-size--mobile)} * 1rem);
   } @else {
     @return 1rem;
   }

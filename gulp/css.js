@@ -12,7 +12,8 @@ gulp.task('css:sass', () => gulp.src(`${global.config.root + global.config.src +
   .pipe(cssimport())
   .pipe(autoprefixer(global.config.css.autoprefixerConfig))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest(global.config.root + global.config.dest + global.config.css.dest)))
+  .pipe(gulp.dest(global.config.root + global.config.dest + global.config.css.dest))
+  .pipe(global.bs.stream()))
 
 const cleanCSS = require('gulp-clean-css')
 const rename = require('gulp-rename')

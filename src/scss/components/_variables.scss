@@ -1,6 +1,5 @@
 /// Media query definition for mobile devices, used in css-locks.
 /// @access public
-/// @alias false
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 /// @group Variables
@@ -8,8 +7,6 @@
 /// @link false
 /// @name mq--mobile
 /// @property false
-/// @require false
-/// @see false
 /// @since 1.0.0
 /// @todo false
 /// @type Unit
@@ -58,3 +55,73 @@ $modularscale: (
   base: 1rem,
   ratio: $major-third
 );
+
+/// Color from color palette
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example color-alpha: #ba1ada;
+/// @group Color Palette
+/// @name color-alpha
+/// @since 1.0.0
+/// @type Color
+$color-alpha: #ba1ada;
+
+/// Color from color palette
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example color-beta: #d91a79;
+/// @group Color Palette
+/// @name color-beta
+/// @since 1.0.0
+/// @type Color
+$color-beta: #d91a79;
+
+/// Color from color palette
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example color-gamma: #1ed9d9;
+/// @group Color Palette
+/// @name color-gamma
+/// @since 1.0.0
+/// @type Color
+$color-gamma: #1ed9d9;
+
+/// Color from color palette
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example color-delta: #1ebada;
+/// @group Color Palette
+/// @name color-delta
+/// @since 1.0.0
+/// @type Color
+$color-delta: #1ebada;
+
+/// Color for text
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example color-text: #383738;
+/// @group Color Palette
+/// @name color-text
+/// @since 1.0.0
+/// @type Color
+$color-text: #383738;
+
+/// Transition duration
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example transition-duration: 0.175s;
+/// @group Transitions
+/// @name trd
+/// @since 1.0.0
+/// @type Unit
+$trd: 0.175s;
+
+/// Transition animation
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example transition-duration: cubic-bezier(0.04, 0.88, 0.74, 1.04);
+/// @group Transitions
+/// @name tra
+/// @since 1.0.0
+/// @type Unit
+$tra: cubic-bezier(0.04, 0.88, 0.74, 1.04);

@@ -1,6 +1,6 @@
 body {
   font-size: ms(0);
-  line-height: 1.3;
+  line-height: 1.7;
 }
 
 // Headings [h1, h2, h3, h4, h5, h6]
@@ -22,4 +22,8 @@ body {
   h#{$i} {
     font-size: ms(7 - $i);
   }
+}
+
+code {
+  line-height: 1;
 }
