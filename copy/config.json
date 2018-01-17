@@ -11,6 +11,13 @@
       "type": "major"
     }
   },
+  "browserSync": {
+    "browserSyncConfig": {
+      "server": {
+        "baseDir": "./new_dist/"
+      }
+    }
+  },
   "css": {
     "run": true,
     "src": "scss/",
@@ -348,7 +355,7 @@
   },
   "jsdoc": {
     "run": true,
-    "src": ["README.md", "./new_src/js/"],
+    "src": ["./new_src/js/homepage.md", "./new_src/js/"],
     "jsdocConfig": {
       "tags": {
         "allowUnknownTags": true
