@@ -1,7 +1,31 @@
+/// Function for stripping units
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example font-size: strip-unit(20px);
+/// @group 2.1 Locks
+/// @name strip-unit
+/// @since 1.0.0
+/// @param {Unit} $value A value with unit (e.g. 20px)
+/// @return {Integer} Returns a value without unit
+/// @link https://css-tricks.com/snippets/css/fluid-typography/
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
+/// Mixin for creating CSS Locks
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include css-locks(font-size, 480px, 960px, 14px, 20px);
+/// @group 2.1 Locks
+/// @name css-locks
+/// @since 1.0.0
+/// @param {String} $properties A property (e.g. font-size)
+/// @param {Unit} $min-vw A minimal view width (e.g. 480px)
+/// @param {Unit} $max-vw A maximal view width (e.g. 960px)
+/// @param {Unit} $min-value A minimal value for lock (e.g. 14px)
+/// @param {Unit} $max-value A maximum value for lock (e.g. 20px)
+/// @link https://css-tricks.com/snippets/css/fluid-typography/
 @mixin css-locks($properties, $min-vw, $max-vw, $min-value, $max-value) {
   @each $property in $properties {
     #{$property}: $min-value;
@@ -18,18 +42,4 @@
       #{$property}: $max-value;
     }
   }
-}
-
-@function rem($size: 20px, $media: 'desktop') {
-  @if $media == 'desktop' {
-    @return calc(#{strip-unit($size / $font-size--desktop)} * 1rem);
-  } @else if $media == 'mobile' {
-    @return calc(#{strip-unit($size / $font-size--mobile)} * 1rem);
-  } @else {
-    @return 1rem;
-  }
-}
-
-html {
-  @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 }

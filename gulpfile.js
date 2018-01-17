@@ -19,6 +19,12 @@ gulp.task('dev:sequence', (callback) => {
 
 gulp.task('dev', ['dev:sequence'])
 
+gulp.task('docs:sequence', (callback) => {
+  gulpSequence('clean', global.config.gfx.run ? 'gfx' : '', global.config.fonts.run ? 'fonts' : '', global.config.js.run ? 'js' : '', global.config.jsdoc.run ? 'jsdoc' : '', global.config.css.run ? 'css' : '', global.config.sassdoc.run ? 'sassdoc' : '', global.config.kss.run ? 'kss' : '', global.config.html.run ? 'html:dev' : '', 'watch:docs', 'browser:sync')(callback)
+})
+
+gulp.task('docs', ['docs:sequence'])
+
 gulp.task('kill', () => {
   global.bs.exit()
 

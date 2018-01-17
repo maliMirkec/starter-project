@@ -29,7 +29,6 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.13",
-    "classily.js": "1.0.9",
     "eslint": "^4.11.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-standard": "^10.2.1",

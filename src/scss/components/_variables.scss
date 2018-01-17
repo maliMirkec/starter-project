@@ -2,55 +2,46 @@
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group Variables
-/// @ignore false
-/// @link false
+/// @group 1.1 Sizes
 /// @name mq--mobile
-/// @property false
 /// @since 1.0.0
-/// @todo false
-/// @type Unit
 $mq--mobile: 480px;
 
 /// Media query definition for desktop devices, used in css-locks.
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group Variables
+/// @group 1.1 Sizes
 /// @name mq--desktop
 /// @since 1.0.0
-/// @type Unit
 $mq--desktop: 960px;
 
 /// Default font size on mobile devices, used in css-locks.
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group Variables
+/// @group 1.1 Sizes
 /// @name font-size--mobile
 /// @since 1.0.0
-/// @type Unit
 $font-size--mobile: 13px;
 
 /// Default font size on desktop devices, used in css-locks.
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group Variables
+/// @group 1.1 Sizes
 /// @name font-size--desktop
 /// @since 1.0.0
-/// @type Unit
 $font-size--desktop: 16px;
 
 /// Configuration for modular scale
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group Variables
+/// @group 1.1 Sizes
 /// @name modularscale
 /// @since 1.0.0
-/// @todo Add modular scale variables
-/// @type Unit
+/// @link http://www.modularscale.com/
 $modularscale: (
   base: 1rem,
   ratio: $major-third
@@ -59,69 +50,62 @@ $modularscale: (
 /// Color from color palette
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
-/// @example color-alpha: #ba1ada;
-/// @group Color Palette
+/// @example color: $color-alpha;
+/// @group 1.2 Colors
 /// @name color-alpha
 /// @since 1.0.0
-/// @type Color
 $color-alpha: #ba1ada;
 
 /// Color from color palette
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
-/// @example color-beta: #d91a79;
-/// @group Color Palette
+/// @example color: $color-beta;
+/// @group 1.2 Colors
 /// @name color-beta
 /// @since 1.0.0
-/// @type Color
 $color-beta: #d91a79;
 
 /// Color from color palette
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
-/// @example color-gamma: #1ed9d9;
-/// @group Color Palette
+/// @example color: $color-gamma;
+/// @group 1.2 Colors
 /// @name color-gamma
 /// @since 1.0.0
-/// @type Color
 $color-gamma: #1ed9d9;
 
 /// Color from color palette
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
-/// @example color-delta: #1ebada;
-/// @group Color Palette
+/// @example color: $color-delta;
+/// @group 1.2 Colors
 /// @name color-delta
 /// @since 1.0.0
-/// @type Color
 $color-delta: #1ebada;
 
 /// Color for text
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
-/// @example color-text: #383738;
-/// @group Color Palette
+/// @example color: $color-text;
+/// @group 1.2 Colors
 /// @name color-text
 /// @since 1.0.0
-/// @type Color
 $color-text: #383738;
 
 /// Transition duration
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
-/// @example transition-duration: 0.175s;
-/// @group Transitions
+/// @example transition-duration: $tra;
+/// @group 1.3 Transitions
 /// @name trd
 /// @since 1.0.0
-/// @type Unit
 $trd: 0.175s;
 
 /// Transition animation
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
-/// @example transition-duration: cubic-bezier(0.04, 0.88, 0.74, 1.04);
-/// @group Transitions
+/// @example transition-duration: $tra;
+/// @group 1.3 Transitions
 /// @name tra
 /// @since 1.0.0
-/// @type Unit
 $tra: cubic-bezier(0.04, 0.88, 0.74, 1.04);
