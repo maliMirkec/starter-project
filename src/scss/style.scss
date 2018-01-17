@@ -1,10 +1,11 @@
 // Plugins
-@import 'modularscale';
 @import 'normalize';
+@import 'modularscale';
 
 // Configuration
 @import 'variables';
 @import 'fonts';
 @import 'locks';
+@import 'helpers';
 @import 'typography';
 @import 'theme';

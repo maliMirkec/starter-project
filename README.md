@@ -63,7 +63,7 @@ Starter Project is set of gulp tasks that will make your life easier. Here you w
 * JavaScript/es6 compiler and linter
 * Pug template engine
 * HTML linter
-* Fonts
+* Font optimization
 * Image optimization
 * Favicon generation
 * Critical CSS

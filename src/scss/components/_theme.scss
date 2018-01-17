@@ -26,14 +26,14 @@ body {
 .sig {
   align-items: baseline;
   background-image: linear-gradient(to right, transparentize($color-gamma, 0.85), transparentize($color-delta, 0.85));
-  color: $color-beta;
+  color: $color-text;
   display: flex;
   justify-content: center;
   line-height: 1;
   padding: rem(1px) rem(10px) rem(6px);
 
   p {
-    font-size: ms(0);
+    font-size: ms(-1);
     margin: 0;
   }
 }

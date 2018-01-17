@@ -1,3 +1,7 @@
+html {
+  @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
+}
+
 body {
   font-size: ms(0);
   line-height: 1.7;

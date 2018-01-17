@@ -11,6 +11,13 @@
       "type": "major"
     }
   },
+  "browserSync": {
+    "browserSyncConfig": {
+      "server": {
+        "baseDir": "./dist/"
+      }
+    }
+  },
   "css": {
     "run": true,
     "src": "scss/",
