@@ -355,7 +355,7 @@
   },
   "jsdoc": {
     "run": true,
-    "src": ["README.md", "./src/js/"],
+    "src": ["./src/js/homepage.md", "./src/js/"],
     "jsdocConfig": {
       "tags": {
         "allowUnknownTags": true
