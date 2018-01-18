@@ -29,7 +29,7 @@
       }]
     },
     "sassConfig": {
-      "includePaths": ["./node_modules/modularscale-sass/stylesheets", "./node_modules/normalize.css/", "./src/scss/", "./src/scss/components"]
+      "includePaths": ["./node_modules/modularscale-sass/stylesheets/", "./node_modules/sass-mq/", "./node_modules/normalize.css/", "./src/scss/", "./src/scss/components"]
     },
     "autoprefixedConfig": {
       "browsers": ["last 5 versions"],
@@ -320,7 +320,7 @@
       "package": {
         "title": "Starter project",
         "name": "starter-project",
-        "description": "Gulp; .editorconfig; .jshintrc; .gitignore; SCSS: reset, locks, system fonts;",
+        "description": "A set of gulp task that helps you develop high performant websites using latest best practices.",
         "license": "MIT",
         "homepage": "https://github.com/maliMirkec/starter-project"
       },
