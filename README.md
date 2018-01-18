@@ -82,7 +82,6 @@ Documentation is still work in progress, stay tuned for more features and docs.
 |-- .eslintrc.json
 |-- .gitignore
 |-- .htmllintrc
-|-- .jshintrc
 |-- .stylelintrc
 |-- LICENSE
 |-- README.md

@@ -32,7 +32,7 @@ $font-size--mobile: 13px;
 /// @group 1.1 Sizes
 /// @name font-size--desktop
 /// @since 1.0.0
-$font-size--desktop: 16px;
+$font-size--desktop: 17px;
 
 /// Configuration for modular scale
 /// @access public
@@ -45,6 +45,22 @@ $font-size--desktop: 16px;
 $modularscale: (
   base: 1rem,
   ratio: $major-third
+);
+
+/// Configuration for media queries
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example
+///   @include mq($from: mobile, $until: desktop) {
+///     color: $color-alpha;
+///   }
+/// @group 1.1 Sizes
+/// @name mq-breakpoints
+/// @since 1.0.0
+/// @link https://www.npmjs.com/package/sass-mq
+$mq-breakpoints: (
+  mobile:  $mq--mobile,
+  desktop: $mq--desktop
 );
 
 /// Color from color palette
