@@ -1,12 +1,12 @@
 {
   "name": "starter-project",
-  "version": "1.1.25",
+  "version": "1.1.26",
   "description": "A set of gulp task that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
     "build": "gulp",
-    "copy_config": "node_modules/.bin/path-exists ../../config.json || node_modules/.bin/path-exists ../../gulpfile.js || node_modules/.bin/ncp copy/ ../../",
-    "copy_src": "node_modules/.bin/path-exists ../../new_src || node_modules/.bin/path-exists ../../src || node_modules/.bin/ncp src/ ../../new_src/",
+    "copy_config": "./node_modules/.bin/path-exists ../../config.json || ./node_modules/.bin/path-exists ../../gulpfile.js || ./node_modules/.bin/ncp ./copy/ ../../",
+    "copy_src": "./node_modules/.bin/path-exists ../../new_src || ./node_modules/.bin/path-exists ../../src || ./node_modules/.bin/ncp ./src/ ../../new_src/",
     "run_scripts": "npm run copy_config && npm run copy_src",
     "postinstall": "npm run run_scripts"
   },
