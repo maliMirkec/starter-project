@@ -5,10 +5,10 @@
   "main": "index.html",
   "scripts": {
     "build": "gulp",
-    "copy_config": "cp -r copy/ ../../",
-    "copy_src": "cp -r src/ ../../new_src/",
+    "copy_config": "node_modules/.bin/ncp copy/ ../../",
+    "copy_src": "node_modules/.bin/ncp src/ ../../new_src/",
     "run_scripts": "npm run copy_config && npm run copy_src",
-    "postinstall": "[ -d 'new_src' ] || [ -d 'src' ] || npm run run_scripts"
+    "postinstall": "[node_modules/.bin/path-exists new_src ] || [node_modules/.bin/path-exists src] || npm run run_scripts"
   },
   "repository": {
     "type": "git",
@@ -94,7 +94,9 @@
     "jstransformer-markdown-it": "^2.0.0",
     "kss": "^3.0.0-beta.18",
     "modularscale-sass": "^3.0.3",
+    "ncp": "^2.0.0",
     "normalize.css": "^7.0.0",
+    "path-exists-cli": "^1.0.0",
     "require-dir": "^0.3.2",
     "sass-mq": "^4.0.2",
     "sassdoc": "^2.5.0",
