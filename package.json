@@ -1,16 +1,11 @@
 {
   "name": "starter-project",
-  "version": "1.1.27",
+  "version": "1.1.28",
   "description": "A set of gulp task that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
     "build": "gulp",
-    "copy_config_test": "node_modules/.bin/path-exists _config.json || node_modules/.bin/path-exists _gulpfile.js || node_modules/.bin/ncp copy/ _copy",
-    "copy_src_test": "node_modules/.bin/path-exists new_src || node_modules/.bin/path-exists src || node_modules/.bin/ncp src/ new_src/",
-    "copy_config": "node_modules/.bin/path-exists ../../config.json || node_modules/.bin/path-exists ../../gulpfile.js || node_modules/.bin/ncp copy/ ../../",
-    "copy_src": "node_modules/.bin/path-exists ../../new_src || node_modules/.bin/path-exists ../../src || node_modules/.bin/ncp src/ ../../new_src/",
-    "run_scripts": "npm run copy_config && npm run copy_src",
-    "postinstall": "npm run run_scripts"
+    "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -98,6 +93,7 @@
     "modularscale-sass": "^3.0.3",
     "ncp": "^2.0.0",
     "normalize.css": "^7.0.0",
+    "path-exists": "^3.0.0",
     "path-exists-cli": "^1.0.0",
     "require-dir": "^0.3.2",
     "sass-mq": "^4.0.2",
