@@ -6,7 +6,7 @@ const rename = require('gulp-rename')
 const inlineSource = require('gulp-inline-source')
 const path = require('path')
 
-gulp.task('html:dist', () => gulp.src(`${global.config.root + global.config.src + global.config.html.src}*.pug`)
+gulp.task('html:dist', () => gulp.src(`${global.config.root + global.config.html.src}*.pug`)
   .pipe(pug())
   .pipe(htmllint(global.config.root + global.config.html.htmllintConfig))
   .pipe(htmlmin(global.config.html.htmlminConfig))
@@ -16,7 +16,7 @@ gulp.task('html:dist', () => gulp.src(`${global.config.root + global.config.src 
   .pipe(rename(global.config.html.renameConfig))
   .pipe(gulp.dest(global.config.root + global.config.dest)))
 
-gulp.task('html:dev', () => gulp.src(`${global.config.root + global.config.src + global.config.html.src}*.pug`)
+gulp.task('html:dev', () => gulp.src(`${global.config.root + global.config.html.src}*.pug`)
   .pipe(pug(global.config.html.pugConfig))
   .pipe(htmllint(global.config.root + global.config.html.htmllintConfig))
   .pipe(inlineSource({

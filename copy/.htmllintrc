@@ -10,7 +10,7 @@
   "attr-req-value": true,
   "attr-validate": false,
   "class-no-dup": true,
-  "class-style": "dash",
+  "class-style": "bem",
   "doctype-first": "smart",
   "doctype-html5": true,
   "fig-req-figcaption": false,

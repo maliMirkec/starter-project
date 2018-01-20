@@ -4,7 +4,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminPngquant = require('imagemin-pngquant')
 
 gulp.task('gfx', () =>
-  gulp.src(`${global.config.root + global.config.src + global.config.gfx.src}**/*`)
+  gulp.src(`${global.config.root + global.config.gfx.src}**/*`)
     .pipe(imagemin([
       imagemin.gifsicle(global.config.gfx.gifsicleConfig),
       imageminMozjpeg(global.config.gfx.imageminMozjpegConfig),

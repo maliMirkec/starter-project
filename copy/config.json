@@ -1,9 +1,9 @@
 {
   "root": "./",
-  "src": "new_src/",
+  "src": "new_src/new_src/",
   "dest": "new_dist/",
   "bump": {
-    "src": "package.json",
+    "src": "new_src/package.json",
     "minorConfig": {
       "type": "minor"
     },
@@ -20,7 +20,7 @@
   },
   "css": {
     "run": true,
-    "src": "scss/",
+    "src": "new_src/scss/",
     "dest": "css/",
     "styleLintConfig": {
       "reporters": [{
@@ -41,12 +41,12 @@
   },
   "fonts": {
     "run": true,
-    "src": "fonts/",
+    "src": "new_src/fonts/",
     "dest": "fonts/"
   },
   "gfx": {
     "run": true,
-    "src": "gfx/",
+    "src": "new_src/gfx/",
     "dest": "gfx/",
     "gifsicleConfig": {
       "interlaced": true
@@ -193,7 +193,7 @@
   },
   "favicon": {
     "run": true,
-    "src": "html/partials/favicon.pug",
+    "src": "new_src/html/partials/favicon.pug",
     "dest": "html/partials",
     "realFaviconConfig": {
       "masterPicture": "./new_src/gfx/svg/starter-project.svg",
@@ -259,7 +259,7 @@
   },
   "html": {
     "run": true,
-    "src": "html/",
+    "src": "new_src/html/",
     "renameConfig": {
       "extname": ".html"
     },
@@ -274,7 +274,7 @@
   },
   "penthouse": {
     "run": true,
-    "src": "style.css",
+    "src": "new_src/style.css",
     "criticalCssConfig": {
       "out": "./new_dist/css/style.critical.css",
       "url": "http://localhost:3000",
@@ -287,7 +287,7 @@
   },
   "js": {
     "run": true,
-    "src": "js/",
+    "src": "new_src/js/",
     "dest": "js/",
     "eslintConfig": {
       "configFile": "./.eslintrc.json",
