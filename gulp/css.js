@@ -5,7 +5,7 @@ const cssimport = require('gulp-cssimport')
 const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
 
-gulp.task('css:sass', () => gulp.src(`./src/scss/*.scss`)
+gulp.task('css:sass', () => gulp.src(`${global.config.root + global.config.css.src}*.scss`)
   .pipe(sourcemaps.init())
   .pipe(gulpStylelint(global.config.css.styleLintConfig))
   .pipe(sass(global.config.css.sassConfig).on('error', sass.logError))
