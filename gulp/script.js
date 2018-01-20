@@ -6,7 +6,7 @@ const include = require('gulp-include')
 const sourcemaps = require('gulp-sourcemaps')
 
 gulp.task('js:build', () =>
-  gulp.src(`${global.config.root + global.config.src + global.config.js.src}**/*.js`)
+  gulp.src(`${global.config.root + global.config.js.src}**/*.js`)
     .pipe(sourcemaps.init())
     .pipe(eslint(global.config.js.eslintConfig))
     .pipe(include(global.config.js.includeConfig))
@@ -28,7 +28,7 @@ gulp.task('js:build', () =>
 const standard = require('gulp-standard')
 
 gulp.task('js:standard', () =>
-  gulp.src(`${global.config.root + global.config.src + global.config.js.src}**/*.js`)
+  gulp.src(`${global.config.root + global.config.js.src}**/*.js`)
     .pipe(standard())
     .pipe(standard.reporter('default', global.config.js.standardConfig)))
 
@@ -50,7 +50,7 @@ gulp.task('js', (callback) => {
 })
 
 gulp.task('js:build:deploy', () =>
-  gulp.src(`${global.config.root + global.config.src + global.config.js.src}**/*.js`)
+  gulp.src(`${global.config.root + global.config.js.src}**/*.js`)
     .pipe(eslint(global.config.js.eslintConfig))
     .pipe(include(global.config.js.includeConfig))
     .pipe(eslint.format())
@@ -68,7 +68,7 @@ gulp.task('js:build:deploy', () =>
     .pipe(gulp.dest(global.config.root + global.config.dest + global.config.js.dest)))
 
 gulp.task('js:standard:deploy', () =>
-  gulp.src(`${global.config.root + global.config.src + global.config.js.src}**/*.js`)
+  gulp.src(`${global.config.root + global.config.js.src}**/*.js`)
     .pipe(standard())
     .pipe(standard.reporter('default', global.config.js.standardConfig)))
 

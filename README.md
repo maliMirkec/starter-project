@@ -2,7 +2,7 @@
 
 ![Starter Project Logo - Folder with start button](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project.png)
 
-### A set of gulp task that helps you develop high performant websites using latest best practices.
+### A set of gulp tasks that helps you develop high performant websites using latest best practices.
 
 Welcome to Starter Project, the easiest way to implement latest best practices to your website. It doesn't matter if you have an existing project or you start from the scratch; you can use this package to meet all your needs.
 
@@ -56,7 +56,7 @@ For example, if you want to change the destination path for the compiled resourc
 
 ## What is Starter Project?
 
-Starter Project is set of gulp tasks that will make your life easier. Here you will find everything that is necessary for developing a modern website, including:
+Starter Project is set of gulp taskss that will make your life easier. Here you will find everything that is necessary for developing a modern website, including:
 
 * [Yarn](https://yarnpkg.com/en/)
 * [Gulp](https://gulpjs.com/)

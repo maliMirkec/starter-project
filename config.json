@@ -1,9 +1,9 @@
 {
   "root": "./",
-  "src": "src/",
   "dest": "dist/",
+  "src": "src/",
   "bump": {
-    "src": "package.json",
+    "src": "src/package.json",
     "minorConfig": {
       "type": "minor"
     },
@@ -20,7 +20,7 @@
   },
   "css": {
     "run": true,
-    "src": "scss/",
+    "src": "src/scss/",
     "dest": "css/",
     "styleLintConfig": {
       "reporters": [{
@@ -41,12 +41,12 @@
   },
   "fonts": {
     "run": true,
-    "src": "fonts/",
+    "src": "src/fonts/",
     "dest": "fonts/"
   },
   "gfx": {
     "run": true,
-    "src": "gfx/",
+    "src": "src/gfx/",
     "dest": "gfx/",
     "gifsicleConfig": {
       "interlaced": true
@@ -193,7 +193,7 @@
   },
   "favicon": {
     "run": true,
-    "src": "html/partials/favicon.pug",
+    "src": "src/html/partials/favicon.pug",
     "dest": "html/partials",
     "realFaviconConfig": {
       "masterPicture": "./src/gfx/svg/starter-project.svg",
@@ -259,7 +259,7 @@
   },
   "html": {
     "run": true,
-    "src": "html/",
+    "src": "src/html/",
     "renameConfig": {
       "extname": ".html"
     },
@@ -274,7 +274,7 @@
   },
   "penthouse": {
     "run": true,
-    "src": "style.css",
+    "src": "src/style.css",
     "criticalCssConfig": {
       "out": "./dist/css/style.critical.css",
       "url": "http://localhost:3000",
@@ -287,7 +287,7 @@
   },
   "js": {
     "run": true,
-    "src": "js/",
+    "src": "src/js/",
     "dest": "js/",
     "eslintConfig": {
       "configFile": "./.eslintrc.json",
@@ -320,7 +320,7 @@
       "package": {
         "title": "Starter project",
         "name": "starter-project",
-        "description": "A set of gulp task that helps you develop high performant websites using latest best practices.",
+        "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
         "license": "MIT",
         "homepage": "https://github.com/maliMirkec/starter-project"
       },
