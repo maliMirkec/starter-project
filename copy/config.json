@@ -3,7 +3,7 @@
   "src": "new_src/new_src/",
   "dest": "new_dist/",
   "bump": {
-    "src": "new_src/package.json",
+    "src": "package.json",
     "minorConfig": {
       "type": "minor"
     },
