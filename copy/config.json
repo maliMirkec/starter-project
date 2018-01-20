@@ -1,7 +1,7 @@
 {
   "root": "./",
-  "src": "new_src/new_src/",
   "dest": "new_dist/",
+  "src": "new_src/",
   "bump": {
     "src": "package.json",
     "minorConfig": {
