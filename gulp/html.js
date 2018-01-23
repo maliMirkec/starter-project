@@ -11,7 +11,7 @@ gulp.task('html:dist', () => gulp.src(`${global.config.root + global.config.html
   .pipe(htmllint(global.config.root + global.config.html.htmllintConfig))
   .pipe(htmlmin(global.config.html.htmlminConfig))
   .pipe(inlineSource({
-    rootpath: path.resolve('./dist')
+    rootpath: path.resolve(global.config.root + global.config.dest)
   }))
   .pipe(rename(global.config.html.renameConfig))
   .pipe(gulp.dest(global.config.root + global.config.dest)))
