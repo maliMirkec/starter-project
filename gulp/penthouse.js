@@ -7,7 +7,7 @@ gulp.task('penthouse', () => gulp.src(global.config.root + global.config.dest + 
   .pipe(gulp.dest(global.config.root)))
 
 gulp.task('critical-dev:sequence', (callback) => {
-  gulpSequence('browser:sync', 'penthouse')(callback)
+  gulpSequence('browser:sync', 'penthouse', 'css:minify')(callback)
 })
 
 gulp.task('critical:dev', ['critical-dev:sequence'])
