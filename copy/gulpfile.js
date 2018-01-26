@@ -33,7 +33,7 @@ gulp.task('kill', () => {
 })
 
 gulp.task('deploy:sequence', (callback) => {
-  gulpSequence('clean', global.config.favicon.run ? 'favicon' : '', global.config.gfx.run ? 'gfx' : '', global.config.fonts.run ? 'fonts' : '', global.config.js.run ? 'js:deploy' : '', global.config.jsdoc.run ? 'jsdoc' : '', global.config.css.run ? 'css:deploy' : '', global.config.sassdoc.run ? 'sassdoc' : '', global.config.kss.run ? 'kss' : '', global.config.html.run ? 'html:dist' : '', global.config.penthouse.run ? 'critical:deploy' : '', 'gzip', 'kill')(callback)
+  gulpSequence('clean', global.config.favicon.run ? 'favicon' : '', global.config.gfx.run ? 'gfx' : '', global.config.fonts.run ? 'fonts' : '', global.config.js.run ? 'js:deploy' : '', global.config.jsdoc.run ? 'jsdoc' : '', global.config.css.run ? 'css:deploy' : '', global.config.sassdoc.run ? 'sassdoc' : '', global.config.kss.run ? 'kss' : '', global.config.html.run ? 'html:dist' : '', global.config.penthouse.run ? 'critical:deploy' : '', global.config.gzip.run ? 'gzip' : '', 'kill')(callback)
 })
 
 gulp.task('default', ['deploy:sequence'])

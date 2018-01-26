@@ -260,6 +260,7 @@
   "html": {
     "run": true,
     "src": "src/html/",
+    "dest": "",
     "renameConfig": {
       "extname": ".html"
     },
@@ -274,7 +275,7 @@
   },
   "penthouse": {
     "run": true,
-    "src": "src/style.css",
+    "src": "style.css",
     "criticalCssConfig": {
       "out": "./dist/css/style.critical.css",
       "url": "http://localhost:3000",
@@ -312,6 +313,12 @@
     "renameConfig": {
       "suffix": ".min"
     }
+  },
+  "gzip": {
+    "run": true,
+    "src": "",
+    "dest": "",
+    "gzipConfig": {}
   },
   "sassdoc": {
     "run": true,
