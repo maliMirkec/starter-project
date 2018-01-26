@@ -260,6 +260,7 @@
   "html": {
     "run": true,
     "src": "new_src/html/",
+    "dest": "",
     "renameConfig": {
       "extname": ".html"
     },
@@ -270,11 +271,11 @@
     "htmlminConfig": {
       "collapseWhitespace": true
     },
-    "inlineSourcePath": "new_dist"
+    "inlineSourcePath": "dist"
   },
   "penthouse": {
     "run": true,
-    "src": "new_src/style.css",
+    "src": "style.css",
     "criticalCssConfig": {
       "out": "./new_dist/css/style.critical.css",
       "url": "http://localhost:3000",
@@ -313,6 +314,12 @@
       "suffix": ".min"
     }
   },
+  "gzip": {
+    "run": true,
+    "src": "",
+    "dest": "",
+    "gzipConfig": {}
+  },
   "sassdoc": {
     "run": true,
     "sassdocConfig": {
@@ -320,7 +327,7 @@
       "package": {
         "title": "Starter project",
         "name": "starter-project",
-        "description": "Gulp; .editorconfig; .jshintrc; .gitignore; SCSS: reset, locks, system fonts;",
+        "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
         "license": "MIT",
         "homepage": "https://github.com/maliMirkec/starter-project"
       },
@@ -381,6 +388,6 @@
     }
   },
   "gulp": {
-    "src": "node_modules/starter-project/gulp/"
+    "src": "gulp/"
   }
 }
