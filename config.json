@@ -233,7 +233,6 @@
           "themeColor": "#1ebada",
           "manifest": {
             "name": "Starter Project",
-            "short_name": "SP",
             "display": "standalone",
             "orientation": "notSet",
             "onConflict": "override",
