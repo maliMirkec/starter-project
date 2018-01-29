@@ -233,6 +233,7 @@
           "themeColor": "#1ebada",
           "manifest": {
             "name": "Starter Project",
+            "short_name": "SP",
             "display": "standalone",
             "orientation": "notSet",
             "onConflict": "override",
@@ -276,15 +277,15 @@
   "penthouse": {
     "run": true,
     "src": "style.css",
-    "criticalCssConfig": {
+    "criticalCssConfigs": [{
       "out": "./dist/css/style.critical.css",
       "url": "http://localhost:3000",
-      "width": 1366,
+      "width": 1900,
       "height": 768,
       "keepLargerMediaQueries": true,
       "strict": false,
       "blockJSRequests": false
-    }
+    }]
   },
   "js": {
     "run": true,
@@ -319,6 +320,21 @@
     "src": "",
     "dest": "",
     "gzipConfig": {}
+  },
+  "kill": {
+    "dev": {
+      "run": false
+    },
+    "docs": {
+      "run": false
+    },
+    "dist": {
+      "run": false
+    },
+    "deploy": {
+      "run": false
+    },
+    "timeout": 20000
   },
   "sassdoc": {
     "run": true,
