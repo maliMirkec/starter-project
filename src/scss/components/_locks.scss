@@ -2,7 +2,7 @@
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example font-size: strip-unit(20px);
-/// @group 2.1 Locks
+/// @group 2.1.Locks
 /// @name strip-unit
 /// @since 1.0.0
 /// @param {Unit} $value A value with unit (e.g. 20px)
@@ -17,7 +17,7 @@
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, 480px, 960px, 14px, 20px);
-/// @group 2.1 Locks
+/// @group 2.1.Locks
 /// @name css-locks
 /// @since 1.0.0
 /// @param {String} $properties A property (e.g. font-size)

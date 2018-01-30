@@ -1,10 +1,14 @@
-# [Starter Project]
+# [Starter Project][Starter Project Web]
 
 ![Starter Project Logo - Folder with start button](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project.png)
 
 ### A set of gulp tasks that helps you develop high performant websites using latest best practices.
 
-Welcome to Starter Project, the easiest way to implement latest best practices to your website. It doesn't matter if you have an existing project or you start from the scratch; you can use this package to meet all your needs.
+Welcome to [Starter Project][Starter Project Web], the easiest way to implement latest best practices to your website. It doesn't matter if you have an existing project or you start from the scratch; you can use this package to meet all your needs.
+
+## [Official website][Starter Project Web]
+
+You could see this package in action on the official website: [https://starter.silvestarbistrovic.from.hr][Starter Project Web]
 
 ## Installation
 
@@ -314,3 +318,4 @@ Documentation is still work in progress, stay tuned for more features and docs.
 ```
 
 [Starter Project]: https://github.com/maliMirkec/starter-project
+[Starter Project Web]: https://starter.silvestarbistrovic.from.hr

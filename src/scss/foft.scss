@@ -12,24 +12,3 @@
   font-weight: 400;
   src: url('/fonts/lato/Lato-Regular.woff2') format('woff2'), url('/fonts/lato/Lato-Regular.woff') format('woff');
 }
-
-@font-face {
-  font-family: LatoBold;
-  font-style: normal;
-  font-weight: 700;
-  src: url('/fonts/lato/Lato-Bold.woff2') format('woff2'), url('/fonts/lato/Lato-Bold.woff') format('woff');
-}
-
-@font-face {
-  font-family: LatoItalic;
-  font-style: italic;
-  font-weight: 400;
-  src: url('/fonts/lato/Lato-Italic.woff2') format('woff2'), url('/fonts/lato/Lato-Italic.woff') format('woff');
-}
-
-@font-face {
-  font-family: LatoBoldItalic;
-  font-style: italic;
-  font-weight: 700;
-  src: url('/fonts/lato/Lato-BoldItalic.woff2') format('woff2'), url('/fonts/lato/Lato-BoldItalic.woff') format('woff');
-}

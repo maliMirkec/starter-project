@@ -279,8 +279,8 @@
     "criticalCssConfigs": [{
       "out": "./dist/css/style.critical.css",
       "url": "https://starter.silvestarbistrovic.from.hr",
-      "width": 1900,
-      "height": 768,
+      "width": 1920,
+      "height": 1200,
       "keepLargerMediaQueries": true,
       "strict": false,
       "blockJSRequests": false

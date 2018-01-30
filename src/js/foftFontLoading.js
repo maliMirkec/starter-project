@@ -56,33 +56,6 @@ let FontFaceObserver;
     const fontA = new FontFaceObserver('Lato')
 
     /**
-     * Second font type.
-     *
-     * @const
-     * @name fontB
-     * @type {Object}
-     */
-    const fontB = new FontFaceObserver('LatoBold')
-
-    /**
-     * Third font type.
-     *
-     * @const
-     * @name fontC
-     * @type {Object}
-     */
-    const fontC = new FontFaceObserver('LatoItalic')
-
-    /**
-     * Fourth font type.
-     *
-     * @const
-     * @name fontD
-     * @type {Object}
-     */
-    const fontD = new FontFaceObserver('LatoBoldItalic')
-
-    /**
      * A promise that adds 'fonts-stage-2' if
      * {@link fontA}, {@link fontB}, {@link fontC}, {@link fontD}
      * are loaded successfully.
@@ -91,7 +64,7 @@ let FontFaceObserver;
      * @method
      * @name Promise
      */
-    Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load()]).then(() => {
+    Promise.all([fontA.load()]).then(() => {
       document.documentElement.className += ' fonts-stage-2'
 
       // Optimization for Repeat Views
