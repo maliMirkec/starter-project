@@ -55,7 +55,7 @@ html {
 // Styleguide: Typography.Paragraphs
 body {
   font-size: ms(0);
-  line-height: 1.5;
+  line-height: $line-height;
 }
 
 // Headings
@@ -79,20 +79,12 @@ body {
   }
 }
 
-// Code Block
-//
-// Code Blocks are usually used to display markup or code.
-//
-// Markup:
-// <pre>
-//   <code>font-size: rem(20px);</code>
-// </pre>
-//
-// Weight: 102
-//
-// Styleguide: Typography.CodeBlock
-code {
-  line-height: 1;
+strong,
+em {
+  font-weight: 400;
 }
 
+::selection {
+  background-color: lighten($color-beta, 44%);
+}
 

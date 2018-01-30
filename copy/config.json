@@ -271,20 +271,20 @@
     "htmlminConfig": {
       "collapseWhitespace": true
     },
-    "inlineSourcePath": "dist"
+    "inlineSourcePath": "new_dist"
   },
   "penthouse": {
     "run": true,
     "src": "style.css",
-    "criticalCssConfig": {
+    "criticalCssConfigs": [{
       "out": "./new_dist/css/style.critical.css",
-      "url": "http://localhost:3000",
-      "width": 1366,
-      "height": 768,
+      "url": "https://starter.silvestarbistrovic.from.hr",
+      "width": 1920,
+      "height": 1200,
       "keepLargerMediaQueries": true,
       "strict": false,
       "blockJSRequests": false
-    }
+    }]
   },
   "js": {
     "run": true,
@@ -320,6 +320,21 @@
     "dest": "",
     "gzipConfig": {}
   },
+  "kill": {
+    "dev": {
+      "run": false
+    },
+    "docs": {
+      "run": false
+    },
+    "dist": {
+      "run": false
+    },
+    "deploy": {
+      "run": true
+    },
+    "timeout": 20000
+  },
   "sassdoc": {
     "run": true,
     "sassdocConfig": {
@@ -341,7 +356,7 @@
       "groups": {
         "undefined": "Misc"
       },
-      "basePath": "http://localhost:3000/docs/sass/"
+      "basePath": "https://starter.silvestarbistrovic.from.hr/docs/sass/"
     }
   },
   "kss": {

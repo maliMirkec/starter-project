@@ -2,7 +2,7 @@
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group 1.1 Sizes
+/// @group 1.1.Sizes
 /// @name mq--mobile
 /// @since 1.0.0
 $mq--mobile: 480px;
@@ -11,7 +11,7 @@ $mq--mobile: 480px;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group 1.1 Sizes
+/// @group 1.1.Sizes
 /// @name mq--desktop
 /// @since 1.0.0
 $mq--desktop: 960px;
@@ -20,7 +20,7 @@ $mq--desktop: 960px;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group 1.1 Sizes
+/// @group 1.1.Sizes
 /// @name font-size--mobile
 /// @since 1.0.0
 $font-size--mobile: 13px;
@@ -29,22 +29,31 @@ $font-size--mobile: 13px;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group 1.1 Sizes
+/// @group 1.1.Sizes
 /// @name font-size--desktop
 /// @since 1.0.0
 $font-size--desktop: 17px;
+
+/// Default line-height
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example line-height: $line-height;
+/// @group 1.1.Sizes
+/// @name line-height
+/// @since 1.0.0
+$line-height: 1.5;
 
 /// Configuration for modular scale
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
-/// @group 1.1 Sizes
+/// @group 1.1.Sizes
 /// @name modularscale
 /// @since 1.0.0
 /// @link http://www.modularscale.com/
 $modularscale: (
   base: 1rem,
-  ratio: $major-third
+  ratio: $major-second
 );
 
 /// Configuration for media queries
@@ -54,7 +63,7 @@ $modularscale: (
 ///   @include mq($from: mobile, $until: desktop) {
 ///     color: $color-alpha;
 ///   }
-/// @group 1.1 Sizes
+/// @group 1.1.Sizes
 /// @name mq-breakpoints
 /// @since 1.0.0
 /// @link https://www.npmjs.com/package/sass-mq
@@ -67,7 +76,7 @@ $mq-breakpoints: (
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example color: $color-alpha;
-/// @group 1.2 Colors
+/// @group 1.2.Colors
 /// @name color-alpha
 /// @since 1.0.0
 $color-alpha: #ba1ada;
@@ -76,7 +85,7 @@ $color-alpha: #ba1ada;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example color: $color-beta;
-/// @group 1.2 Colors
+/// @group 1.2.Colors
 /// @name color-beta
 /// @since 1.0.0
 $color-beta: #d91a79;
@@ -85,7 +94,7 @@ $color-beta: #d91a79;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example color: $color-gamma;
-/// @group 1.2 Colors
+/// @group 1.2.Colors
 /// @name color-gamma
 /// @since 1.0.0
 $color-gamma: #1ed9d9;
@@ -94,7 +103,7 @@ $color-gamma: #1ed9d9;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example color: $color-delta;
-/// @group 1.2 Colors
+/// @group 1.2.Colors
 /// @name color-delta
 /// @since 1.0.0
 $color-delta: #1ebada;
@@ -103,7 +112,7 @@ $color-delta: #1ebada;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example color: $color-text;
-/// @group 1.2 Colors
+/// @group 1.2.Colors
 /// @name color-text
 /// @since 1.0.0
 $color-text: #383738;
@@ -112,7 +121,7 @@ $color-text: #383738;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example transition-duration: $tra;
-/// @group 1.3 Transitions
+/// @group 1.3.Transitions
 /// @name trd
 /// @since 1.0.0
 $trd: 0.175s;
@@ -121,7 +130,7 @@ $trd: 0.175s;
 /// @access public
 /// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
 /// @example transition-duration: $tra;
-/// @group 1.3 Transitions
+/// @group 1.3.Transitions
 /// @name tra
 /// @since 1.0.0
 $tra: cubic-bezier(0.04, 0.88, 0.74, 1.04);
