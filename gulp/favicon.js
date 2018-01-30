@@ -6,11 +6,8 @@ const fs = require('fs')
 // You should run it at least once to create the icons. Then,
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
-gulp.task('favicon:generate', (done) => {
-  realFavicon.generateFavicon(global.config.favicon.realFaviconConfig, () => {
-    done()
-  })
-})
+gulp.task('favicon:generate', done =>
+  realFavicon.generateFavicon(global.config.favicon.realFaviconConfig, () => done()))
 
 const parsedFaviconFile = fs.readFileSync(global.config.favicon.realFaviconConfig.markupFile)
 const parsedFaviconData = JSON.parse(parsedFaviconFile)
@@ -26,18 +23,8 @@ gulp.task('favicon:inject', () => gulp.src([global.config.root + global.config.f
 // released a new Touch icon along with the latest version of iOS).
 // Run this task from time to time. Ideally, make it part of your
 // continuous integration system.
-gulp.task('favicon:update', (done) => {
-  const currentVersion = parsedFaviconData.version
-
-  realFavicon.checkForUpdates(currentVersion, (err) => {
-    if (err) {
-      throw err
-    }
-  })
-})
+gulp.task('favicon:update', done => realFavicon.checkForUpdates(parsedFaviconData.version))
 
 const gulpSequence = require('gulp-sequence')
 
-gulp.task('favicon', (callback) => {
-  gulpSequence('favicon:generate', 'favicon:inject')(callback)
-})
+gulp.task('favicon', callback => gulpSequence('favicon:generate', 'favicon:inject')(callback))

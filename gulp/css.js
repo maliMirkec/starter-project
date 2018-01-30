@@ -35,17 +35,11 @@ gulp.task('css:minify:style', () => gulp.src([`${global.config.root + global.con
 
 const gulpSequence = require('gulp-sequence')
 
-gulp.task('css:critical', (callback) => {
-  gulpSequence('css:sass:critical', 'css:minify:critical')(callback)
-})
+gulp.task('css:critical', callback => gulpSequence('css:sass:critical', 'css:minify:critical')(callback))
 
-gulp.task('css:style', (callback) => {
-  gulpSequence('css:sass:style')(callback)
-})
+gulp.task('css:style', callback => gulpSequence('css:sass:style')(callback))
 
-gulp.task('css', (callback) => {
-  gulpSequence('css:sass:critical', 'css:minify:critical', 'css:sass:style', 'css:minify:style')(callback)
-})
+gulp.task('css', callback => gulpSequence('css:sass:critical', 'css:minify:critical', 'css:sass:style', 'css:minify:style')(callback))
 
 gulp.task('css:minify:critical', () => gulp.src([`${global.config.root + global.config.dest + global.config.css.dest}**/*.critical.css`, `!${global.config.root + global.config.dest + global.config.css.dest}/**/*.min.critical.css`])
   .pipe(cleanCSS())
@@ -71,6 +65,4 @@ gulp.task('css:minify:deploy', () => gulp.src([`${global.config.root + global.co
   .pipe(rename(global.config.css.renameConfig))
   .pipe(gulp.dest(global.config.root + global.config.dest + global.config.css.dest)))
 
-gulp.task('css:deploy', (callback) => {
-  gulpSequence('css:sass:deploy', 'css:minify:deploy')(callback)
-})
+gulp.task('css:deploy', callback => gulpSequence('css:sass:deploy', 'css:minify:deploy')(callback))

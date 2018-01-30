@@ -1,6 +1,6 @@
 {
   "name": "starter-project",
-  "version": "1.1.41",
+  "version": "1.1.42",
   "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
@@ -86,6 +86,7 @@
     "gulp-stylelint": "^5.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "gulp-wait": "^0.0.2",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.1",
     "jstransformer-markdown-it": "^2.0.0",
