@@ -278,7 +278,7 @@
     "src": "style.css",
     "criticalCssConfigs": [{
       "out": "./dist/css/style.critical.css",
-      "url": "http://localhost:3000",
+      "url": "https://starter.silvestarbistrovic.from.hr",
       "width": 1900,
       "height": 768,
       "keepLargerMediaQueries": true,
@@ -330,6 +330,9 @@
     "dist": {
       "run": false
     },
+    "deploy": {
+      "run": true
+    },
     "timeout": 20000
   },
   "sassdoc": {
@@ -353,7 +356,7 @@
       "groups": {
         "undefined": "Misc"
       },
-      "basePath": "http://localhost:3000/docs/sass/"
+      "basePath": "https://starter.silvestarbistrovic.from.hr/docs/sass/"
     }
   },
   "kss": {

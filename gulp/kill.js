@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const exit = require('gulp-exit')
+const wait = require('gulp-wait')
 
 gulp.task('kill:now', () => {
   global.bs.exit()
@@ -9,10 +10,9 @@ gulp.task('kill:now', () => {
 })
 
 gulp.task('kill:delay', () => {
-  setTimeout(() => {
-    global.bs.exit()
+  global.bs.exit()
 
-    return gulp.src(global.config.src)
-      .pipe(exit())
-  }, global.config.kill.timeout)
+  return gulp.src(global.config.src)
+    .pipe(wait(global.config.kill.timeout))
+    .pipe(exit())
 })
