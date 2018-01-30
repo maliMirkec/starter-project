@@ -34,7 +34,7 @@ const uglify = require('gulp-uglify')
 const rename = require('gulp-rename')
 
 gulp.task('js:uglify', () => gulp.src([`${global.config.root + global.config.dest + global.config.js.dest}**/*.js`, `!${global.config.root + global.config.dest + global.config.js.dest}**/*.min.js`])
-  .pipe(sourcemaps.init({ loadMaps: true }))
+  .pipe(sourcemaps.init())
   .pipe(uglify())
   .pipe(rename(global.config.js.renameConfig))
   .pipe(sourcemaps.write(global.config.root))

@@ -27,7 +27,7 @@ gulp.task('css:minify:critical', () => gulp.src([`${global.config.root + global.
   .pipe(gulp.dest(global.config.root + global.config.dest + global.config.css.dest)))
 
 gulp.task('css:minify:style', () => gulp.src([`${global.config.root + global.config.dest + global.config.css.dest}**/*.css`, `!${global.config.root + global.config.dest + global.config.css.dest}/**/*.min.css`, `!${global.config.root + global.config.dest + global.config.css.dest}/**/*.critical.min.css`])
-  .pipe(sourcemaps.init({ loadMaps: true }))
+  .pipe(sourcemaps.init())
   .pipe(cleanCSS())
   .pipe(rename(global.config.css.renameConfig))
   .pipe(sourcemaps.write(global.config.root))
@@ -47,7 +47,7 @@ gulp.task('css:minify:critical', () => gulp.src([`${global.config.root + global.
   .pipe(gulp.dest(global.config.root + global.config.dest + global.config.css.dest)))
 
 gulp.task('css:minify:style', () => gulp.src([`${global.config.root + global.config.dest + global.config.css.dest}**/*.css`, `!${global.config.root + global.config.dest + global.config.css.dest}/**/*.min.css`, `!${global.config.root + global.config.dest + global.config.css.dest}/**/*.critical.min.css`])
-  .pipe(sourcemaps.init({ loadMaps: true }))
+  .pipe(sourcemaps.init())
   .pipe(cleanCSS())
   .pipe(rename(global.config.css.renameConfig))
   .pipe(sourcemaps.write(global.config.root))
