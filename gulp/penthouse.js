@@ -14,3 +14,7 @@ gulp.task('critical:dev', ['critical-dev:sequence'])
 gulp.task('critical-dist:sequence', callback => gulpSequence('browser:sync', 'penthouse')(callback))
 
 gulp.task('critical:dist', ['critical-dist:sequence', 'css:minify:deploy'])
+
+gulp.task('critical-deploy:sequence', callback => gulpSequence('penthouse')(callback))
+
+gulp.task('critical:deploy', ['critical-deploy:sequence', 'css:minify:deploy'])
