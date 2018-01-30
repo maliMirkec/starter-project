@@ -1,7 +1,7 @@
 /**
  * A better CSS Loading.
  *
- * @module Deferred Styles
+ * @module DeferredStyles
  * @author Google Developers
  * @see https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery
  */
