@@ -330,9 +330,6 @@
     "dist": {
       "run": false
     },
-    "deploy": {
-      "run": true
-    },
     "timeout": 20000
   },
   "sassdoc": {
