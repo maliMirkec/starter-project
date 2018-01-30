@@ -1,7 +1,7 @@
 /**
  * A better font loading using FontFaceObserver.
  *
- * @module Critical FOFT
+ * @module CriticalFOFT
  * @author Zach Leatherman
  * @see https://www.zachleat.com/web/comprehensive-webfonts/#critical-foft
  */
