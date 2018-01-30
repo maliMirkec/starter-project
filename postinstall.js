@@ -20,6 +20,8 @@ pathExists(configCheck1).then((exists1) => {
       }
     })
   }
+
+  return true
 })
 
 const srcCheck1 = '../../new_src'
@@ -39,4 +41,17 @@ pathExists(srcCheck1).then((exists1) => {
       }
     })
   }
+
+  return true
+})
+
+const tasksSrc = 'gulp'
+const tasksDest = '../../gulp/'
+
+ncp(tasksSrc, tasksDest, (err) => {
+  if (err) {
+    return false
+  }
+
+  return true
 })
