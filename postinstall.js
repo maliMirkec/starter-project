@@ -45,12 +45,17 @@ pathExists(srcCheck1).then((exists1) => {
   return true
 })
 
+const tasksCheck = '../../_gulp'
 const tasksSrc = 'gulp'
-const tasksDest = '../../gulp/'
+const tasksDest = '../../_gulp'
 
-ncp(tasksSrc, tasksDest, (err) => {
-  if (err) {
-    return false
+pathExists(tasksCheck).then((exists1) => {
+  if (!exists1) {
+    ncp(tasksSrc, tasksDest, (err) => {
+      if (err) {
+        return false
+      }
+    })
   }
 
   return true

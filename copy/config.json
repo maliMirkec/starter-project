@@ -403,6 +403,6 @@
     }
   },
   "gulp": {
-    "src": "gulp/"
+    "src": "_gulp/"
   }
 }
