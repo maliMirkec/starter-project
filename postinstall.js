@@ -46,7 +46,7 @@ pathExists(srcCheck1).then((exists1) => {
 })
 
 const tasksCheck = '../../_gulp'
-const tasksSrc = 'gulp'
+const tasksSrc = '_gulp'
 const tasksDest = '../../_gulp'
 
 pathExists(tasksCheck).then((exists1) => {
