@@ -7,7 +7,7 @@ const inlineSource = require('gulp-inline-source')
 const path = require('path')
 
 gulp.task('html:dist', () => gulp.src(`${global.config.root + global.config.html.src}*.pug`)
-  .pipe(pug())
+  .pipe(pug(global.config.html.pugConfig))
   .pipe(htmllint(global.config.root + global.config.html.htmllintConfig))
   .pipe(htmlmin(global.config.html.htmlminConfig))
   .pipe(inlineSource({
