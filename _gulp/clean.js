@@ -3,9 +3,9 @@ const clean = require('gulp-clean')
 
 const cleanSrc = []
 
-Object.entries(global.config).forEach(([key, value]) => {
-  if (value.run && value.dest) {
-    cleanSrc.push(global.config.root + global.config.dest + value.dest)
+Object.keys(global.config).forEach((key) => {
+  if (global.config[key].run && global.config[key].clean) {
+    cleanSrc.push(global.config.root + global.config.dest + global.config[key].clean)
   }
 })
 
