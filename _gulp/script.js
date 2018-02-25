@@ -4,6 +4,10 @@ const gutil = require('gulp-util')
 const babel = require('gulp-babel')
 const include = require('gulp-include')
 const sourcemaps = require('gulp-sourcemaps')
+const uglify = require('gulp-uglify')
+const rename = require('gulp-rename')
+const standard = require('gulp-standard')
+const runSequence = require('run-sequence')
 
 gulp.task('js:build', () => gulp.src(`${global.config.root + global.config.js.src}**/*.js`)
   .pipe(sourcemaps.init())
@@ -24,14 +28,9 @@ gulp.task('js:build', () => gulp.src(`${global.config.root + global.config.js.sr
   .pipe(sourcemaps.write(global.config.root))
   .pipe(gulp.dest(global.config.root + global.config.dest + global.config.js.dest)))
 
-const standard = require('gulp-standard')
-
 gulp.task('js:standard', () => gulp.src(`${global.config.root + global.config.js.src}**/*.js`)
   .pipe(standard())
   .pipe(standard.reporter('default', global.config.js.standardConfig)))
-
-const uglify = require('gulp-uglify')
-const rename = require('gulp-rename')
 
 gulp.task('js:uglify', () => gulp.src([`${global.config.root + global.config.dest + global.config.js.dest}**/*.js`, `!${global.config.root + global.config.dest + global.config.js.dest}**/*.min.js`])
   .pipe(sourcemaps.init())
@@ -40,9 +39,7 @@ gulp.task('js:uglify', () => gulp.src([`${global.config.root + global.config.des
   .pipe(sourcemaps.write(global.config.root))
   .pipe(gulp.dest(global.config.root + global.config.dest + global.config.js.dest)))
 
-const gulpSequence = require('gulp-sequence')
-
-gulp.task('js', callback => gulpSequence('js:build', 'js:standard', 'js:uglify')(callback))
+gulp.task('js', callback => runSequence('js:build', 'js:standard', 'js:uglify', callback))
 
 gulp.task('js:build:deploy', () => gulp.src(`${global.config.root + global.config.js.src}**/*.js`)
   .pipe(eslint(global.config.js.eslintConfig))
@@ -70,4 +67,4 @@ gulp.task('js:uglify:deploy', () => gulp.src([`${global.config.root + global.con
   .pipe(rename(global.config.js.renameConfig))
   .pipe(gulp.dest(global.config.root + global.config.dest + global.config.js.dest)))
 
-gulp.task('js:deploy', callback => gulpSequence('js:build:deploy', 'js:standard:deploy', 'js:uglify:deploy')(callback))
+gulp.task('js:deploy', callback => runSequence('js:build:deploy', 'js:standard:deploy', 'js:uglify:deploy', callback))

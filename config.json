@@ -315,7 +315,7 @@
     }
   },
   "gzip": {
-    "run": true,
+    "run": false,
     "src": "",
     "dest": "",
     "gzipConfig": {}

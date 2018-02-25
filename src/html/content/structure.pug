@@ -14,7 +14,40 @@
     |-- faviconData.json
     |-- gulpfile.js
     |-- package.json
+    |-- postinstall.js
+    |-- yarn.lock
+    |-- .vscode
+    |   |-- settings.json
+    |-- _gulp
+    |   |-- browser-sync.js
+    |   |-- bump.js
+    |   |-- clean.js
+    |   |-- copy.js
+    |   |-- css.js
+    |   |-- favicon.js
+    |   |-- fonts.js
+    |   |-- gfx.js
+    |   |-- gzip.js
+    |   |-- html.js
+    |   |-- jsdoc.js
+    |   |-- kill.js
+    |   |-- kss.js
+    |   |-- penthouse.js
+    |   |-- sassdoc.js
+    |   |-- script.js
+    |   |-- watch.js
+    |-- copy
+    |   |-- .editorconfig
+    |   |-- .eslintignore
+    |   |-- .eslintrc.json
+    |   |-- .htmllintrc
+    |   |-- .stylelintrc
+    |   |-- config.json
+    |   |-- faviconData.json
+    |   |-- gitignore
+    |   |-- gulpfile.js
     |-- dist
+    |   |-- 404.html
     |   |-- index.html
     |   |-- css
     |   |   |-- foft.css
@@ -28,8 +61,11 @@
     |   |   |-- style.min.css.map
     |   |-- docs
     |   |   |-- js
+    |   |   |   |-- classes.list.html
     |   |   |   |-- index.html
-    |   |   |   |-- module-Classily.html
+    |   |   |   |-- module-CriticalFOFT-FontFaceObserver.html
+    |   |   |   |-- module-CriticalFOFT.html
+    |   |   |   |-- module-DeferredStyles.html
     |   |   |   |-- modules.list.html
     |   |   |   |-- quicksearch.html
     |   |   |   |-- fonts
@@ -98,9 +134,16 @@
     |   |   |               |-- prism.min.js
     |   |   |-- styleguide
     |   |       |-- index.html
-    |   |       |-- item-basic-headings.html
-    |   |       |-- item-basic.html
-    |   |       |-- section-basic.html
+    |   |       |-- item-code.html
+    |   |       |-- item-footer.html
+    |   |       |-- item-header.html
+    |   |       |-- item-typography-headings.html
+    |   |       |-- item-typography-paragraphs.html
+    |   |       |-- item-typography.html
+    |   |       |-- section-code.html
+    |   |       |-- section-footer.html
+    |   |       |-- section-header.html
+    |   |       |-- section-typography.html
     |   |       |-- kss-assets
     |   |           |-- WARNING.txt
     |   |           |-- github-fork--black.png
@@ -119,12 +162,6 @@
     |   |           |-- scrollspy.js
     |   |-- fonts
     |   |   |-- lato
-    |   |       |-- Lato-Bold.woff
-    |   |       |-- Lato-Bold.woff2
-    |   |       |-- Lato-BoldItalic.woff
-    |   |       |-- Lato-BoldItalic.woff2
-    |   |       |-- Lato-Italic.woff
-    |   |       |-- Lato-Italic.woff2
     |   |       |-- Lato-Regular.woff
     |   |       |-- Lato-Regular.woff2
     |   |-- gfx
@@ -148,14 +185,10 @@
     |       |-- index.min.js
     |       |-- index.min.js.map
     |-- src
+        |-- .DS_Store
         |-- fonts
         |   |-- lato
-        |       |-- Lato-Bold.woff
-        |       |-- Lato-Bold.woff2
-        |       |-- Lato-BoldItalic.woff
-        |       |-- Lato-BoldItalic.woff2
-        |       |-- Lato-Italic.woff
-        |       |-- Lato-Italic.woff2
+        |       |-- .DS_Store
         |       |-- Lato-Regular.woff
         |       |-- Lato-Regular.woff2
         |-- gfx
@@ -166,6 +199,7 @@
         |   |-- svg
         |       |-- starter-project.svg
         |-- html
+        |   |-- 404.pug
         |   |-- index.pug
         |   |-- assets
         |   |   |-- critical-css.pug
@@ -173,7 +207,8 @@
         |   |   |-- favicon.pug
         |   |   |-- foft-font-loading.pug
         |   |   |-- scripts.pug
-        |   |-- markdown
+        |   |-- content
+        |   |   |-- 404.pug
         |   |   |-- index.pug
         |   |   |-- structure.pug
         |   |-- partials
@@ -182,6 +217,7 @@
         |-- js
         |   |-- deferredStyles.js
         |   |-- foftFontLoading.js
+        |   |-- homepage.md
         |   |-- index.js
         |-- scss
             |-- foft.scss
@@ -190,8 +226,13 @@
             |-- style.scss
             |-- components
                 |-- _fonts.scss
+                |-- _helpers.scss
                 |-- _locks.scss
                 |-- _theme.scss
                 |-- _typography.scss
                 |-- _variables.scss
+                |-- elements
+                    |-- _content.scss
+                    |-- _header.scss
+                    |-- _sig.scss
   ```

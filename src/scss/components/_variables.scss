@@ -134,3 +134,21 @@ $trd: 0.175s;
 /// @name tra
 /// @since 1.0.0
 $tra: cubic-bezier(0.04, 0.88, 0.74, 1.04);
+
+/// Lato
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example font-family: $font-alpha;
+/// @group 1.3.Transitions
+/// @name $font-alpha
+/// @since 1.0.0
+$font-alpha: 'Lato';
+
+/// Lato Subset
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example font-family: $font-alpha-subset;
+/// @group 1.3.Transitions
+/// @name $font-alpha-subset
+/// @since 1.0.0
+$font-alpha-subset: 'LatoSubset';
