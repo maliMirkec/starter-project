@@ -22,6 +22,7 @@
     "run": true,
     "src": "new_src/scss/",
     "dest": "css/",
+    "clean": "css/",
     "styleLintConfig": {
       "reporters": [{
         "formatter": "string",
@@ -42,12 +43,14 @@
   "fonts": {
     "run": true,
     "src": "new_src/fonts/",
-    "dest": "fonts/"
+    "dest": "fonts/",
+    "clean": "fonts/"
   },
   "gfx": {
     "run": true,
     "src": "new_src/gfx/",
     "dest": "gfx/",
+    "clean": "gfx/",
     "gifsicleConfig": {
       "interlaced": true
     },
@@ -195,6 +198,7 @@
     "run": true,
     "src": "new_src/html/partials/favicon.pug",
     "dest": "html/partials",
+    "clean": "favicon/",
     "realFaviconConfig": {
       "masterPicture": "./new_src/gfx/svg/starter-project.svg",
       "dest": "./new_dist/favicon/",
@@ -261,6 +265,7 @@
     "run": true,
     "src": "new_src/html/",
     "dest": "",
+    "clean": "*.html",
     "renameConfig": {
       "extname": ".html"
     },
@@ -290,6 +295,7 @@
     "run": true,
     "src": "new_src/js/",
     "dest": "js/",
+    "clean": "js/",
     "eslintConfig": {
       "configFile": "./.eslintrc.json",
       "fix": true,
@@ -337,6 +343,7 @@
   },
   "sassdoc": {
     "run": true,
+    "clean": "docs/sass/",
     "sassdocConfig": {
       "dest": "./new_dist/docs/sass/",
       "package": {
@@ -361,7 +368,8 @@
   },
   "kss": {
     "run": true,
-    "dest": "styleguide/",
+    "dest": "docs/styleguide/",
+    "clean": "docs/styleguide/",
     "kssConfig": {
       "title": "Starter Project",
       "source": "./new_src/scss/",
@@ -378,6 +386,7 @@
   "jsdoc": {
     "run": true,
     "src": ["./new_src/js/homepage.md", "./new_src/js/"],
+    "clean": "docs/js/",
     "jsdocConfig": {
       "tags": {
         "allowUnknownTags": true
