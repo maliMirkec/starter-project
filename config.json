@@ -343,7 +343,6 @@
   },
   "sassdoc": {
     "run": true,
-    "dest": "docs/sass/",
     "clean": "docs/sass/",
     "sassdocConfig": {
       "dest": "./dist/docs/sass/",
