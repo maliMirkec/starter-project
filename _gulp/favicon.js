@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const realFavicon = require('gulp-real-favicon')
 const fs = require('fs')
+const runSequence = require('run-sequence')
 
 // Generate the icons. This task takes a few seconds to complete.
 // You should run it at least once to create the icons. Then,
@@ -25,6 +26,4 @@ gulp.task('favicon:inject', () => gulp.src([global.config.root + global.config.f
 // continuous integration system.
 gulp.task('favicon:update', done => realFavicon.checkForUpdates(parsedFaviconData.version))
 
-const gulpSequence = require('gulp-sequence')
-
-gulp.task('favicon', callback => gulpSequence('favicon:generate', 'favicon:inject')(callback))
+gulp.task('favicon', callback => runSequence('favicon:generate', 'favicon:inject', callback))

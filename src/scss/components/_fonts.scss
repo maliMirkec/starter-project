@@ -10,7 +10,13 @@ body {
 }
 
 .fonts-stage-1 body {
-  font-family: LatoSubset, sans-serif;
+  font-family: $font-alpha-subset, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.fonts-stage-2 body {
+  font-family: $font-alpha, sans-serif;
   font-style: normal;
   font-weight: 400;
 }
