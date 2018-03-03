@@ -38,6 +38,9 @@
     },
     "renameConfig": {
       "suffix": ".min"
+    },
+    "sourcemapsConfig": {
+      "run": true
     }
   },
   "fonts": {
@@ -195,7 +198,7 @@
     }
   },
   "favicon": {
-    "run": true,
+    "run": false,
     "src": "src/html/partials/favicon.pug",
     "dest": "html/partials",
     "clean": "favicon/",
@@ -318,6 +321,9 @@
     },
     "renameConfig": {
       "suffix": ".min"
+    },
+    "sourcemapsConfig": {
+      "run": true
     }
   },
   "gzip": {
@@ -337,7 +343,7 @@
       "run": false
     },
     "deploy": {
-      "run": true
+      "run": false
     },
     "timeout": 20000
   },
