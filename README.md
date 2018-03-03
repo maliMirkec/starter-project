@@ -120,6 +120,10 @@ Starter Project is set of gulp taskss that will make your life easier. Here you 
 
 Documentation is still work in progress, stay tuned for more features and docs.
 
+## Updates
+
+All updates are available in the [CHANGELOG.md](https://github.com/maliMirkec/starter-project/CHANGELOG.md) file.
+
 ## Project Structure
 
 ```
