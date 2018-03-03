@@ -122,7 +122,7 @@ Documentation is still work in progress, stay tuned for more features and docs.
 
 ## Updates
 
-All updates are available in the [CHANGELOG.md](https://github.com/maliMirkec/starter-project/CHANGELOG.md) file.
+All updates are available in the [CHANGELOG.md](https://github.com/maliMirkec/starter-project/blob/master/CHANGELOG.md) file.
 
 ## Project Structure
 
