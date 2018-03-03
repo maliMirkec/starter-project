@@ -198,7 +198,7 @@
     }
   },
   "favicon": {
-    "run": false,
+    "run": true,
     "src": "src/html/partials/favicon.pug",
     "dest": "html/partials",
     "clean": "favicon/",
