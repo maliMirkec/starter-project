@@ -6,3 +6,5 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 1.2.0
 
+- Adding sourcemaps config
+- Adding CHANGELOG.md file
