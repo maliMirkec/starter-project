@@ -2,6 +2,9 @@
   "root": "./",
   "dest": "dist/",
   "src": "src/",
+  "gulp": {
+    "src": "_gulp/"
+  },
   "bump": {
     "src": "package.json",
     "minorConfig": {
@@ -17,6 +20,25 @@
         "baseDir": "./dist/"
       }
     }
+  },
+  "html": {
+    "run": true,
+    "src": "src/html/**/{index,404}",
+    "dest": "",
+    "watch": "src/html/**/*",
+    "clean": "**/*.html",
+    "renameConfig": {
+      "extname": ".html"
+    },
+    "pugConfig": {
+      "pretty": true,
+      "basedir": "./src/html/"
+    },
+    "htmllintConfig": ".htmllintrc",
+    "htmlminConfig": {
+      "collapseWhitespace": true
+    },
+    "inlineSourcePath": "dist"
   },
   "css": {
     "run": true,
@@ -43,11 +65,50 @@
       "run": true
     }
   },
-  "fonts": {
+  "penthouse": {
     "run": true,
-    "src": "src/fonts/",
-    "dest": "fonts/",
-    "clean": "fonts/"
+    "src": "style.css",
+    "criticalCssConfigs": [{
+      "out": "./dist/css/style.critical.css",
+      "url": "https://starter.silvestarbistrovic.from.hr",
+      "width": 1920,
+      "height": 1200,
+      "keepLargerMediaQueries": true,
+      "strict": false,
+      "blockJSRequests": false
+    }]
+  },
+  "js": {
+    "run": true,
+    "src": "src/js/",
+    "dest": "js/",
+    "clean": "js/",
+    "eslintConfig": {
+      "configFile": "./.eslintrc.json",
+      "fix": true,
+      "quiet": true
+    },
+    "includeConfig": {
+      "includePaths": [
+        "./node_modules"
+      ]
+    },
+    "babelConfig": {
+      "presets": ["env"]
+    },
+    "standardConfig": {
+      "breakOnError": false,
+      "showRuleNames": true,
+      "standard": {
+        "globals": ["requestAnimationFrame", "sessionStorage"]
+      }
+    },
+    "renameConfig": {
+      "suffix": ".min"
+    },
+    "sourcemapsConfig": {
+      "run": true
+    }
   },
   "gfx": {
     "run": true,
@@ -197,6 +258,12 @@
       ]
     }
   },
+  "fonts": {
+    "run": true,
+    "src": "src/fonts/",
+    "dest": "fonts/",
+    "clean": "fonts/"
+  },
   "favicon": {
     "run": true,
     "src": "src/html/partials/favicon.pug",
@@ -264,72 +331,11 @@
       "markupFile": "./faviconData.json"
     }
   },
-  "html": {
-    "run": true,
-    "src": "src/html/",
-    "dest": "",
-    "clean": "*.html",
-    "renameConfig": {
-      "extname": ".html"
-    },
-    "pugConfig": {
-      "pretty": true
-    },
-    "htmllintConfig": ".htmllintrc",
-    "htmlminConfig": {
-      "collapseWhitespace": true
-    },
-    "inlineSourcePath": "dist"
-  },
-  "penthouse": {
-    "run": true,
-    "src": "style.css",
-    "criticalCssConfigs": [{
-      "out": "./dist/css/style.critical.css",
-      "url": "https://starter.silvestarbistrovic.from.hr",
-      "width": 1920,
-      "height": 1200,
-      "keepLargerMediaQueries": true,
-      "strict": false,
-      "blockJSRequests": false
-    }]
-  },
-  "js": {
-    "run": true,
-    "src": "src/js/",
-    "dest": "js/",
-    "clean": "js/",
-    "eslintConfig": {
-      "configFile": "./.eslintrc.json",
-      "fix": true,
-      "quiet": true
-    },
-    "includeConfig": {
-      "includePaths": [
-        "./node_modules"
-      ]
-    },
-    "babelConfig": {
-      "presets": ["env"]
-    },
-    "standardConfig": {
-      "breakOnError": false,
-      "showRuleNames": true,
-      "standard": {
-        "globals": ["requestAnimationFrame", "sessionStorage"]
-      }
-    },
-    "renameConfig": {
-      "suffix": ".min"
-    },
-    "sourcemapsConfig": {
-      "run": true
-    }
-  },
   "gzip": {
     "run": true,
     "src": "",
     "dest": "",
+    "clean": "**/*.gz",
     "gzipConfig": {}
   },
   "kill": {
@@ -346,6 +352,23 @@
       "run": true
     },
     "timeout": 20000
+  },
+  "kss": {
+    "run": true,
+    "dest": "docs/styleguide/",
+    "clean": "docs/styleguide/",
+    "kssConfig": {
+      "title": "Starter Project",
+      "source": "./src/scss/",
+      "destination": "./dist/docs/styleguide/",
+      "css": [
+        "/css/style.css",
+        "/css/foft.css"
+      ],
+      "js": [
+        "/js/foftFontLoading.js"
+      ]
+    }
   },
   "sassdoc": {
     "run": true,
@@ -370,23 +393,6 @@
         "undefined": "Misc"
       },
       "basePath": "https://starter.silvestarbistrovic.from.hr/docs/sass/"
-    }
-  },
-  "kss": {
-    "run": true,
-    "dest": "docs/styleguide/",
-    "clean": "docs/styleguide/",
-    "kssConfig": {
-      "title": "Starter Project",
-      "source": "./src/scss/",
-      "destination": "./dist/docs/styleguide/",
-      "css": [
-        "/css/style.css",
-        "/css/foft.css"
-      ],
-      "js": [
-        "/js/foftFontLoading.js"
-      ]
     }
   },
   "jsdoc": {
@@ -416,8 +422,5 @@
         "dateFormat": "MMMM Do YYYY, h:mm:ss a"
       }
     }
-  },
-  "gulp": {
-    "src": "_gulp/"
   }
 }

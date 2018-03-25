@@ -5,16 +5,6 @@ body {
   min-height: 100vh;
 }
 
-.content {
-  flex: 1 1 auto;
-  margin-bottom: rem(30px);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: rem(30px);
-  max-width: rem(600px);
-  width: 100%;
-}
-
 a {
   @include tra;
   color: lighten($color-delta, 10%);
@@ -40,11 +30,37 @@ ul {
 
 li {
   &:before {
-    color: lighten($color-beta, 20%);
+    color: $color-delta;
     content: '✔';
-    font-size: rem(12px);
+    font-size: ms(-1);
     margin-left: -3px;
     margin-right: rem(10px);
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+blockquote {
+  background-image: linear-gradient(to bottom right, $color-gamma, adjust-hue($color-gamma, 10%));
+  color: $color-text;
+  margin: 0;
+  padding: rem(20px) rem(40px);
+
+  p {
+    margin: 0;
+  }
+}
+
+pre {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+
+  code {
+    white-space: pre-wrap;
+    word-break: break-all;
   }
 }
 
@@ -70,3 +86,29 @@ code {
   }
 }
 
+.main {
+  display: grid;
+  flex: 1 1 auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem(960px);
+  padding-bottom: rem(30px);
+  padding-top: rem(30px);
+  width: 100%;
+
+  @include mq($from: mobile) {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto;
+  }
+
+  *:first-child {
+    margin-top: 0;
+  }
+}
+
+.content {
+  padding: rem(10px);
+  width: calc(100% - #{rem(20px)});
+}

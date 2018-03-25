@@ -1,23 +1,25 @@
-:markdown-it(linkify langPrefix='highlight-')
-  ## Project Structure
+extends /layout/layout.pug
 
-  ```
+block variables
+  - pageTitle = "Structure"
+
+block content
+  :markdown-it(linkify langPrefix='highlight-')
+    ## Project Structure
+
+    Here you could see the initial project structure.
+
+    ```
     |-- .editorconfig
     |-- .eslintignore
     |-- .eslintrc.json
     |-- .gitignore
     |-- .htmllintrc
     |-- .stylelintrc
-    |-- LICENSE
-    |-- README.md
     |-- config.json
     |-- faviconData.json
     |-- gulpfile.js
     |-- package.json
-    |-- postinstall.js
-    |-- yarn.lock
-    |-- .vscode
-    |   |-- settings.json
     |-- _gulp
     |   |-- browser-sync.js
     |   |-- bump.js
@@ -36,29 +38,20 @@
     |   |-- sassdoc.js
     |   |-- script.js
     |   |-- watch.js
-    |-- copy
-    |   |-- .editorconfig
-    |   |-- .eslintignore
-    |   |-- .eslintrc.json
-    |   |-- .htmllintrc
-    |   |-- .stylelintrc
-    |   |-- config.json
-    |   |-- faviconData.json
-    |   |-- gitignore
-    |   |-- gulpfile.js
     |-- dist
     |   |-- 404.html
     |   |-- index.html
+    |   |-- commands
+    |   |   |-- index.html
+    |   |-- configuration
+    |   |   |-- index.html
     |   |-- css
     |   |   |-- foft.css
     |   |   |-- foft.min.css
-    |   |   |-- foft.min.css.map
     |   |   |-- style.critical.css
     |   |   |-- style.critical.min.css
-    |   |   |-- style.critical.min.css.map
     |   |   |-- style.css
     |   |   |-- style.min.css
-    |   |   |-- style.min.css.map
     |   |-- docs
     |   |   |-- js
     |   |   |   |-- classes.list.html
@@ -160,6 +153,8 @@
     |   |           |-- sample.png
     |   |           |-- sample.svg
     |   |           |-- scrollspy.js
+    |   |-- features
+    |   |   |-- index.html
     |   |-- fonts
     |   |   |-- lato
     |   |       |-- Lato-Regular.woff
@@ -171,21 +166,24 @@
     |   |   |   |-- starter-project.png
     |   |   |-- svg
     |   |       |-- starter-project.svg
+    |   |-- installation
+    |   |   |-- index.html
     |   |-- js
-    |       |-- deferredStyles.js
-    |       |-- deferredStyles.js.map
-    |       |-- deferredStyles.min.js
-    |       |-- deferredStyles.min.js.map
-    |       |-- foftFontLoading.js
-    |       |-- foftFontLoading.js.map
-    |       |-- foftFontLoading.min.js
-    |       |-- foftFontLoading.min.js.map
-    |       |-- index.js
-    |       |-- index.js.map
-    |       |-- index.min.js
-    |       |-- index.min.js.map
+    |   |   |-- deferredStyles.js
+    |   |   |-- deferredStyles.js.map
+    |   |   |-- deferredStyles.min.js
+    |   |   |-- deferredStyles.min.js.map
+    |   |   |-- foftFontLoading.js
+    |   |   |-- foftFontLoading.js.map
+    |   |   |-- foftFontLoading.min.js
+    |   |   |-- foftFontLoading.min.js.map
+    |   |   |-- index.js
+    |   |   |-- index.js.map
+    |   |   |-- index.min.js
+    |   |   |-- index.min.js.map
+    |   |-- structure
+    |       |-- index.html
     |-- src
-        |-- .DS_Store
         |-- fonts
         |   |-- lato
         |       |-- .DS_Store
@@ -207,13 +205,23 @@
         |   |   |-- favicon.pug
         |   |   |-- foft-font-loading.pug
         |   |   |-- scripts.pug
-        |   |-- content
-        |   |   |-- 404.pug
+        |   |-- commands
         |   |   |-- index.pug
-        |   |   |-- structure.pug
+        |   |-- configuration
+        |   |   |-- index.pug
+        |   |-- features
+        |   |   |-- index.pug
+        |   |-- installation
+        |   |   |-- index.pug
+        |   |-- layout
+        |   |   |-- layout.pug
         |   |-- partials
-        |       |-- footer.pug
-        |       |-- header.pug
+        |   |   |-- footer.pug
+        |   |   |-- head.pug
+        |   |   |-- header.pug
+        |   |   |-- sidebar.pug
+        |   |-- structure
+        |       |-- index.pug
         |-- js
         |   |-- deferredStyles.js
         |   |-- foftFontLoading.js
@@ -225,6 +233,7 @@
             |-- style.critical.scss
             |-- style.scss
             |-- components
+                |-- _font-face.scss
                 |-- _fonts.scss
                 |-- _helpers.scss
                 |-- _locks.scss
@@ -234,5 +243,6 @@
                 |-- elements
                     |-- _content.scss
                     |-- _header.scss
+                    |-- _sidebar.scss
                     |-- _sig.scss
-  ```
+    ```

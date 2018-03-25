@@ -1,0 +1,30 @@
+extends /layout/layout.pug
+
+block variables
+  - pageTitle = "Examples"
+
+block content
+  :markdown-it(linkify langPrefix='highlight-')
+
+    ## Examples
+
+    Starter Project was used to build following websites:
+
+    ### [Starter Project website](https://starter.silvestarbistrovic.from.hr)
+
+    A website for Starter Project. The website runs on Starter Project only.
+
+
+    ### [Silvestar Bistrović website](https://www.silvestarbistrovic.from.hr)
+
+    A personal website with a blog. The site runs on Hexo.
+
+    ### [Han Han Xue website](https://hanhanxue.com/)
+
+    A website with a blog for Han Han Xue, a Designer and FX Technical Director from Montreal, Canada. The site runs on Middleman.
+
+    ### [Irina & Matej website](https://irinaandmatej.com/)
+
+    A website for Irina and Matej, wedding and portrait photographers based in Croatia. The site runs on WordPress.
+
+    If you want to feature a website, [create pull request](https://github.com/maliMirkec/starter-project/compare) or [contact me](mailto:me@silvestarbistrovic.from.hr?Subject=Feature).

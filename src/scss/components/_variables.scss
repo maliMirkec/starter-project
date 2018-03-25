@@ -23,7 +23,7 @@ $mq--desktop: 960px;
 /// @group 1.1.Sizes
 /// @name font-size--mobile
 /// @since 1.0.0
-$font-size--mobile: 13px;
+$font-size--mobile: 14px;
 
 /// Default font size on desktop devices, used in css-locks.
 /// @access public
@@ -32,7 +32,7 @@ $font-size--mobile: 13px;
 /// @group 1.1.Sizes
 /// @name font-size--desktop
 /// @since 1.0.0
-$font-size--desktop: 17px;
+$font-size--desktop: 16px;
 
 /// Default line-height
 /// @access public
@@ -107,6 +107,15 @@ $color-gamma: #1ed9d9;
 /// @name color-delta
 /// @since 1.0.0
 $color-delta: #1ebada;
+
+/// Color from color palette
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example color: $color-epsilon;
+/// @group 1.2.Colors
+/// @name color-epsilon
+/// @since 1.0.0
+$color-epsilon: #ffe;
 
 /// Color for text
 /// @access public
