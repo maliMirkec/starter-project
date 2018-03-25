@@ -18,7 +18,30 @@
   background-image: linear-gradient(to bottom right, $color-gamma, adjust-hue($color-gamma, 10%));
   color: $color-text;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: rem(40px);
+  padding: rem(10px);
+
+  h1 {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  svg {
+    flex: 0 0 rem(50px);
+    height: auto;
+    margin-right: rem(10px);
+    margin-top: rem(-5px);
+    max-width: 100%;
+    width: rem(50px);
+  }
+
+  h5 {
+    flex: 0 0 100%;
+    margin-bottom: rem(20px);
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+  }
 }

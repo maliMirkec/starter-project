@@ -266,14 +266,16 @@
   },
   "html": {
     "run": true,
-    "src": "src/html/",
+    "src": "src/html/**/{index,404}",
     "dest": "",
-    "clean": "*.html",
+    "watch": "src/html/**/*",
+    "clean": "**/*.html",
     "renameConfig": {
       "extname": ".html"
     },
     "pugConfig": {
-      "pretty": true
+      "pretty": true,
+      "basedir": "./src/html/"
     },
     "htmllintConfig": ".htmllintrc",
     "htmlminConfig": {
@@ -330,6 +332,7 @@
     "run": true,
     "src": "",
     "dest": "",
+    "clean": "**/*.gz",
     "gzipConfig": {}
   },
   "kill": {
