@@ -15,7 +15,7 @@ Install using npm: `npm install starter-project --save`.
 
 Run command `gulp dev` for developing mode.
 
-Run command `gulp` for deployment mode.
+Run command `gulp` for production mode.
 
 ## [Configuration](https://starter.silvestarbistrovic.from.hr/configuration/)
 
