@@ -11,10 +11,10 @@ gulp.task('html:dist', () => gulp.src(`${global.config.root + global.config.html
   .pipe(htmllint(global.config.root + global.config.html.htmllintConfig))
   .pipe(htmlmin(global.config.html.htmlminConfig))
   .pipe(inlineSource({
-    rootpath: path.resolve(global.config.root + global.config.dest)
+    rootpath: path.resolve(global.config.root + global.config.html.inlineSourcePath)
   }))
   .pipe(rename(global.config.html.renameConfig))
-  .pipe(gulp.dest(global.config.root + global.config.dest + global.config.html.dest)))
+  .pipe(gulp.dest(global.config.root + global.config.html.dest)))
 
 gulp.task('html:dev', () => gulp.src(`${global.config.root + global.config.html.src}*.pug`)
   .pipe(pug(global.config.html.pugConfig))
@@ -24,4 +24,4 @@ gulp.task('html:dev', () => gulp.src(`${global.config.root + global.config.html.
     ignore: ['css', 'script']
   }))
   .pipe(rename(global.config.html.renameConfig))
-  .pipe(gulp.dest(global.config.root + global.config.dest + global.config.html.dest)))
+  .pipe(gulp.dest(global.config.root + global.config.html.dest)))

@@ -7,7 +7,7 @@
   "attr-no-unsafe-char": true,
   "attr-order": false,
   "attr-quote-style": "double",
-  "attr-req-value": true,
+  "attr-req-value": false,
   "attr-validate": false,
   "class-no-dup": true,
   "class-style": "bem",

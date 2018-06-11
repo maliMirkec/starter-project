@@ -24,7 +24,7 @@
   "html": {
     "run": true,
     "src": "src/html/**/{index,404}",
-    "dest": "",
+    "dest": "dist/",
     "watch": "src/html/**/*",
     "clean": "**/*.html",
     "renameConfig": {
