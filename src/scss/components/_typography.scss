@@ -55,7 +55,9 @@ html {
 // Styleguide: Typography.Paragraphs
 body {
   font-size: ms(0);
+  -webkit-font-smoothing: antialiased;
   line-height: $line-height;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Headings
