@@ -1,5 +1,8 @@
 {
   "extends": ["airbnb-base", "standard"],
+  "rules": {
+    "no-console": "off"
+  },
   "globals": {
     "requestAnimationFrame": true,
     "sessionStorage": true

@@ -69,11 +69,11 @@
     }
   },
   "penthouse": {
-    "run": false,
+    "run": true,
     "src": "style.css",
     "criticalCssConfigs": [{
       "out": "./dist/css/style.critical.css",
-      "url": "https://starter.silvestarbistrovic.from.hr",
+      "url": "http://localhost:3000",
       "width": 1920,
       "height": 1200,
       "keepLargerMediaQueries": true,
