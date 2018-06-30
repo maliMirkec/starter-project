@@ -34,7 +34,10 @@
       "pretty": true,
       "basedir": "./src/html/"
     },
-    "htmllintConfig": ".htmllintrc",
+    "htmllintConfig": {
+      "config": "./.htmllintrc",
+      "failOnError": true
+    },
     "htmlminConfig": {
       "collapseWhitespace": true
     },
@@ -66,7 +69,7 @@
     }
   },
   "penthouse": {
-    "run": true,
+    "run": false,
     "src": "style.css",
     "criticalCssConfigs": [{
       "out": "./dist/css/style.critical.css",
