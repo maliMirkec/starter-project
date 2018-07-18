@@ -7,8 +7,7 @@ const runSequence = require('run-sequence')
 // You should run it at least once to create the icons. Then,
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
-gulp.task('favicon:generate', done =>
-  realFavicon.generateFavicon(global.config.favicon.realFaviconConfig, () => done()))
+gulp.task('favicon:generate', done => realFavicon.generateFavicon(global.config.favicon.realFaviconConfig, () => done()))
 
 if (global.config.favicon.run) {
   const parsedFaviconFile = fs.readFileSync(global.config.favicon.realFaviconConfig.markupFile)
