@@ -8,6 +8,8 @@ ncp.limit = 16
 
 console.log('Installing Starter Package')
 
+return true;
+
 const questions = [
   {
     type: 'confirm',
