@@ -118,7 +118,7 @@ function ctrim (str, dot) {
   return temp
 }
 
-const copyFiles = ['.gitignore', '.editorconfig', '.eslintignore', '.eslintrc.json', '.htmllintrc', '.stylelintrc', 'faviconData.json', 'gulpfile.js']
+const copyFiles = ['./.gitignore', './.editorconfig', './.eslintignore', './.eslintrc.json', './.htmllintrc', './.stylelintrc', './faviconData.json', './gulpfile.js']
 const srcPath = 'src'
 const gulpPath = '_gulp'
 
@@ -569,8 +569,6 @@ inquirer.prompt(questions).then((answers) => {
     }
   }
 }`
-
-  console.log(config)
 
   return true
 })
