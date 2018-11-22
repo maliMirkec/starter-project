@@ -1,5 +1,6 @@
 /dev/
 /dist/
+/dest/
 /node_modules/
 /bower_packages/
 /vendor/
