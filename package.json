@@ -1,6 +1,6 @@
 {
   "name": "starter-project",
-  "version": "1.4.0-rc.1",
+  "version": "1.4.0-rc.2",
   "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
@@ -48,6 +48,13 @@
     "url": "https://github.com/maliMirkec/starter-project/issues"
   },
   "homepage": "https://starter.silvestarbistrovic.from.hr",
+  "devDependencies": {
+    "inquirer": "^6.2.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "path-exists": "^3.0.0",
+    "yarn": "^1.3.2"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -89,15 +96,10 @@
     "gulp-wait": "^0.0.2",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^5.0.1",
-    "inquirer": "^6.2.0",
     "jstransformer-markdown-it": "^2.0.0",
     "kss": "^3.0.0-beta.21",
-    "mkdirp": "^0.5.1",
     "modularscale-sass": "^3.0.3",
-    "ncp": "^2.0.0",
     "normalize.css": "^8.0.0",
-    "path-exists": "^3.0.0",
-    "path-exists-cli": "^1.0.0",
     "require-dir": "^1.0.0",
     "run-sequence": "^2.2.1",
     "sass-mq": "^5.0.0",
@@ -105,7 +107,6 @@
     "stylelint": "^9.3.0",
     "stylelint-config-sass-guidelines": "^5.0.0",
     "stylelint-order": "^0.8.1",
-    "stylelint-scss": "^3.1.3",
-    "yarn": "^1.3.2"
+    "stylelint-scss": "^3.1.3"
   }
 }
