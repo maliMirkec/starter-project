@@ -1,0 +1,12 @@
+block variables
+head
+  meta(charset="utf-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+  link(rel="preload", href="/css/style.min.css", as="style")
+  link(rel="preload", href="/js/index.min.js", as="script")
+
+  include ../assets/favicon.pug
+  include ../assets/critical-css.pug
+  title= pageTitle += " | Starter Package" || "Starter Package"

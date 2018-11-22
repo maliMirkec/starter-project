@@ -1,0 +1,77 @@
+/// Function for converting a value to rem unit
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example font-size: rem(20px, 'mobile');
+/// @group 3.1.Helpers
+/// @name rem
+/// @since 1.0.0
+/// @param {Unit} $size [20px] A value with unit (e.g. 20px)
+/// @param {String} $media ['desktop'] A media, (e.g. 'desktop' or 'mobile')
+/// @return {Unit} Returns a value converted in rem; returns 1rem if media is not 'desktop' or 'mobile'
+/// @see $color-text
+
+@function rem($size: 20px, $media: 'desktop') {
+  @if $media == 'desktop' {
+    @return calc(#{strip-unit($size / $font-size--desktop)} * 1rem);
+  } @else if $media == 'mobile' {
+    @return calc(#{strip-unit($size / $font-size--mobile)} * 1rem);
+  } @else {
+    @return 1rem;
+  }
+}
+
+/// Function that calculates tracking
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example letter-spacing: tracking(200);
+/// @group 3.1.Helpers
+/// @name tracking
+/// @since 1.0.0
+/// @param {Integer} $tracking [0] Tracking value without a unit (e.g. 200)
+/// @param {String} $media ['desktop'] A media, (e.g. 'desktop' or 'mobile')
+/// @return {Unit} Returns a tracking value
+
+@function tracking($tracking: 0) {
+  @if $tracking == 0 {
+    @return 0;
+  } @else {
+    @return calc(#{$tracking} / 1000 * 1em);
+  }
+}
+
+/// Mixin for defining tracking
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include ls(100);
+/// @group 3.1.Helpers
+/// @name ls
+/// @since 1.0.0
+/// @param {Integer} $tracking [0] Tracking value without a unit (e.g. 200)
+@mixin ls($tracking: 0) {
+  letter-spacing: tracking(#{strip-unit($tracking)});
+}
+
+/// Mixin for reseting padding and margin to zero
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include zero-box;
+/// @group 3.1.Helpers
+/// @name zero-box
+/// @since 1.0.0
+@mixin zero-box() {
+  margin: 0;
+  padding: 0;
+}
+
+/// Mixin for defining transition
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example @include tra($trd, $tra);
+/// @group 3.1.Helpers
+/// @name tra
+/// @since 1.0.0
+/// @param {Unit} $transition-duration [$trd] A duration of the transition (e.g. 1s)
+/// @param {String} $transition-animation [$tra] An easing function of the transition (e.g. linear or cubic-bezier(0.04, 0.88, 0.74, 1.04))
+@mixin tra($transition-duration: $trd, $transition-animation: $tra) {
+  transition: all $transition-duration $transition-animation;
+}
