@@ -1,11 +1,11 @@
 {
   "name": "starter-project",
-  "version": "1.4.0-rc.3",
+  "version": "1.4.0-rc.4",
   "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
     "build": "gulp",
-    "postinstall": "node postinstall.js"
+    "install": "node install.js"
   },
   "repository": {
     "type": "git",
