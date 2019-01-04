@@ -1,0 +1,19 @@
+{
+  "pugConfig": {
+    "basedir": "",
+    "pretty": true
+  },
+  "htmllintConfig": {
+    "config": "",
+    "failOnError": false
+  },
+  "htmlminConfig": {
+    "collapseWhitespace": true
+  },
+  "renameConfig": {
+    "extname": ".html"
+  },
+  "inlineConfig": {
+    "rootpath": ""
+  }
+}
