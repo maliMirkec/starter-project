@@ -1,0 +1,61 @@
+{
+  "override": true,
+  "proot": "./",
+  "src": "src",
+  "dist": "dist",
+  "override2": true,
+  "html": {
+    "run": true,
+    "src": "html",
+    "dist": "",
+    "lint": true
+  },
+  "css": {
+    "run": true,
+    "src": "scss",
+    "dist": "css",
+    "lint": true
+  },
+  "js": {
+    "run": true,
+    "src": "js",
+    "dist": "js",
+    "lint": true
+  },
+  "gfx": {
+    "run": true,
+    "src": "gfx",
+    "dist": "gfx"
+  },
+  "fonts": {
+    "run": true,
+    "src": "fonts",
+    "dist": "fonts"
+  },
+  "favicon": {
+    "run": true
+  },
+  "critical": {
+    "run": true
+  },
+  "gzip": {
+    "run": true
+  },
+  "kss": {
+    "run": true
+  },
+  "sassdoc": {
+    "run": true
+  },
+  "jsdoc": {
+    "run": true
+  },
+  "favicons": {
+    "run": true,
+    "src": "favicons",
+    "dist": "favicons"
+  },
+  "penthouse": {
+    "run": true
+  }
+}

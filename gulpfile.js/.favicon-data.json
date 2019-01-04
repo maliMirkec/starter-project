@@ -1,0 +1,64 @@
+{
+  "masterPicture": "helpers.source/gfx/svg/starter-project.svg",
+  "dest": "helpers.dist/favicons/",
+  "iconsPath": "/favicons/",
+  "markupFile": "helpers.proot/gulpfile.js/.favicon-data-generated.json",
+  "design": {
+    "ios": {
+      "pictureAspect": "backgroundAndMargin",
+      "backgroundColor": "#ffffff",
+      "margin": "14%",
+      "assets": {
+        "ios6AndPriorIcons": false,
+        "ios7AndLaterIcons": false,
+        "precomposedIcons": false,
+        "declareOnlyDefaultIcon": true
+      },
+      "appName": "Starter Project"
+    },
+    "desktopBrowser": {},
+    "windows": {
+      "pictureAspect": "noChange",
+      "backgroundColor": "#1ed9d9",
+      "onConflict": "override",
+      "assets": {
+        "windows80Ie10Tile": false,
+        "windows10Ie11EdgeTiles": {
+          "small": false,
+          "medium": true,
+          "big": false,
+          "rectangle": false
+        }
+      },
+      "appName": "Starter Project"
+    },
+    "androidChrome": {
+      "pictureAspect": "shadow",
+      "themeColor": "#1ed9d9",
+      "manifest": {
+        "name": "Starter Project",
+        "display": "standalone",
+        "orientation": "notSet",
+        "onConflict": "override",
+        "declared": true
+      },
+      "assets": {
+        "legacyIcon": false,
+        "lowResolutionIcons": false
+      }
+    },
+    "safariPinnedTab": {
+      "pictureAspect": "blackAndWhite",
+      "threshold": 35.3125,
+      "themeColor": "#d91a79"
+    }
+  },
+  "settings": {
+    "compression": 5,
+    "scalingAlgorithm": "Cubic",
+    "errorOnImageTooSmall": false,
+    "readmeFile": true,
+    "htmlCodeFile": true,
+    "usePathAsIs": false
+  }
+}
