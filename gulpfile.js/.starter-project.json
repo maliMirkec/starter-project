@@ -39,7 +39,7 @@
     "run": true
   },
   "gzip": {
-    "run": true
+    "run": false
   },
   "kss": {
     "run": true
