@@ -7,7 +7,7 @@ body {
 
 a {
   @include tra;
-  color: lighten($color-delta, 10%);
+  color: $color-delta;
 
   &:visited {
     color: $color-delta;
@@ -15,11 +15,11 @@ a {
 
   &:hover,
   &:focus {
-    color: lighten($color-delta, 15%);
+    color: darken($color-delta, 15%);
   }
 
   &:active {
-    color: lighten($color-delta, 25%);
+    color: darken($color-delta, 25%);
   }
 }
 

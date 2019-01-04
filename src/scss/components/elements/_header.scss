@@ -16,7 +16,7 @@
 .header {
   align-items: center;
   background-image: linear-gradient(to bottom right, $color-gamma, adjust-hue($color-gamma, 10%));
-  color: $color-text;
+  color: $color-epsilon;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -28,7 +28,7 @@
     width: auto;
   }
 
-  svg {
+  img {
     flex: 0 0 rem(50px);
     height: auto;
     margin-right: rem(10px);
