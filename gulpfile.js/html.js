@@ -45,7 +45,7 @@ function htmlListen () {
 
 // When Critical CSS file is changed, it will process HTML, too
 function htmlListenCritical (cb) {
-  watch(`${helpers.dist()}/${helpers.trim(global.config.css.dist)}/*.critical.css`, global.config.watchConfig, htmlStart)
+  watch(`${helpers.dist()}/${helpers.trim(global.config.css.dist)}/*.critical.min.css`, global.config.watchConfig, htmlStart)
 
   cb()
 }
