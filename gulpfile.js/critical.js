@@ -8,7 +8,6 @@ critical.DEBUG = process.env.NODE_ENV !== 'production'
 const { helpers } = require('./helpers')
 
 const criticalConfig = require('./.critical.json')
-const syncConfig = require('./.sync.json')
 const cssConfig = require('./.css.json')
 
 // Will minify Critical CSS files
@@ -21,23 +20,20 @@ function criticalMinify () {
 
 // Will extract Critical CSS
 function criticalStart (cb) {
-  criticalConfig.forEach(
-    (config) => {
-      const thisSettings = Object.assign({}, config.settings, {
-        out: `/${helpers.trim(global.config.css.dist)}/${config.settings.out}`,
-        url: `http://localhost:${syncConfig.port || '3000'}/${config.settings.path}`
-      })
+  criticalConfig.forEach((config) => {
+    const thisSettings = Object.assign({}, config.settings, {
+      out: `/${helpers.trim(global.config.css.dist)}/${config.settings.out}`
+    })
 
-      const thisConfig = Object.assign({}, config, {
-        src: `${helpers.dist()}/${helpers.trim(global.config.css.dist)}/${config.src}`,
-        settings: thisSettings
-      })
+    const thisConfig = Object.assign({}, config, {
+      src: `${helpers.dist()}/${helpers.trim(global.config.css.dist)}/${config.src}`,
+      settings: thisSettings
+    })
 
-      src(thisConfig.src)
-        .pipe(critical(thisConfig.settings))
-        .pipe(dest(helpers.dist()))
-    }
-  )
+    src(thisConfig.src)
+      .pipe(critical(thisConfig.settings))
+      .pipe(dest(helpers.dist()))
+  })
 
   cb()
 }

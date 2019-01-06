@@ -6,6 +6,7 @@
   "override2": true,
   "html": {
     "run": true,
+    "pug": true,
     "src": "html",
     "dist": "",
     "lint": true
