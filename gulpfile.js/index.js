@@ -9,24 +9,22 @@ global.config.watchConfig = require('./.watch.json')
 const { sync } = require('./sync')
 const { bump } = require('./bump')
 const { clean } = require('./clean')
-const { css } = require('./css')
-const { js } = require('./js')
-const { gfx } = require('./gfx')
-const { fonts } = require('./fonts')
-const { favicon } = require('./favicon')
-const { html } = require('./html')
-const { critical } = require('./critical')
-const { gzip } = require('./gzip')
-const { kss } = require('./kss')
-const { sassdoc } = require('./sassdoc')
-const { jsdoc } = require('./jsdoc')
+const { css } = global.config.css.run ? require('./css') : false
+const { js } = global.config.js.run ? require('./js') : false
+const { gfx } = global.config.gfx.run ? require('./gfx') : false
+const { fonts } = global.config.fonts.run ? require('./fonts') : false
+const { favicon } = global.config.favicon.run ? require('./favicon') : false
+const { html } = global.config.html.run ? require('./html') : false
+const { critical } = global.config.critical.run ? require('./critical') : false
+const { gzip } = global.config.gzip.run ? require('./gzip') : false
+const { kss } = global.config.kss.run ? require('./kss') : false
+const { sassdoc } = global.config.sassdoc.run ? require('./sassdoc') : false
+const { jsdoc } = global.config.jsdoc.run ? require('./jsdoc') : false
 
 exports.bumpPatch = bump.patch
 exports.bumpMinor = bump.minor
 exports.bumpMajor = bump.major
 exports.clean = clean.cleanStart
-exports.critical = critical.criticalStart
-exports.favicon = favicon.faviconStart
 
 exports.dev = series(
   clean.cleanStart,

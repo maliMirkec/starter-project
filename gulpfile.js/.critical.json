@@ -2,7 +2,7 @@
   "src": "style.css",
   "settings": {
     "out": "style.critical.css",
-    "path": "",
+    "url": "http://localhost:8080/",
     "width": 1920,
     "height": 1200,
     "keepLargerMediaQueries": true,
