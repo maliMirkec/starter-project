@@ -51,11 +51,6 @@
   "jsdoc": {
     "run": true
   },
-  "favicons": {
-    "run": true,
-    "src": "favicons",
-    "dist": "favicons"
-  },
   "penthouse": {
     "run": true
   }
