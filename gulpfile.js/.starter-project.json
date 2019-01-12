@@ -8,7 +8,7 @@
     "run": true,
     "pug": true,
     "src": "html",
-    "dist": "",
+    "dist": "/",
     "lint": true
   },
   "css": {
@@ -43,20 +43,15 @@
     "run": false
   },
   "kss": {
-    "run": true
+    "run": true,
+    "dist": "docs/styleguide"
   },
   "sassdoc": {
-    "run": true
+    "run": true,
+    "dist": "docs/sass"
   },
   "jsdoc": {
-    "run": true
-  },
-  "favicons": {
     "run": true,
-    "src": "favicons",
-    "dist": "favicons"
-  },
-  "penthouse": {
-    "run": true
+    "dist": "docs/js"
   }
 }
