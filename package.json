@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "gulp dev",
     "default": "gulp default",
-    "build": "gulp build"
+    "build": "gulp build",
+    "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -50,9 +51,12 @@
   },
   "homepage": "https://starter.silvestarbistrovic.from.hr",
   "dependencies": {
+    "chalk": "^2.4.2",
     "fontfaceobserver": "^2.1.0",
     "jstransformer-markdown-it": "^2.1.0",
+    "mkdirp": "^0.5.1",
     "modularscale-sass": "^3.0.8",
+    "ncp": "^2.0.0",
     "normalize.css": "^8.0.1",
     "sass-mq": "^5.0.0",
     "starter-project-cli": "^1.0.13",
