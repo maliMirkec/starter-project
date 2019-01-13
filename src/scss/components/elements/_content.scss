@@ -109,6 +109,7 @@ code {
 }
 
 .content {
+  grid-column: 2 / 3;
   padding: rem(10px);
   width: calc(100% - #{rem(20px)});
 }
