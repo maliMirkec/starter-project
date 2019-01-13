@@ -1,20 +1,25 @@
 # [Starter Project](https://starter.silvestarbistrovic.from.hr)
 
-Starter Project is the easiest way to implement the latest best practices on your project.
+[![Starter Project CLI on NPM](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project-cli-npm.png)](https://www.npmjs.com/package/starter-project-cli)
+[![Starter Project on NPM](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project-npm.png)](https://www.npmjs.com/package/starter-project)
+
+> Starter Package is the best starting point for your new project — achieve the maximum score on page speed testing tools.
+
+![Starter Project Logo - Folder with start button](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project-md.png)
+
+Starter Package is a package with the latest best practices for your HTML (pug), CSS (Sass), JavaScript (es6), graphic, font, and favicon files.
 
 # Version 2
 
-Welcome to version 2! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
+Version 2 is a major update! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
+
+You could use `node_modules/.bin/spro start` command, if you want to reinitialize Starter Project CLI. See more at [Starter Project CLI docs].
 
 _Version 2 is not backward compatible with [version 1](https://starter.silvestarbistrovic.from.hr/old/)._
 
-## About
-
-Starter Project is a package that contains predefined HTML (pug), CSS (Sass), JavaScript (es6), graphic, font, and favicon files. This package is the best starting point for your new and fresh project — it is set up to achieve the maximum score on almost every **page speed testing tool**.
-
 ## Installation
 
-The package is available on npm. Create a new directory, enter it and run the following command to install the latest version:
+The package is available on npm. To install Starter Package, create a new directory, enter it and run the following command to install the latest version:
 
 ```
 npm install starter-project --save
@@ -26,13 +31,15 @@ After the installation, run the following command to set up the project:
 node node_modules/starter-package/postinstall.js
 ```
 
-You should be able to run Gulp tasks now. If you want to learn more about the project structure, jump to [this section](#Structure). If you want to learn more about npm packages, jump to [this section](#Packages).
+Starter Project should have installed source files, Gulp files, and configuration files.
+
+If you want to learn more about the project structure, jump to the [Structure section](#Structure). If you want to learn more about npm packages, jump to the [Packages section](#Packages).
 
 ## Gulp tasks
 
-In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
+You should be able to run Gulp tasks now. In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
 
-There are three available major Gulp tasks:
+There are three primary Gulp tasks:
 | Task      | Description                                                                                     |
 | --------- | ----------------------------------------------------------------------------------------------- |
 | `default` | the task for running and watching all the tasks (useful for more thorough development process)  |
@@ -46,8 +53,7 @@ There are four other Gulp tasks:
 | `bumpPatch` | the task for bumping patch versions of the `package.json` file |
 | `bumpMinor` | the task for bumping minor versions of the `package.json` file |
 | `bumpMajor` | the task for bumping major versions of the `package.json` file |
-
-- `clean` - the task for deleting compiled code.
+| `clean`     | the task for deleting compiled code.                           |
 
 Run `gulp --tasks` to see all available Gulp tasks.
 
@@ -55,9 +61,7 @@ Run `gulp --tasks` to see all available Gulp tasks.
 
 If you want more control over your Gulp tasks, you could find the configuration files for every single Gulp task in the `gulpfile.js` folder.
 
-`.starter-project.json` is the main configuration file in which you could find all your answers from the command line.
-
-You could learn more about it in the [Starter Project CLI docs].
+`.starter-project.json` is the main configuration file in which you could find all global settings for Gulp tasks. Avoid editing this file manually. See [Starter Project CLI docs] for more details.
 
 ## Structure
 
@@ -69,9 +73,6 @@ You could learn more about it in the [Starter Project CLI docs].
     |-- .gitignore
     |-- .htmllintrc
     |-- .stylelintrc
-    |-- package.json
-    |-- .vscode
-    |   |-- settings.json
     |-- gulpfile.js
     |   |-- .critical.json
     |   |-- .css.json
@@ -229,7 +230,7 @@ Starter Package CLI uses the following packages:
 
 ## Support
 
-Show your support by starring the project on [Github](https://github.com/maliMirkec/starter-project), or by (https://twitter.com/intent/tweet?url=https://starter.silvestarbistrovic.from.hr&text=Starter%20Project%20is%20the%20easiest%20way%20to%20implement%20the%20latest%20best%20practices%20in%20your%20project.%20💯%20Try%20it%20out%20today!%20🔥&via=malimirkeccita), please. 🙏
+Show your support by starring the project on [Github](https://github.com/maliMirkec/starter-project), or by [sharing on Twitter](https://twitter.com/intent/tweet?url=https://starter.silvestarbistrovic.from.hr&text=Starter%20Project%20is%20the%20easiest%20way%20to%20implement%20the%20latest%20best%20practices%20in%20your%20project.%20💯%20Try%20it%20out%20today!%20🔥&via=malimirkeccita), please. 🙏
 
 Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/issues/new) or create [a pull request](https://github.com/maliMirkec/starter-project/compare).
 
@@ -237,5 +238,5 @@ Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/i
 
 Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-project/blob/master/CHANGELOG.md) file.
 
-[Starter Project CLI]: https://raw.githubusercontent.com/maliMirkec/starter-project-cli/
-[Starter Project CLI docs]: https://raw.githubusercontent.com/maliMirkec/starter-project-cli/
+[Starter Project CLI]: https://starter.silvestarbistrovic.from.hr/cli/
+[Starter Project CLI docs]: https://starter.silvestarbistrovic.from.hr/cli/
