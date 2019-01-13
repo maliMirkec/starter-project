@@ -43,7 +43,7 @@ li {
 }
 
 blockquote {
-  background-image: linear-gradient(to bottom right, $color-gamma, adjust-hue($color-gamma, 10%));
+  background-color: lighten($color-alpha, 45%);
   color: $color-text;
   margin: 0;
   padding: rem(20px) rem(40px);
@@ -77,8 +77,7 @@ pre {
 //
 // Styleguide: Code
 code {
-  background-image: linear-gradient(to bottom right, lighten($color-delta, 46%), lighten($color-delta, 41%));
-  padding: 0 rem(3px);
+  background-color: lighten($color-delta, 60%);
 
   pre & {
     display: inline-block;
@@ -99,7 +98,7 @@ code {
   width: 100%;
 
   @include mq($from: mobile) {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 240px 1fr;
     grid-template-rows: auto;
   }
 
@@ -112,4 +111,23 @@ code {
   grid-column: 2 / 3;
   padding: rem(10px);
   width: calc(100% - #{rem(20px)});
+}
+
+table {
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px solid lighten($color-alpha, 45%);
+    padding: rem(3px) rem(5px);
+    vertical-align: top;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a[href*="npmjs"] + a[href*="npmjs"] {
+  margin-left: rem(5px);
 }

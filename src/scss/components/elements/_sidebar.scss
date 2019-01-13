@@ -9,10 +9,7 @@
     font-size: ms(0);
 
     &:before {
-      content: '»';
-      font-size: ms(0);
-      margin-left: -3px;
-      margin-right: rem(10px);
+      content: none;
     }
   }
 
