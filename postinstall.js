@@ -6,7 +6,7 @@ const chalk = require('chalk')
 
 ncp.limit = 16
 
-const helpers = ['.vscode', '.editorconfig', '.htmllintrc', '.stylelintrc', '.eslintignore', '.eslintrc.json']
+const helpers = ['.vscode', 'gulpfile.js', 'src', '.editorconfig', '.htmllintrc', '.stylelintrc', '.eslintignore', '.eslintrc.json']
 const destinationPath = './'
 
 const message = (text, error = true) => (text ? console.log(chalk.hex(error ? '#e01258' : '#12e09f')(text)) : false)
@@ -43,10 +43,7 @@ const fileExists = (filePath) => {
 
 const copyFile = (filePath, destPath = './', destFile) => {
   try {
-    message(fileExists(path.join(__dirname, filePath)))
-    message(path.join(__dirname, filePath))
-    message(`${destPath + destFile}`)
-    return ncp(path.join(__dirname, filePath), `${destPath + destFile}`, { clobber: true }, message)
+    return (fileExists(path.join(__dirname, filePath))) ? true : ncp(path.join(__dirname, filePath), `${destPath + destFile}`, { clobber: true }, message)
   } catch (err) {
     message(err)
 
@@ -54,20 +51,10 @@ const copyFile = (filePath, destPath = './', destFile) => {
   }
 }
 
-let pjson = {
-  name: 'test'
-}
-
-if (fileExists('./package.json')) {
-  pjson = require('./package.json')
-}
-
-if (pjson.name !== 'starter-project') {
-  for (let i = 0; i < helpers.length; i += 1) {
-    if (!directoryExists(destinationPath)) {
-      makeDirectory(destinationPath)
-    }
-
-    copyFile(helpers[i], destinationPath, helpers[i])
+for (let i = 0; i < helpers.length; i += 1) {
+  if (!directoryExists(destinationPath)) {
+    makeDirectory(destinationPath)
   }
+
+  copyFile(helpers[i], destinationPath, helpers[i])
 }
