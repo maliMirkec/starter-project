@@ -54,7 +54,15 @@ const copyFile = (filePath, destPath = './', destFile) => {
   }
 }
 
-setTimeout(() => {
+let pjson = {
+  name: 'test'
+}
+
+if (fileExists('./package.json')) {
+  pjson = require('./package.json')
+}
+
+if (pjson.name !== 'starter-project') {
   for (let i = 0; i < helpers.length; i += 1) {
     if (!directoryExists(destinationPath)) {
       makeDirectory(destinationPath)
@@ -62,4 +70,4 @@ setTimeout(() => {
 
     copyFile(helpers[i], destinationPath, helpers[i])
   }
-}, 5000)
+}
