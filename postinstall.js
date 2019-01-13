@@ -7,7 +7,7 @@ const chalk = require('chalk')
 ncp.limit = 16
 
 const helpers = ['.vscode', 'gulpfile.js', 'src', '.editorconfig', '.htmllintrc', '.stylelintrc', '.eslintignore', '.eslintrc.json']
-const destPath = './'
+const destinationPath = './'
 
 const message = (text, error = true) => (text ? console.log(chalk.hex(error ? '#e01258' : '#12e09f')(text)) : false)
 
@@ -33,7 +33,9 @@ const makeDirectory = (dirPath) => {
 
 const copyFile = (filePath, destPath = './', destFile) => {
   try {
-    return ncp(path.join(__dirname, '..', filePath), `${destPath + destFile}`, { clobber: true }, message)
+    message(path.join(__dirname, filePath))
+    message(`${destPath + destFile}`)
+    return ncp(path.join(__dirname, filePath), `${destPath + destFile}`, { clobber: true }, message)
   } catch (err) {
     message(err)
 
@@ -42,9 +44,9 @@ const copyFile = (filePath, destPath = './', destFile) => {
 }
 
 for (let i = 0; i < helpers.length; i += 1) {
-  if (!directoryExists(destPath)) {
-    makeDirectory(destPath)
+  if (!directoryExists(destinationPath)) {
+    makeDirectory(destinationPath)
   }
 
-  copyFile(helpers[i], destPath, helpers[i])
+  copyFile(helpers[i], destinationPath, helpers[i])
 }
