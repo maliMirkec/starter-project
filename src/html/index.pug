@@ -14,15 +14,23 @@ block content
 
     Welcome to version 2! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
 
-    _Version 2 is not backward compatible with version 1._
+    _Version 2 is not backward compatible with [version 1](/old/)._
 
     ## Installation
 
     The package is available on npm. Create a new directory, enter it and run the following command to install the latest version:
 
-    `npm install starter-project --save`.
+    ```
+    npm install starter-project --save
+    ```
 
-    After the installation, the project is set up, and you should be able to run Gulp tasks now. If you want to learn more about the project structure, jump to [this section](#Structure). If you want to learn more about npm packages, jump to [this section](#Packages).
+    After the installation, run the following command to set up the project:
+
+    ```
+    node node_modules/starter-package/postinstall.js
+    ```
+
+    You should be able to run Gulp tasks now. If you want to learn more about the project structure, jump to [this section](#Structure). If you want to learn more about npm packages, jump to [this section](#Packages).
 
     ## Gulp tasks
 

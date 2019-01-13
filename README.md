@@ -16,9 +16,17 @@ Starter Project is a package that contains predefined HTML (pug), CSS (Sass), Ja
 
 The package is available on npm. Create a new directory, enter it and run the following command to install the latest version:
 
-`npm install starter-project --save`.
+```
+npm install starter-project --save
+```
 
-After the installation, the project is set up, and you should be able to run Gulp tasks now. If you want to learn more about the project structure, jump to [this section](#Structure). If you want to learn more about npm packages, jump to [this section](#Packages).
+After the installation, run the following command to set up the project:
+
+```
+node node_modules/starter-package/postinstall.js
+```
+
+You should be able to run Gulp tasks now. If you want to learn more about the project structure, jump to [this section](#Structure). If you want to learn more about npm packages, jump to [this section](#Packages).
 
 ## Gulp tasks
 
