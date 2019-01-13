@@ -28,7 +28,7 @@ function htmlStart () {
     ? htmlConfig.inlineConfig
     : Object.assign({}, htmlConfig.inlineConfig, { rootpath: path.resolve(helpers.dist()) })
 
-  return src([`${helpers.source()}/${helpers.trim(global.config.html.src)}/[^_]**/*.pug`, `${helpers.source()}/${helpers.trim(global.config.html.src)}/*.pug`])
+  return src([`${helpers.source()}/${helpers.trim(global.config.html.src)}/**/*.pug`, `!${helpers.source()}/${helpers.trim(global.config.html.src)}/_**/*.pug`, `!${helpers.source()}/${helpers.trim(global.config.html.src)}/**/_**/*.pug`])
     .pipe(gulpif(global.config.html.pug, pug(thisPugConfig)))
     .pipe(htmllint(thisHtmllintConfig))
     .pipe(inlineSource(thisInlineConfig))

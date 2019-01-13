@@ -7,7 +7,7 @@
     "progressive": true
   },
   "pngConfig": {
-    "quality": 90
+    "quality": [0.8, 0.9]
   },
   "svgConfig": {
     "plugins": [

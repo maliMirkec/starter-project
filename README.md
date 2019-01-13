@@ -1,40 +1,233 @@
 # [Starter Project](https://starter.silvestarbistrovic.from.hr)
 
-![Starter Project Logo - Folder with start button](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project.png)
+Starter Project is the easiest way to implement the latest best practices on your project.
 
-A set of latest best practices packed in Gulp tasks.
+# Version 2
 
-## Getting started
-Welcome to Starter Project, the easiest way to implement latest best practices to your website. It doesn't matter if you have an existing project or you start from the scratch; you can use this package to meet all your needs.
+Welcome to version 2! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
 
-## [Installation](https://starter.silvestarbistrovic.from.hr/installation/)
+_Version 2 is not backward compatible with [version 1](https://starter.silvestarbistrovic.from.hr/old/)._
 
-Install using npm: `npm install starter-project --save`.
+## About
 
-## [Commands](https://starter.silvestarbistrovic.from.hr/installation/)
+Starter Project is a package that contains predefined HTML (pug), CSS (Sass), JavaScript (es6), graphic, font, and favicon files. This package is the best starting point for your new and fresh project — it is set up to achieve the maximum score on almost every **page speed testing tool**.
 
-Run command `gulp dev` for developing mode.
+## Installation
 
-Run command `gulp` for production mode.
+The package is available on npm. Create a new directory, enter it and run the following command to install the latest version:
 
-## [Configuration](https://starter.silvestarbistrovic.from.hr/configuration/)
+`npm install starter-project --save`.
 
-Configure Starter Project to meet your project requirements. Open [`config.json`](https://github.com/maliMirkec/starter-project/blob/master/config.json) to see all available options.
+After the installation, the project is set up, and you should be able to run Gulp tasks now. If you want to learn more about the project structure, jump to [this section](#Structure). If you want to learn more about npm packages, jump to [this section](#Packages).
 
-## [Features](https://starter.silvestarbistrovic.from.hr/features/)
+## Gulp tasks
 
-Benefit from powerful features, like [Browser-sync](https://www.browsersync.io/), [Sass](http://sass-lang.com/), [Stylelint](https://stylelint.io/), [JavaScript](https://developer.mozilla.org/bm/docs/Web/JavaScript), [Babel](https://babeljs.io/), [Pug template engine](https://pugjs.org/api/getting-started.html), [Imagemin Minification](https://www.npmjs.com/package/gulp-imagemin), [Critical CSS](https://www.smashingmagazine.com/2015/08/understanding-critical-css/), [Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps), and many more.
+In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
 
-## Updates
+There are three available major Gulp tasks:
+| Task      | Description                                                                                     |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| `default` | the task for running and watching all the tasks (useful for more thorough development process)  |
+| `build`   | the task for running all tasks with the exit process (useful for Netlify builds)                |
+| `dev`     | the task for running and watching only essential tasks (useful for primary development process) |
 
-See updates in [CHANGELOG.md](https://github.com/maliMirkec/starter-project/blob/master/CHANGELOG.md) file.
+There are four other Gulp tasks:
+
+| Task        | Description                                                    |
+| ----------- | -------------------------------------------------------------- |
+| `bumpPatch` | the task for bumping patch versions of the `package.json` file |
+| `bumpMinor` | the task for bumping minor versions of the `package.json` file |
+| `bumpMajor` | the task for bumping major versions of the `package.json` file |
+
+- `clean` - the task for deleting compiled code.
+
+Run `gulp --tasks` to see all available Gulp tasks.
+
+## Configuration
+
+If you want more control over your Gulp tasks, you could find the configuration files for every single Gulp task in the `gulpfile.js` folder.
+
+`.starter-project.json` is the main configuration file in which you could find all your answers from the command line.
+
+You could learn more about it in the [Starter Project CLI docs].
+
+## Structure
+
+```
+|-- Workspace
+    |-- .editorconfig
+    |-- .eslintignore
+    |-- .eslintrc.json
+    |-- .gitignore
+    |-- .htmllintrc
+    |-- .stylelintrc
+    |-- package.json
+    |-- .vscode
+    |   |-- settings.json
+    |-- gulpfile.js
+    |   |-- .critical.json
+    |   |-- .css.json
+    |   |-- .favicon-data.json
+    |   |-- .favicon.json
+    |   |-- .gfx.json
+    |   |-- .gzip.json
+    |   |-- .helpers.json
+    |   |-- .html.json
+    |   |-- .js.json
+    |   |-- .jsdoc.json
+    |   |-- .kss.json
+    |   |-- .sassdoc.json
+    |   |-- .starter-project.json
+    |   |-- .sync.json
+    |   |-- .watch.json
+    |   |-- bump.js
+    |   |-- clean.js
+    |   |-- critical.js
+    |   |-- css.js
+    |   |-- favicon.js
+    |   |-- fonts.js
+    |   |-- gfx.js
+    |   |-- gzip.js
+    |   |-- helpers.js
+    |   |-- html.js
+    |   |-- index.js
+    |   |-- js.js
+    |   |-- jsdoc.js
+    |   |-- kss.js
+    |   |-- sassdoc.js
+    |   |-- sync.js
+    |-- src
+        |-- favicons
+        |   |-- README.md
+        |   |-- android-chrome-192x192.png
+        |   |-- android-chrome-512x512.png
+        |   |-- apple-touch-icon.png
+        |   |-- browserconfig.xml
+        |   |-- favicon-16x16.png
+        |   |-- favicon-32x32.png
+        |   |-- favicon.ico
+        |   |-- html_code.html
+        |   |-- mstile-144x144.png
+        |   |-- mstile-150x150.png
+        |   |-- mstile-310x150.png
+        |   |-- mstile-310x310.png
+        |   |-- mstile-70x70.png
+        |   |-- safari-pinned-tab.svg
+        |   |-- site.webmanifest
+        |-- fonts
+        |   |-- lato
+        |       |-- Lato-Regular.woff
+        |       |-- Lato-Regular.woff2
+        |-- gfx
+        |   |-- jpg
+        |   |   |-- starter-project-md.jpg
+        |   |   |-- starter-project.jpg
+        |   |-- png
+        |   |   |-- starter-project-md.png
+        |   |   |-- starter-project.png
+        |   |-- svg
+        |       |-- starter-project-md.svg
+        |       |-- starter-project.svg
+        |-- html
+        |   |-- 404.pug
+        |   |-- index.pug
+        |   |-- _assets
+        |   |   |-- critical-css.pug
+        |   |   |-- deferred-styles.pug
+        |   |   |-- favicon.pug
+        |   |   |-- foft-font-loading.pug
+        |   |   |-- scripts.pug
+        |   |-- _layout
+        |   |   |-- layout.pug
+        |   |-- _partials
+        |   |   |-- banner.pug
+        |   |   |-- footer.pug
+        |   |   |-- head.pug
+        |   |   |-- header.pug
+        |   |   |-- sidebar.pug
+        |   |-- structure
+        |       |-- index.pug
+        |-- js
+        |   |-- deferredStyles.js
+        |   |-- foftFontLoading.js
+        |   |-- homepage.md
+        |   |-- index.js
+        |-- scss
+            |-- foft.scss
+            |-- homepage.md
+            |-- style.critical.scss
+            |-- style.scss
+            |-- components
+                |-- _font-face.scss
+                |-- _fonts.scss
+                |-- _helpers.scss
+                |-- _locks.scss
+                |-- _theme.scss
+                |-- _typography.scss
+                |-- _variables.scss
+                |-- elements
+                    |-- _banner.scss
+                    |-- _content.scss
+                    |-- _header.scss
+                    |-- _sidebar.scss
+                    |-- _sig.scss
+```
+
+## Packages
+
+Starter Package CLI uses the following packages:
+- `@babel/core`,
+- `@babel/preset-env`,
+- `browser-sync`,
+- `del`,
+- `eslint`,
+- `eslint-config-airbnb-base`,
+- `eslint-config-standard`,
+- `eslint-plugin-import`,
+- `eslint-plugin-node`,
+- `eslint-plugin-standard`,
+- `gulp`,
+- `gulp-autoprefixer`,
+- `gulp-babel`,
+- `gulp-bump`,
+- `gulp-clean-css`,
+- `gulp-cssimport`,
+- `gulp-eslint`,
+- `gulp-exit`,
+- `gulp-htmllint`,
+- `gulp-htmlmin`,
+- `gulp-if`,
+- `gulp-imagemin`,
+- `gulp-include`,
+- `gulp-inline-source`,
+- `gulp-penthouse`,
+- `gulp-pug`,
+- `gulp-real-favicon`,
+- `gulp-rename`,
+- `gulp-sass`,
+- `gulp-sourcemaps`,
+- `gulp-standard`,
+- `gulp-stylelint`,
+- `gulp-uglify`,
+- `gulp-wait`,
+- `imagemin-mozjpeg`,
+- `imagemin-pngquant`,
+- `kss`,
+- `path`,
+- `stylelint`,
+- `stylelint-config-sass-guidelines`,
+- `stylelint-order`, and
+- `stylelint-scss`.
 
 ## Support
 
-Share on [Twitter](https://twitter.com/intent/tweet?url=https://starter.silvestarbistrovic.from.hr&text=Starter%20Project%20-%20A%20set%20of%20latest%20best%20practices%20packed%20in%20Gulp%20tasks&via=malimirkeccita).
+Show your support by starring the project on [Github](https://github.com/maliMirkec/starter-project), or by (https://twitter.com/intent/tweet?url=https://starter.silvestarbistrovic.from.hr&text=Starter%20Project%20is%20the%20easiest%20way%20to%20implement%20the%20latest%20best%20practices%20in%20your%20project.%20💯%20Try%20it%20out%20today!%20🔥&via=malimirkeccita), please. 🙏
 
-Star on [Github](https://github.com/maliMirkec/starter-project).
+Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/issues/new) or create [a pull request](https://github.com/maliMirkec/starter-project/compare).
 
-Contribute: [report an issue](https://github.com/maliMirkec/starter-project/issues/new) or [create pull request](https://github.com/maliMirkec/starter-project/compare).
+## Changelog
 
-> Documentation is still work in progress, stay tuned!
+Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-project/blob/master/CHANGELOG.md) file.
+
+[Starter Project CLI]: https://raw.githubusercontent.com/maliMirkec/starter-project-cli/
+[Starter Project CLI docs]: https://raw.githubusercontent.com/maliMirkec/starter-project-cli/
