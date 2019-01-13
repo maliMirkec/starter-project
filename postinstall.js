@@ -31,19 +31,9 @@ const makeDirectory = (dirPath) => {
   }
 }
 
-const fileExists = (filePath) => {
-  try {
-    return fs.existsSync(filePath)
-  } catch (err) {
-    log(err)
-
-    return false
-  }
-}
-
 const copyFile = (filePath, destPath = './', destFile) => {
   try {
-    return (fileExists(path.join(__dirname, filePath))) ? true : ncp(path.join(__dirname, filePath), `${destPath + destFile}`, { clobber: true }, message)
+    return ncp(path.join(__dirname, filePath), `${destPath + destFile}`, { clobber: true }, message)
   } catch (err) {
     message(err)
 
