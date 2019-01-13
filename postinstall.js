@@ -31,8 +31,19 @@ const makeDirectory = (dirPath) => {
   }
 }
 
+const fileExists = (filePath) => {
+  try {
+    return fs.existsSync(filePath)
+  } catch (err) {
+    log(err)
+
+    return false
+  }
+}
+
 const copyFile = (filePath, destPath = './', destFile) => {
   try {
+    message(fileExists(path.join(__dirname, filePath)))
     message(path.join(__dirname, filePath))
     message(`${destPath + destFile}`)
     return ncp(path.join(__dirname, filePath), `${destPath + destFile}`, { clobber: true }, message)
@@ -43,10 +54,12 @@ const copyFile = (filePath, destPath = './', destFile) => {
   }
 }
 
-for (let i = 0; i < helpers.length; i += 1) {
-  if (!directoryExists(destinationPath)) {
-    makeDirectory(destinationPath)
-  }
+setTimeout(() => {
+  for (let i = 0; i < helpers.length; i += 1) {
+    if (!directoryExists(destinationPath)) {
+      makeDirectory(destinationPath)
+    }
 
-  copyFile(helpers[i], destinationPath, helpers[i])
-}
+    copyFile(helpers[i], destinationPath, helpers[i])
+  }
+}, 5000)
