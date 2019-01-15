@@ -1,7 +1,7 @@
 # [Starter Project](https://starter.silvestarbistrovic.from.hr)
 
-[![Starter Project CLI on NPM](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project-cli-npm.png)](https://www.npmjs.com/package/starter-project-cli)
-[![Starter Project on NPM](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project-npm.png)](https://www.npmjs.com/package/starter-project)
+[![Starter Project on NPM](https://img.shields.io/badge/starter--project-npm-blue.svg)](https://www.npmjs.com/package/starter-project)
+[![Starter Project CLI on NPM](https://img.shields.io/badge/starter--project--cli-npm-blue.svg)](https://www.npmjs.com/package/starter-project-cli)
 
 > Starter Package is the best starting point for your new project — achieve the maximum score on page speed testing tools.
 
