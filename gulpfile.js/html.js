@@ -20,7 +20,7 @@ function htmlStart () {
       : Object.assign({}, htmlConfig.pugConfig, { basedir: `${helpers.source()}/${helpers.trim(global.config.html.src)}/` })
   }
 
-  const thisHtmllintConfig = {}
+  let thisHtmllintConfig = {}
 
   if (global.config.html.lint) {
     thisHtmllintConfig = htmlConfig.htmllintConfig.config
@@ -28,10 +28,10 @@ function htmlStart () {
       : Object.assign({}, htmlConfig.htmllintConfig, { config: `${helpers.proot()}.htmllintrc` })
   }
 
-  const thisInlineConfig = {}
+  let thisInlineConfig = {}
 
   if (global.config.html.inline) {
-    htmlConfig.inlineConfig.rootpath
+    thisInlineConfig = htmlConfig.inlineConfig.rootpath
       ? htmlConfig.inlineConfig
       : Object.assign({}, htmlConfig.inlineConfig, { rootpath: path.resolve(helpers.dist()) })
   }
