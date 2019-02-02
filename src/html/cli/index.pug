@@ -69,11 +69,12 @@ block content
     In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
 
     There are three major Gulp tasks:
-    | Task      | Description                                                                                     |
-    | --------- | ----------------------------------------------------------------------------------------------- |
-    | `default` | the task for running and watching all the tasks (useful for more thorough development process)  |
-    | `build`   | the task for running all tasks with the exit process (useful for Netlify builds)                |
-    | `dev`     | the task for running and watching only essential tasks (useful for primary development process) |
+
+    | Task      | Description                                                                                   |
+    | --------- | --------------------------------------------------------------------------------------------- |
+    | `default` | the task for running all the tasks (useful for more thorough development process)             |
+    | `build`   | the task for running all tasks with the exit process (useful for Netlify builds, for example) |
+    | `dev`     | the task for running only essential tasks (useful for basic development process)              |
 
     There are four other Gulp tasks:
 
@@ -156,6 +157,7 @@ block content
     - [GENERAL] Where is the folder with the source code of the project (relative to default path)?
     - [GENERAL] Where do you want to store compiled code of the project (relative to default path)?
     - [GENERAL] Are you sure that you want to override the project?
+    - [BROWSER-SYNC] Do you want to run Browser Sync to preview changes in the browser?
     - [HTML] Do you want to run HTML tasks?
     - [HTML] Are you using Pug as a template engine?
     - [HTML] Where is the folder with HTML source code (relative to default source path)?

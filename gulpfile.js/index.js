@@ -21,9 +21,12 @@ const { kss } = global.config.kss.run ? require('./kss') : false
 const { sassdoc } = global.config.sassdoc.run ? require('./sassdoc') : false
 const { jsdoc } = global.config.jsdoc.run ? require('./jsdoc') : false
 
-exports.bumpPatch = bump.patch
-exports.bumpMinor = bump.minor
-exports.bumpMajor = bump.major
+if(global.config.bump.run) {
+  exports.bumpPatch = bump.patch
+  exports.bumpMinor = bump.minor
+  exports.bumpPrerelease = bump.prerelease
+}
+
 exports.clean = clean.cleanStart
 
 exports.dev = series(
@@ -62,7 +65,9 @@ exports.build = series(
   sync.syncStart,
   parallel(
     global.config.critical.run ? critical.criticalStart : helpers.skip,
-    global.config.critical.run ? critical.criticalListenMinify : helpers.skip,
+    global.config.critical.run && global.config.critical.minify
+      ? critical.criticalListenMinify
+      : helpers.skip,
     global.config.html.run ? html.htmlListenCritical : helpers.skip,
     global.config.critical.run ? helpers.kill : helpers.skip
   ),
@@ -92,7 +97,9 @@ exports.default = series(
     global.config.html.run ? html.htmlListenCritical : helpers.skip,
     global.config.critical.run ? critical.criticalStart : helpers.skip,
     global.config.critical.run ? critical.criticalListen : helpers.skip,
-    global.config.critical.run ? critical.criticalListenMinify : helpers.skip,
+    global.config.critical.run && global.config.critical.minify
+      ? critical.criticalListenMinify
+      : helpers.skip,
     global.config.kss.run ? kss.kssListen : helpers.skip,
     global.config.sassdoc.run ? sassdoc.sassdocListen : helpers.skip,
     global.config.jsdoc.run ? jsdoc.jsdocListen : helpers.skip

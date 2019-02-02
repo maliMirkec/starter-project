@@ -42,7 +42,7 @@ function faviconStart (cb) {
 
 // When favicon file change, it will process favicon file, too
 function faviconListen () {
-  return watch(`${helpers.source()}/${helpers.trim(global.config.favicon.src)}/**/*`, global.config.watchConfig, faviconStart, global.bs.reload)
+  return watch(helpers.path(`${helpers.source()}/${helpers.trim(global.config.favicon.src)}/**/*`), global.config.watchConfig, faviconStart, global.bs.reload)
 }
 
 exports.favicon = {

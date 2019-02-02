@@ -3,9 +3,11 @@ const bump = require('gulp-bump')
 
 const { helpers } = require('./helpers')
 
+const { bumpConfig } = require('./.bump.json')
+
 // Will patch the version
 function patch (cb) {
-  src([`${helpers.trim(global.config.proot)}/package.json`])
+  src(bumpConfig.src.map(path => helpers.parse(path)))
     .pipe(bump())
     .pipe(dest(global.config.proot))
 
@@ -14,7 +16,7 @@ function patch (cb) {
 
 // Will update minor version
 function minor (cb) {
-  src([`${helpers.trim(global.config.proot)}/package.json`])
+  src(bumpConfig.src.map(path => helpers.parse(path)))
     .pipe(bump({
       type: 'minor'
     }))
@@ -25,9 +27,20 @@ function minor (cb) {
 
 // Will update major version
 function major (cb) {
-  src([`${helpers.trim(global.config.proot)}/package.json`])
+  src(bumpConfig.src.map(path => helpers.parse(path)))
     .pipe(bump({
       type: 'major'
+    }))
+    .pipe(dest(global.config.proot))
+
+  cb()
+}
+
+// Will update prerelease version
+function prerelease (cb) {
+  src(bumpConfig.src.map(path => helpers.parse(path)))
+    .pipe(bump({
+      type: 'prerelease'
     }))
     .pipe(dest(global.config.proot))
 
@@ -37,5 +50,6 @@ function major (cb) {
 exports.bump = {
   patch,
   minor,
-  major
+  major,
+  prerelease
 }
