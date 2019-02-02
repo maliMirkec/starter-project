@@ -22,7 +22,7 @@ function kssStart () {
 
 // When Sass file is changed, it will process KSS docs, too
 function kssListen () {
-  return watch(`${helpers.source()}/${helpers.trim(global.config.css.src)}/**/*.scss`, global.config.watchConfig, kssStart, global.bs.reload)
+  return watch(helpers.path(`${helpers.source()}/${helpers.trim(global.config.css.src)}/**/*.scss`), global.config.watchConfig, kssStart, global.bs.reload)
 }
 
 exports.kss = {

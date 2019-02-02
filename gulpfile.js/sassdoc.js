@@ -18,7 +18,7 @@ function sassdocStart () {
 
 // When Sass file is changed, it will process SassDoc docs, too
 function sassdocListen () {
-  return watch(`${helpers.source()}/${helpers.trim(global.config.css.src)}/**/*.scss`, global.config.watchConfig, sassdocStart, global.bs.reload)
+  return watch(helpers.path(`${helpers.source()}/${helpers.trim(global.config.css.src)}/**/*.scss`), global.config.watchConfig, sassdocStart, global.bs.reload)
 }
 
 exports.sassdoc = {

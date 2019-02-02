@@ -4,6 +4,9 @@ const wait = require('gulp-wait')
 
 const helpersConfig = require('./.helpers.json')
 
+// Will remove '..' from dir path
+const path = p => p.split('/').filter((e, i, a) => (e !== '..' && a[i + 1] !== '..') || i + 1 === a.length).join('/')
+
 // Will remove end slash from dir path
 const trim = dir => (dir.substr(-1) !== '/' ? dir : dir.substr(0, dir.length - 1))
 
@@ -17,7 +20,7 @@ const source = () => `${trim(global.config.proot)}/${trim(global.config.src)}`
 const dist = () => `${trim(global.config.proot)}/${trim(global.config.dist)}`
 
 // Will parse path
-const parse = path => path.replace('helpers.proot/', proot())
+const parse = p => p.replace('helpers.proot/', proot())
   .replace('helpers.dist', dist()).replace('helpers.source', source())
   .replace('config.css.src', global.config.css.src)
   .replace('config.css.dist', global.config.css.dist)
@@ -41,6 +44,7 @@ const kill = (cb) => {
 exports.helpers = {
   proot,
   trim,
+  path,
   source,
   dist,
   skip,

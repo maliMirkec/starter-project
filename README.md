@@ -40,11 +40,12 @@ If you want to learn more about the project structure, jump to the [Structure se
 You should be able to run Gulp tasks now. In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
 
 There are three primary Gulp tasks:
-| Task      | Description                                                                                     |
-| --------- | ----------------------------------------------------------------------------------------------- |
-| `default` | the task for running and watching all the tasks (useful for more thorough development process)  |
-| `build`   | the task for running all tasks with the exit process (useful for Netlify builds)                |
-| `dev`     | the task for running and watching only essential tasks (useful for primary development process) |
+
+| Task      | Description                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------- |
+| `default` | the task for running all the tasks (useful for more thorough development process)             |
+| `build`   | the task for running all tasks with the exit process (useful for Netlify builds, for example) |
+| `dev`     | the task for running only essential tasks (useful for basic development process)              |
 
 There are four other Gulp tasks:
 
@@ -184,49 +185,49 @@ If you want more control over your Gulp tasks, you could find the configuration 
 
 ## Packages
 
-Starter Package CLI uses the following packages:
-- `@babel/core`,
-- `@babel/preset-env`,
-- `browser-sync`,
-- `del`,
-- `eslint`,
-- `eslint-config-airbnb-base`,
-- `eslint-config-standard`,
-- `eslint-plugin-import`,
-- `eslint-plugin-node`,
-- `eslint-plugin-standard`,
-- `gulp`,
-- `gulp-autoprefixer`,
-- `gulp-babel`,
-- `gulp-bump`,
-- `gulp-clean-css`,
-- `gulp-cssimport`,
-- `gulp-eslint`,
-- `gulp-exit`,
-- `gulp-htmllint`,
-- `gulp-htmlmin`,
-- `gulp-if`,
-- `gulp-imagemin`,
-- `gulp-include`,
-- `gulp-inline-source`,
-- `gulp-penthouse`,
-- `gulp-pug`,
-- `gulp-real-favicon`,
-- `gulp-rename`,
-- `gulp-sass`,
-- `gulp-sourcemaps`,
-- `gulp-standard`,
-- `gulp-stylelint`,
-- `gulp-uglify`,
-- `gulp-wait`,
-- `imagemin-mozjpeg`,
-- `imagemin-pngquant`,
-- `kss`,
-- `path`,
-- `stylelint`,
-- `stylelint-config-sass-guidelines`,
-- `stylelint-order`, and
-- `stylelint-scss`.
+Starter Package uses the following packages:
+- @babel/core,
+- @babel/preset-env,
+- browser-sync,
+- del,
+- eslint,
+- eslint-config-airbnb-base,
+- eslint-config-standard,
+- eslint-plugin-import,
+- eslint-plugin-node,
+- eslint-plugin-standard,
+- gulp,
+- gulp-autoprefixer,
+- gulp-babel,
+- gulp-bump,
+- gulp-clean-css,
+- gulp-cssimport,
+- gulp-eslint,
+- gulp-exit,
+- gulp-htmllint,
+- gulp-htmlmin,
+- gulp-if,
+- gulp-imagemin,
+- gulp-include,
+- gulp-inline-source,
+- gulp-penthouse,
+- gulp-pug,
+- gulp-real-favicon,
+- gulp-rename,
+- gulp-sass,
+- gulp-sourcemaps,
+- gulp-standard,
+- gulp-stylelint,
+- gulp-uglify,
+- gulp-wait,
+- imagemin-mozjpeg,
+- imagemin-pngquant,
+- kss,
+- path,
+- stylelint,
+- stylelint-config-sass-guidelines,
+- stylelint-order, and
+- stylelint-scss.
 
 ## Support
 

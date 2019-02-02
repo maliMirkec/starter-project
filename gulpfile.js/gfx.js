@@ -21,7 +21,7 @@ function gfxStart () {
 
 // When image is changed, it will process image file, too
 function gfxListen () {
-  return watch(`${helpers.source()}/${helpers.trim(global.config.gfx.src)}/**/*`, global.config.watchConfig, gfxStart, global.bs.reload)
+  return watch(helpers.path(`${helpers.source()}/${helpers.trim(global.config.gfx.src)}/**/*`), global.config.watchConfig, gfxStart, global.bs.reload)
 }
 
 exports.gfx = {
