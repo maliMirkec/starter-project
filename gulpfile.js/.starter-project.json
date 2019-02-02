@@ -8,7 +8,7 @@
   "html": {
     "run": true,
     "pug": true,
-    "src": "",
+    "src": "html",
     "dist": "",
     "minify": true,
     "inline": true,
@@ -17,7 +17,7 @@
   "css": {
     "run": true,
     "sass": true,
-    "src": "css",
+    "src": "scss",
     "dist": "css",
     "minify": true,
     "autoprefix": true,
@@ -57,7 +57,7 @@
   },
   "sassdoc": {
     "run": true,
-    "dist": "docs/sassdoc"
+    "dist": "docs/sass"
   },
   "jsdoc": {
     "run": true,

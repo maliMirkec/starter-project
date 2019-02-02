@@ -12,7 +12,7 @@ const cssConfig = require('./.css.json')
 
 // Will minify Critical CSS files
 function criticalMinify (cb) {
-  if(global.config.css.minify) {
+  if (global.config.css.minify) {
     src(`${helpers.dist()}/${helpers.trim(global.config.css.dist)}/*.critical.css`)
       .pipe(cleanCSS())
       .pipe(rename(cssConfig.renameConfig))
