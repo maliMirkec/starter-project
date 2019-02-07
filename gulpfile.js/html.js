@@ -8,6 +8,7 @@ const htmllint = global.config.html.lint ? require('gulp-htmllint') : () => true
 const inlineSource = global.config.html.inline ? require('gulp-inline-source') : () => true
 
 const { helpers } = require('./helpers')
+
 const htmlConfig = require('./.html.json')
 
 // Will process Pug files
