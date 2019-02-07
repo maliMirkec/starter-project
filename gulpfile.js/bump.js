@@ -3,7 +3,7 @@ const bump = require('gulp-bump')
 
 const { helpers } = require('./helpers')
 
-const { bumpConfig } = require('./.bump.json')
+const bumpConfig = require('./.bump.json')
 
 // Will patch the version
 function patch (cb) {

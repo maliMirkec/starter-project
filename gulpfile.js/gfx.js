@@ -4,6 +4,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminPngquant = require('imagemin-pngquant')
 
 const { helpers } = require('./helpers')
+
 const gfxConfig = require('./.gfx.json')
 
 // Will process image files
