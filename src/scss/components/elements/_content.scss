@@ -56,10 +56,11 @@ blockquote {
 pre {
   display: block;
   max-width: 100%;
-  overflow: hidden;
+  overflow: auto;
 
   code {
     white-space: pre-wrap;
+    width: 100%;
     word-break: break-all;
   }
 }
@@ -86,6 +87,7 @@ code {
 }
 
 .main {
+  align-items: start;
   display: grid;
   flex: 1 1 auto;
   grid-template-columns: 1fr;

@@ -1,5 +1,7 @@
 .sidebar {
   padding: rem(10px);
+  position: sticky;
+  top: rem(30px);
 
   ul {
     padding-left: rem(20px);
