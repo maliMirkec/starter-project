@@ -23,7 +23,7 @@ function jsdocStart () {
 
 // When JS file is changed, it will process JSdoc docs, too
 function jsdocListen () {
-  return watch([helpers.path(`${helpers.source()}/${helpers.trim(global.config.js.src)}/*.js`), helpers.path(`${helpers.source()}/${helpers.trim(global.config.js.src)}/*.md`)], global.config.watchConfig, jsdocStart, global.bs.reload)
+  return watch([helpers.trim(`${helpers.source()}/${global.config.js.src}/*.js`), helpers.trim(`${helpers.source()}/${global.config.js.src}/*.md`)], global.config.watchConfig, jsdocStart, global.bs.reload)
 }
 
 exports.jsdoc = {

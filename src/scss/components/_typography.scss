@@ -81,11 +81,6 @@ body {
   }
 }
 
-strong,
-em {
-  font-weight: 400;
-}
-
 ::selection {
   background-color: lighten($color-beta, 44%);
 }

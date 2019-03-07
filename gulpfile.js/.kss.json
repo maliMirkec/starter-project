@@ -1,7 +1,7 @@
 {
   "title": "Starter Project",
   "source": "helpers.source",
-  "destination": "helpers.dist/docs/styleguide/",
+  "destination": "helpers.dist/config.kss.dist/",
   "css": [
     "helpers.dist/config.css.dist/style.css",
     "helpers.dist/config.css.dist/foft.css"

@@ -4,20 +4,27 @@ const wait = require('gulp-wait')
 
 const helpersConfig = require('./.helpers.json')
 
-// Will remove '..' from dir path
-const path = p => p.split('/').filter((e, i, a) => (e !== '..' && a[i + 1] !== '..') || i + 1 === a.length).join('/')
+// Will remove end slash from path
+const trim = (p) => {
+  while (p.indexOf('..') !== -1) {
+    p = p.replace('..', '')
+  }
 
-// Will remove end slash from dir path
-const trim = dir => (dir.substr(-1) !== '/' ? dir : dir.substr(0, dir.length - 1))
+  while (p.indexOf('//') !== -1) {
+    p = p.replace('//', '/')
+  }
+
+  return p
+}
 
 // Will return root folder
-const proot = () => `${trim(global.config.proot)}/`
+const proot = () => trim(`${global.config.proot}/`)
 
 // Will return root src folder
-const source = () => `${trim(global.config.proot)}/${trim(global.config.src)}`
+const source = () => trim(`${global.config.proot}/${global.config.src}`)
 
 // Will return root dest folder
-const dist = () => `${trim(global.config.proot)}/${trim(global.config.dist)}`
+const dist = () => trim(`${global.config.proot}/${global.config.dist}`)
 
 // Will parse path
 const parse = p => p.replace('helpers.proot/', proot())
@@ -28,6 +35,9 @@ const parse = p => p.replace('helpers.proot/', proot())
   .replace('config.js.dist', global.config.js.dist)
   .replace('config.html.src', global.config.html.src)
   .replace('config.html.dist', global.config.html.dist)
+  .replace('config.kss.dist', global.config.kss.dist)
+  .replace('config.sassdoc.dist', global.config.sassdoc.dist)
+  .replace('config.jsdoc.dist', global.config.jsdoc.dist)
 
 // Will skip the task
 const skip = cb => cb()
@@ -44,7 +54,6 @@ const kill = (cb) => {
 exports.helpers = {
   proot,
   trim,
-  path,
   source,
   dist,
   skip,

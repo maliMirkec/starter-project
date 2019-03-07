@@ -17,16 +17,16 @@ function faviconStart (cb) {
     markupFile: `${helpers.parse(faviconDataConfig.markupFile)}`
   })
 
-  if (fs.existsSync(`${helpers.trim(thisFaviconDataConfig.temp)}/favicon.ico`)) {
-    src(`${helpers.trim(thisFaviconDataConfig.temp)}/*`)
-      .pipe(dest(`${helpers.trim(thisFaviconDataConfig.dest)}`))
+  if (fs.existsSync(helpers.trim(`${thisFaviconDataConfig.temp}/favicon.ico`))) {
+    src(helpers.trim(`${thisFaviconDataConfig.temp}/*`))
+      .pipe(dest(helpers.trim(`${thisFaviconDataConfig.dest}`)))
 
     cb()
   } else {
     realFavicon.generateFavicon(thisFaviconDataConfig, () => {
       if (fs.existsSync(thisFaviconDataConfig.markupFile)) {
-        src(`${helpers.trim(thisFaviconDataConfig.dest)}/*`)
-          .pipe(dest(`${helpers.trim(thisFaviconDataConfig.temp)}`))
+        src(helpers.trim(`${thisFaviconDataConfig.dest}/*`))
+          .pipe(dest(helpers.trim(`${thisFaviconDataConfig.temp}`)))
 
         const parsedFaviconFile = JSON.parse(fs.readFileSync(thisFaviconDataConfig.markupFile))
 
@@ -42,7 +42,7 @@ function faviconStart (cb) {
 
 // When favicon file change, it will process favicon file, too
 function faviconListen () {
-  return watch(helpers.path(`${helpers.source()}/${helpers.trim(global.config.favicon.src)}/**/*`), global.config.watchConfig, faviconStart, global.bs.reload)
+  return watch(helpers.trim(`${helpers.source()}/${global.config.favicon.src}/**/*`), global.config.watchConfig, faviconStart, global.bs.reload)
 }
 
 exports.favicon = {

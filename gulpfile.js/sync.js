@@ -1,5 +1,3 @@
-global.bs = require('browser-sync').create()
-
 const { helpers } = require('./helpers')
 
 const syncConfig = require('./.sync.json')

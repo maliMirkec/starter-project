@@ -13,10 +13,10 @@ const cssConfig = require('./.css.json')
 // Will minify Critical CSS files
 function criticalMinify (cb) {
   if (global.config.css.minify) {
-    src(`${helpers.dist()}/${helpers.trim(global.config.css.dist)}/*.critical.css`)
+    src(helpers.trim(`${helpers.dist()}/${global.config.css.dist}/*.critical.css`))
       .pipe(cleanCSS())
       .pipe(rename(cssConfig.renameConfig))
-      .pipe(dest(`${helpers.dist()}/${helpers.trim(global.config.css.dist)}`))
+      .pipe(dest(helpers.trim(`${helpers.dist()}/${global.config.css.dist}`)))
   }
 
   cb()
@@ -26,11 +26,11 @@ function criticalMinify (cb) {
 function criticalStart (cb) {
   criticalConfig.forEach((config) => {
     const thisSettings = Object.assign({}, config.settings, {
-      out: `/${helpers.trim(global.config.css.dist)}/${config.settings.out}`
+      out: helpers.trim(`/${global.config.css.dist}/${config.settings.out}`)
     })
 
     const thisConfig = Object.assign({}, config, {
-      src: `${helpers.dist()}/${helpers.trim(global.config.css.dist)}/${config.src}`,
+      src: helpers.trim(`${helpers.dist()}/${global.config.css.dist}/${config.src}`),
       settings: thisSettings
     })
 
@@ -44,12 +44,12 @@ function criticalStart (cb) {
 
 // When CSS file is changed, it will update Critical CSS, too
 function criticalListen () {
-  return watch(helpers.path(`${helpers.source()}/${helpers.trim(global.config.css.src)}/**/*.scss`), global.config.watchConfig, criticalStart)
+  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`), global.config.watchConfig, criticalStart)
 }
 
 // When Critical CSS file is changed, it will process Critical CSS file, too
 function criticalListenMinify (cb) {
-  watch(helpers.path(`${helpers.dist()}/${helpers.trim(global.config.css.dist)}/*.critical.css`), global.config.watchConfig, criticalMinify, global.bs.reload)
+  watch(helpers.trim(`${helpers.dist()}/${global.config.css.dist}/*.critical.css`), global.config.watchConfig, criticalMinify, global.bs.reload)
 
   cb()
 }
