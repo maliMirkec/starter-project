@@ -239,5 +239,5 @@ Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/i
 
 Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-project/blob/master/CHANGELOG.md) file.
 
-[Starter Project CLI]: https://starter.silvestarbistrovic.from.hr/cli/
-[Starter Project CLI docs]: https://starter.silvestarbistrovic.from.hr/cli/
+[Starter Project CLI]: https://starter.silvestarbistrovic.from.hr/
+[Starter Project CLI docs]: https://starter.silvestarbistrovic.from.hr/
