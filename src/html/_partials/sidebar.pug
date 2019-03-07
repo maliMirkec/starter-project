@@ -1,4 +1,4 @@
-- var navData = [{ 'prefix': '🏁', 'title': 'Getting Started', 'href': '/' }, { 'prefix': '📌', 'title': 'CLI', 'href': '/cli/' }, { 'prefix': '🔗️', 'title': 'GitHub SP', 'href': 'https://github.com/maliMirkec/starter-project' }, { 'prefix': '🔗', 'title': 'GitHub SP CLI', 'href': 'https://github.com/maliMirkec/starter-project-cli' }, { 'prefix': '🔗', 'title': 'NPM SP', 'href': 'https://www.npmjs.com/package/starter-project' }, { 'prefix': '🔗', 'title': 'NPM SP CLI', 'href': 'https://www.npmjs.com/package/starter-project-cli' }, { 'prefix': '📧', 'title': 'Contact', 'href': 'mailto:me@silvestarbistrovic.from.hr?Subject=Contact' }, { 'prefix': '⚠️', 'title': 'Docs 1.x.x', 'href': '/old/' }]
+- var navData = [{ 'prefix': '🌐', 'title': 'SPRO', 'href': '/' }, { 'prefix': '🌐', 'title': 'Starter Project', 'href': '/starter-project/' }, { 'prefix': '🔗', 'title': 'SPRO GitHub', 'href': 'https://github.com/maliMirkec/starter-project-cli' }, { 'prefix': '🔗', 'title': 'SPRO NPM', 'href': 'https://www.npmjs.com/package/starter-project-cli' }, { 'prefix': '🔗️', 'title': 'SP GitHub', 'href': 'https://github.com/maliMirkec/starter-project' }, { 'prefix': '🔗', 'title': 'SP NPM', 'href': 'https://www.npmjs.com/package/starter-project' }, { 'prefix': '📧', 'title': 'Contact', 'href': 'mailto:me@silvestarbistrovic.from.hr?Subject=Contact' }, { 'prefix': '⚠️', 'title': 'Docs 1.x.x', 'href': '/old/' }]
 
 aside.sidebar
   nav
@@ -6,4 +6,6 @@ aside.sidebar
       each val, index in navData
         - var currentClass = val.title == pageTitle ? 'highlight' : ''
         li(class=currentClass)
-          a(href=val.href)= val.prefix + ' ' + val.title
+          a(href=val.href)
+            span= val.title == pageTitle ? '👉' : val.prefix
+            span= val.title

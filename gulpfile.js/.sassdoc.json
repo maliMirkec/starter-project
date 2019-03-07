@@ -1,5 +1,5 @@
 {
-  "dest": "/docs/sass/",
+  "dest": "helpers.dist/config.sassdoc.dist/",
   "package": "package.json",
   "autofill": true,
   "verbose": true,

@@ -1,11 +1,14 @@
 {
-  "src": ["helpers.source/config.js.src/homepage.md", "helpers.source/config.js.src/"],
+  "src": [
+    "helpers.source/config.js.src/homepage.md",
+    "helpers.source/config.js.src/"
+  ],
   "settings": {
     "tags": {
       "allowUnknownTags": true
     },
     "opts": {
-      "destination": "helpers.dist/docs/js/"
+      "destination": "helpers.dist/config.jsdoc.dist/"
     },
     "plugins": [
       "plugins/markdown"

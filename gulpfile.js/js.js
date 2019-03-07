@@ -12,6 +12,12 @@ const { helpers } = require('./helpers')
 
 const jsConfig = require('./.js.json')
 
+// gulp-if fix
+if (!global.config.css.sourcemaps) {
+  sourcemaps.init = () => true
+  sourcemaps.write = () => true
+}
+
 // Will process JS files
 function jsStart () {
   const thisEslintConfig = (global.config.js.lint)
@@ -33,7 +39,7 @@ function jsStart () {
     eslint.result = () => true
   }
 
-  return src(`${helpers.source()}/${helpers.trim(global.config.js.src)}/*.js`)
+  return src(helpers.trim(`${helpers.source()}/${global.config.js.src}/*.js`))
     .pipe(gulpif(global.config.js.sourcemaps, sourcemaps.init()))
     .pipe(gulpif(global.config.js.lint, standard()))
     .pipe(gulpif(global.config.js.lint, standard.reporter('default', jsConfig.standardConfig)))
@@ -48,17 +54,17 @@ function jsStart () {
     })))
     .pipe(include(thisIncludeConfig))
     .pipe(babel(jsConfig.babelConfig))
-    .pipe(dest(`${helpers.dist()}/${helpers.trim(global.config.js.dist)}`))
+    .pipe(dest(helpers.trim(`${helpers.dist()}/${global.config.js.dist}`)))
     .pipe(gulpif(global.config.js.uglify, uglify()))
     .pipe(gulpif(global.config.js.uglify, rename(jsConfig.renameConfig)))
-    .pipe(gulpif(global.config.js.sourcemaps, sourcemaps.write(`${helpers.source()}/${helpers.trim(global.config.js.dist)}`)))
-    .pipe(dest(`${helpers.dist()}/${helpers.trim(global.config.js.dist)}`))
-    .pipe(global.bs.stream())
+    .pipe(gulpif(global.config.js.sourcemaps, sourcemaps.write(helpers.trim(`${helpers.source()}/${global.config.js.dist}`))))
+    .pipe(dest(helpers.trim(`${helpers.dist()}/${global.config.js.dist}`)))
+    .pipe(gulpif(global.config.sync.run, global.bs.stream()))
 }
 
 // When JS file is changed, it will process JS file, too
 function jsListen () {
-  return watch(helpers.path(`${helpers.source()}/${helpers.trim(global.config.js.src)}/*.js`), global.config.watchConfig, jsStart, global.bs.reload)
+  return watch(helpers.trim(`${helpers.source()}/${global.config.js.src}/*.js`), global.config.watchConfig, jsStart, global.bs.reload)
 }
 
 exports.js = {

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: $color-text;
   display: flex;
@@ -51,18 +55,16 @@ blockquote {
   p {
     margin: 0;
   }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
 }
 
 pre {
   display: block;
   max-width: 100%;
   overflow: auto;
-
-  code {
-    white-space: pre-wrap;
-    width: 100%;
-    word-break: break-all;
-  }
 }
 
 // Code Block
@@ -82,6 +84,7 @@ code {
 
   pre & {
     display: inline-block;
+    min-width: calc(100% - 24px);
     padding: rem(9px) rem(12px);
   }
 }
@@ -100,7 +103,7 @@ code {
   width: 100%;
 
   @include mq($from: mobile) {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 160px 1fr;
     grid-template-rows: auto;
   }
 
@@ -110,9 +113,12 @@ code {
 }
 
 .content {
-  grid-column: 2 / 3;
+  min-width: calc(100% - #{rem(20px)});
   padding: rem(10px);
-  width: calc(100% - #{rem(20px)});
+
+  @include mq($from: desktop) {
+    grid-column: 2 / 3;
+  }
 }
 
 table {
@@ -130,6 +136,6 @@ img {
   max-width: 100%;
 }
 
-a[href*="npmjs"] + a[href*="npmjs"] {
-  margin-left: rem(5px);
+a[href*="npmjs"] {
+  margin-right: rem(5px);
 }

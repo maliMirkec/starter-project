@@ -1,246 +1,782 @@
 extends /_layout/layout.pug
 
 block variables
-  - pageTitle = "Getting Started"
+  - pageTitle = "SPRO"
 
 block content
-  :markdown-it(linkify langPrefix='highlight-')
+  :markdown-it(html)
+    # SPRO / Starter Project CLI
 
-    # Starter Project
-
-    [![Starter Project on NPM](https://img.shields.io/badge/starter--project-npm-blue.svg)](https://www.npmjs.com/package/starter-project)
     [![Starter Project CLI on NPM](https://img.shields.io/badge/starter--project--cli-npm-blue.svg)](https://www.npmjs.com/package/starter-project-cli)
+    [![Starter Project on NPM](https://img.shields.io/badge/starter--project-npm-blue.svg)](https://www.npmjs.com/package/starter-project)
 
-    > Starter Package is the best starting point for your new project — achieve the maximum score on page speed testing tools.
+    > Starter Project CLI creates a perfect Gulp development environment for everyone within a few minutes.
 
-    ![Starter Project Logo - Folder with start button](/gfx/png/starter-project-md.png)
+    ![Starter Project CLI Logo - Folder with start button and CLI word](https://github.com/maliMirkec/starter-project-cli/raw/master/gfx/starter-project-cli.png)
 
-    Starter Package is a package with the latest best practices for your HTML (pug), CSS (Sass), JavaScript (es6), graphic, font, and favicon files.
+    Starter Project CLI, or **SPRO** (pronounces es-pro), is a command line interface that could save you a vast amount of time that you usually spend on configuring your project.
 
-    # Version 2
+    SPRO would install Gulp tasks for processing the following file types:
+    * HTML (pug)
+    * CSS (Sass)
+    * JavaScript (es6)
+    * Graphic (PNG, JPEG, SVG, GIF)
+    * Fonts
+    * Favicons
 
-    Version 2 is a major update! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
+    The tasks include compiling, lintering, formatting, compressing, and transforming your source file to produce the most optimized production files.
 
-    You could use `node_modules/.bin/spro start` command, if you want to reinitialize Starter Project CLI. See more at [Starter Project CLI docs].
+    __Info: If you would like to add a Gulp task, feel free to open [a pull request], or request a feature by creating [a new issue].__
 
-    _Version 2 is not backward compatible with [version 1](/old/)._
+    ## Table of Contents
 
-    ## Installation
+    - [Resources](#resources)
+    - [Installation](#installation)
+    - [Getting started](#getting-started)
+    - [Gulp tasks](#gulp-tasks)
+    - [Configuration file](#configuration-file)
+    - [Path Placeholders](#path-placeholders)
+    - [Command](#command)
+    - [Task Configuration](#task-configuration)
+      - [BrowserSync Configuration](#browsersync-configuration)
+      - [Favicon Configuration](#favicon-configuration)
+      - [HTML Configuration](#html-configuration)
+      - [CSS Configuration](#css-configuration)
+      - [JavaScript Configuration](#javascript-configuration)
+      - [Images Configuration](#images-configuration)
+      - [Critical CSS Configuration](#critical-css-configuration)
+      - [Gzip Configuration](#gzip-configuration)
+      - [Semver Configuration](#semver-configuration)
+      - [KSS Configuration](#kss-configuration)
+      - [SassDoc Configuration](#sassdoc-configuration)
+      - [JSDoc Configuration](#jsdoc-configuration)
+      - [Helpers Configuration](#helpers-configuration)
+      - [Watch Configuration](#watch-configuration)
+    - [Questions](#questions)
+    - [Dependenciest](#Dependencies)
+    - [Support](#support)
+    - [ToDo](#todo)
 
-    The package is available on npm. To install Starter Package, create a new directory, enter it and run the following command to install the latest version:
+    <h2 id="resources">Resources</h2>
 
+    Besides this documentation, you could learn more about SPRO by reading the following articles:
+
+    - [Introducing SPRO](https://www.silvestarbistrovic.from.hr/articles/introducing-spro/), and
+    - [Custom WordPress Theme Development with SPRO](https://www.silvestarbistrovic.from.hr/articles/custom-wordpress-theme-development-with-spro/).
+
+    Also, you could watch the full course about SPRO on Skillshare (registration required):
+
+    - [Setting up development environment with Gulp](https://skl.sh/2EcUlRt)
+
+    <h2 id="installation">Installation</h2>
+
+    You could use SPRO as a global or local package.
+
+    To install the package locally, run:
+    ```bash
+    npm install starter-project-cli --save
     ```
-    npm install starter-project --save
+
+    To install the package globally, run:
+    ```bash
+    npm install --global starter-project-cli --save
     ```
 
-    After the installation, run the following command to set up the project:
+    <h2 id="getting-started">Getting started</h2>
 
+    After successful installation, you could run the `spro` command. If you have installed the package locally, you could initialize the package by running the following command:
+    ```bash
+    node_modules/.bin/spro start
     ```
-    node node_modules/starter-package/postinstall.js
+
+    If you have installed the package globally, you could initialize the package by running the following command:
+    ```bash
+    spro start
     ```
 
-    Starter Project should have installed source files, Gulp files, and configuration files.
+    SPRO would prompt you to ask a few questions about the project structure.
 
-    If you want to learn more about the project structure, jump to the Structure section. If you want to learn more about npm packages, jump to the Packages section.
+    ![Starter Project CLI in action](/gfx/png/starter-project-questions.png)
 
-    ## Gulp tasks
+    Once you answer all questions, SPRO would do two things:
+    - copy all required files (Gulp task files and configuration files), and
+    - prepare a command for installation of dependencies required for the project.
 
-    You should be able to run Gulp tasks now. In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
+    _Warning: Note that the installation process could last a few minutes._
 
-    There are three available major Gulp tasks:
-    | Task      | Description                                                                                     |
-    | --------- | ----------------------------------------------------------------------------------------------- |
-    | `default` | the task for running and watching all the tasks (useful for more thorough development process)  |
-    | `build`   | the task for running all tasks with the exit process (useful for Netlify builds)                |
-    | `dev`     | the task for running and watching only essential tasks (useful for primary development process) |
+    <h2 id="gulp-tasks">Gulp tasks</h2>
 
-    There are four other Gulp tasks:
+    In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
+
+    There are four available major Gulp tasks:
+
+    | Task      | Description                                                                                   |
+    | --------- | --------------------------------------------------------------------------------------------- |
+    | `default` | the task for running all the tasks (useful for more thorough development process)             |
+    | `build`   | the task for running all tasks with the exit process (useful for Netlify builds, for example) |
+    | `dev`     | the task for running only essential tasks (useful for basic development process)              |
+    | `clean`   | the task for deleting compiled code.                                                          |
+
+    And there are three optional Gulp tasks for versioning (available only you choose SEMVER option):
 
     | Task        | Description                                                    |
     | ----------- | -------------------------------------------------------------- |
     | `bumpPatch` | the task for bumping patch versions of the `package.json` file |
     | `bumpMinor` | the task for bumping minor versions of the `package.json` file |
     | `bumpMajor` | the task for bumping major versions of the `package.json` file |
-    | `clean`     | the task for deleting compiled code.                           |
 
-    Run `gulp --tasks` to see all available Gulp tasks.
+    _Pro tip: Run `gulp --tasks` to see all available Gulp tasks._
 
-    ## Configuration
+    <h2 id="configuration-file">Configuration file</h2>
 
     If you want more control over your Gulp tasks, you could find the configuration files for every single Gulp task in the `gulpfile.js` folder.
 
-    `.starter-project.json` is the main configuration file in which you could find all global settings for Gulp tasks. Avoid editing this file manually. See [Starter Project CLI docs] for more details.
+    `.starter-project.json` is the main configuration file in which you could find all your answers from the command line.
 
-    ## Structure
-
-    ```
-    |-- Workspace
-        |-- .editorconfig
-        |-- .eslintignore
-        |-- .eslintrc.json
-        |-- .gitignore
-        |-- .htmllintrc
-        |-- .stylelintrc
-        |-- gulpfile.js
-        |   |-- .critical.json
-        |   |-- .css.json
-        |   |-- .favicon-data.json
-        |   |-- .favicon.json
-        |   |-- .gfx.json
-        |   |-- .gzip.json
-        |   |-- .helpers.json
-        |   |-- .html.json
-        |   |-- .js.json
-        |   |-- .jsdoc.json
-        |   |-- .kss.json
-        |   |-- .sassdoc.json
-        |   |-- .starter-project.json
-        |   |-- .sync.json
-        |   |-- .watch.json
-        |   |-- bump.js
-        |   |-- clean.js
-        |   |-- critical.js
-        |   |-- css.js
-        |   |-- favicon.js
-        |   |-- fonts.js
-        |   |-- gfx.js
-        |   |-- gzip.js
-        |   |-- helpers.js
-        |   |-- html.js
-        |   |-- index.js
-        |   |-- js.js
-        |   |-- jsdoc.js
-        |   |-- kss.js
-        |   |-- sassdoc.js
-        |   |-- sync.js
-        |-- src
-            |-- favicons
-            |   |-- README.md
-            |   |-- android-chrome-192x192.png
-            |   |-- android-chrome-512x512.png
-            |   |-- apple-touch-icon.png
-            |   |-- browserconfig.xml
-            |   |-- favicon-16x16.png
-            |   |-- favicon-32x32.png
-            |   |-- favicon.ico
-            |   |-- html_code.html
-            |   |-- mstile-144x144.png
-            |   |-- mstile-150x150.png
-            |   |-- mstile-310x150.png
-            |   |-- mstile-310x310.png
-            |   |-- mstile-70x70.png
-            |   |-- safari-pinned-tab.svg
-            |   |-- site.webmanifest
-            |-- fonts
-            |   |-- lato
-            |       |-- Lato-Regular.woff
-            |       |-- Lato-Regular.woff2
-            |-- gfx
-            |   |-- jpg
-            |   |   |-- starter-project-md.jpg
-            |   |   |-- starter-project.jpg
-            |   |-- png
-            |   |   |-- starter-project-md.png
-            |   |   |-- starter-project.png
-            |   |-- svg
-            |       |-- starter-project-md.svg
-            |       |-- starter-project.svg
-            |-- html
-            |   |-- 404.pug
-            |   |-- index.pug
-            |   |-- _assets
-            |   |   |-- critical-css.pug
-            |   |   |-- deferred-styles.pug
-            |   |   |-- favicon.pug
-            |   |   |-- foft-font-loading.pug
-            |   |   |-- scripts.pug
-            |   |-- _layout
-            |   |   |-- layout.pug
-            |   |-- _partials
-            |   |   |-- banner.pug
-            |   |   |-- footer.pug
-            |   |   |-- head.pug
-            |   |   |-- header.pug
-            |   |   |-- sidebar.pug
-            |   |-- structure
-            |       |-- index.pug
-            |-- js
-            |   |-- deferredStyles.js
-            |   |-- foftFontLoading.js
-            |   |-- homepage.md
-            |   |-- index.js
-            |-- scss
-                |-- foft.scss
-                |-- homepage.md
-                |-- style.critical.scss
-                |-- style.scss
-                |-- components
-                    |-- _font-face.scss
-                    |-- _fonts.scss
-                    |-- _helpers.scss
-                    |-- _locks.scss
-                    |-- _theme.scss
-                    |-- _typography.scss
-                    |-- _variables.scss
-                    |-- elements
-                        |-- _banner.scss
-                        |-- _content.scss
-                        |-- _header.scss
-                        |-- _sidebar.scss
-                        |-- _sig.scss
+    ```.starter-project.json
+    {
+      {
+      "proot": "./",
+      "src": "src",
+      "dist": "dist",
+      "sync": {
+        "run": true
+      },
+      "html": {
+        "run": true,
+        "src": "html",
+        "dist": "",
+        "pug": false,
+        "minify": true,
+        "inline": true,
+        "lint": true
+      },
+      "css": {
+        "run": true,
+        "src": "scss",
+        "dist": "css",
+        "sass": true,
+        "minify": true,
+        "autoprefix": true,
+        "sourcemaps": true,
+        "lint": true
+      },
+      "js": {
+        "run": true,
+        "src": "js",
+        "dist": "js",
+        "uglify": true,
+        "lint": true,
+        "sourcemaps": true
+      },
+      "gfx": {
+        "run": true,
+        "src": "gfx",
+        "dist": "gfx"
+      },
+      "fonts": {
+        "run": true,
+        "src": "fonts",
+        "dist": "fonts"
+      },
+      "favicon": {
+        "run": true
+      },
+      "critical": {
+        "run": true
+      },
+      "gzip": {
+        "run": true
+      },
+      "kss": {
+        "run": true,
+        "dist": "docs/styleguide"
+      },
+      "sassdoc": {
+        "run": true,
+        "dist": "docs/sass"
+      },
+      "jsdoc": {
+        "run": true,
+        "dist": "docs/js"
+      },
+      "bump": {
+        "run": true
+      }
+    }
     ```
 
-    ## Packages
+    _Avoid editing this file manually, unless you know what you are doing. Run `spro start` command again instead._
 
-    Starter Package CLI uses the following packages:
-    - `@babel/core`,
-    - `@babel/preset-env`,
-    - `browser-sync`,
-    - `del`,
-    - `eslint`,
-    - `eslint-config-airbnb-base`,
-    - `eslint-config-standard`,
-    - `eslint-plugin-import`,
-    - `eslint-plugin-node`,
-    - `eslint-plugin-standard`,
-    - `gulp`,
-    - `gulp-autoprefixer`,
-    - `gulp-babel`,
-    - `gulp-bump`,
-    - `gulp-clean-css`,
-    - `gulp-cssimport`,
-    - `gulp-eslint`,
-    - `gulp-exit`,
-    - `gulp-htmllint`,
-    - `gulp-htmlmin`,
-    - `gulp-if`,
-    - `gulp-imagemin`,
-    - `gulp-include`,
-    - `gulp-inline-source`,
-    - `gulp-penthouse`,
-    - `gulp-pug`,
-    - `gulp-real-favicon`,
-    - `gulp-rename`,
-    - `gulp-sass`,
-    - `gulp-sourcemaps`,
-    - `gulp-standard`,
-    - `gulp-stylelint`,
-    - `gulp-uglify`,
-    - `gulp-wait`,
-    - `imagemin-mozjpeg`,
-    - `imagemin-pngquant`,
-    - `kss`,
-    - `path`,
-    - `stylelint`,
-    - `stylelint-config-sass-guidelines`,
-    - `stylelint-order`, and
-    - `stylelint-scss`.
+    See more about individual configuring tasks [in the Task Configuration section].
 
-    ## Support
+    <h2 id="path-placeholders"> Path Placeholders</h2>
 
-    Show your support by starring the project on [Github](https://github.com/maliMirkec/starter-project), or by [sharing on Twitter](https://twitter.com/intent/tweet?url=https://starter.silvestarbistrovic.from.hr&text=Starter%20Project%20is%20the%20easiest%20way%20to%20implement%20the%20latest%20best%20practices%20in%20your%20project.%20💯%20Try%20it%20out%20today!%20🔥&via=malimirkeccita), please. 🙏
+    SPRO provides _path placeholders_ for easier configuration. All path placeholders would be replaced with settings from the main config file, `.starter-project.json` file.
 
-    Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/issues/new) or create [a pull request](https://github.com/maliMirkec/starter-project/compare).
+    **Use path placeholders to avoid hardcoding paths in the project.**
 
-    [Starter Project CLI]: /cli/
-    [Starter Project CLI docs]: /cli/
+    Here is the list of all available path placeholders:
+
+    | Placeholder        | Replacement                         |
+    | ------------------ | ----------------------------------- |
+    | `helpers.proot`    | project root path                   |
+    | `helpers.source`   | project source path                 |
+    | `helpers.dist`     | project destination path            |
+    | `config.html.src`  | project HTML source path            |
+    | `config.html.dist` | project HTML source path            |
+    | `config.css.src`   | project CSS source path             |
+    | `config.css.dist ` | project CSS destination path        |
+    | `config.js.src`    | project JavaScript source path      |
+    | `config.js.dist`   | project JavaScript destination path |
+
+    <h2 id="command">Command</h2>
+
+    SPRO package has only one command:
+    - `spro start`, `spro s`.
+
+    Also, you could run `spro --version` to check the version of the package.
+
+    <h2 id="task-configuration">Task Configuration</h2>
+
+    Every task has its own configuration file.
+
+    <h2 id="browsersync-configuration"> BrowserSync Configuration</h2>
+
+    The default BrowserSync configuration is defined as follows:
+    ```.sync.json
+    {
+      "port": 8080,
+      "server": {
+        "baseDir": ""
+      }
+    }
+    ```
+
+    You could see all available options [on BrowserSync the npm page].
+
+    <h2 id="favicon-configuration"> Favicon Configuration</h2>
+
+    The default favicon configuration is defined as follows:
+    ```.favicon.json
+    {
+      "run": true,
+      "src": "helpers.source/config.html.src/_assets/favicon.pug",
+      "dest": "helpers.source/config.html.src/_assets"
+    }
+    ```
+
+    To make the favicon task work, you should visit the [RealFaviconGenerator] and run the wizard. At the end of the process, you should copy the setting and put them in the `.favicon-data.json` file under `gulpfile.js` directory.
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="html-configuration"> HTML Configuration</h2>
+
+    The default HTML configuration is defined as follows:
+    ```.html.json
+    {
+      "pugConfig": {
+        "basedir": "",
+        "pretty": true
+      },
+      "htmllintConfig": {
+        "config": "",
+        "failOnError": false
+      },
+      "htmlminConfig": {
+        "collapseWhitespace": true
+      },
+      "renameConfig": {
+        "extname": ".html"
+      },
+      "inlineConfig": {
+        "rootpath": ""
+      }
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="css-configuration"> CSS Configuration</h2>
+
+    The default CSS configuration is defined as follows:
+    ```.css.json
+    {
+      "sassConfig": {
+        "includePaths": [
+          "helpers.proot/node_modules/modularscale-sass/stylesheets/",
+          "helpers.proot/node_modules/sass-mq/",
+          "helpers.proot/node_modules/normalize.css/",
+          "helpers.source/config.css.src/",
+          "helpers.source/config.css.src/components/"
+        ]
+      },
+      "styleLintConfig": {
+        "reporters": [{
+          "formatter": "string",
+          "console": true
+        }]
+      },
+      "autoprefixerConfig": {
+        "browsers": ["last 5 versions"],
+        "cascade": false
+      },
+      "renameConfig": {
+        "suffix": ".min"
+      }
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="javascript-configuration"> JavaScript Configuration</h2>
+
+    The default JavaScript configuration is defined as follows:
+    ```.js.json
+    {
+      "eslintConfig": {
+        "configFile": "helpers.proot/.eslintrc.json",
+        "fix": true,
+        "quiet": true
+      },
+      "includeConfig": {
+        "hardFail": true,
+        "includePaths": [
+          "helpers.proot/node_modules"
+        ]
+      },
+      "babelConfig": {
+        "presets": ["@babel/env"]
+      },
+      "standardConfig": {
+        "breakOnError": false,
+        "showRuleNames": true,
+        "standard": {
+          "globals": [
+            "requestAnimationFrame",
+            "sessionStorage"
+          ]
+        }
+      },
+      "renameConfig": {
+        "suffix": ".min"
+      }
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="images-configuration"> Images Configuration</h2>
+
+    The default images configuration is defined as follows:
+    ```.gfx.json
+    {
+      "gifConfig": {
+        "interlaced": true
+      },
+      "jpegConfig": {
+        "quality": 90,
+        "progressive": true
+      },
+      "pngConfig": {
+        "quality": [0.8, 0.9]
+      },
+      "svgConfig": {
+        "plugins": [
+          {
+            "cleanupAttrs": true
+          },
+          {
+            "removeDoctype": true
+          },
+          {
+            "removeComments": true
+          },
+          {
+            "removeXMLProcInst": true
+          },
+          {
+            "removeMetadata": true
+          },
+          {
+            "removeTitle": false
+          },
+          {
+            "removeDesc": false
+          },
+          {
+            "removeUselessDefs": true
+          },
+          {
+            "removeXMLNS": false
+          },
+          {
+            "removeEditorsNSData": true
+          },
+          {
+            "removeEmptyAttrs": true
+          },
+          {
+            "removeHiddenElems": true
+          },
+          {
+            "removeEditorsNSData": true
+          },
+          {
+            "removeEmptyText": true
+          },
+          {
+            "removeEmptyContainers": true
+          },
+          {
+            "removeViewBox": false
+          },
+          {
+            "cleanupEnableBackground": true
+          },
+          {
+            "convertStyleToAttrs": true
+          },
+          {
+            "convertColors": true
+          },
+          {
+            "convertPathData": true
+          },
+          {
+            "convertTransform": true
+          },
+          {
+            "removeUnknownsAndDefaults": true
+          },
+          {
+            "removeNonInheritableGroupAttrs": true
+          },
+          {
+            "removeUselessStrokeAndFill": true
+          },
+          {
+            "removeUnusedNS": true
+          },
+          {
+            "cleanupIDs": false
+          },
+          {
+            "cleanupNumericValues": true
+          },
+          {
+            "cleanupListOfValues": true
+          },
+          {
+            "moveElemsAttrsToGroup": true
+          },
+          {
+            "moveGroupAttrsToElems": false
+          },
+          {
+            "collapseGroups": true
+          },
+          {
+            "removeRasterImages": true
+          },
+          {
+            "mergePaths": true
+          },
+          {
+            "convertShapeToPath": false
+          },
+          {
+            "sortAttrs": true
+          },
+          {
+            "removeDimensions": true
+          },
+          {
+            "removeAttrs": false
+          },
+          {
+            "removeElementsByAttr": false
+          },
+          {
+            "addClassesToSVGElement": false
+          },
+          {
+            "addAttributesToSVGElement": false
+          },
+          {
+            "removeStyleElement": false
+          },
+          {
+            "removeScriptElement": false
+          },
+          {
+            "removeDimensions": false
+          }
+        ]
+      }
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="critical-css-configuration"> Critical CSS Configuration</h2>
+
+    The default Critical CSS configuration is defined as follows:
+    ```.critical.json
+    [{
+      "src": "style.css",
+      "settings": {
+        "out": "style.critical.css",
+        "url": "http://localhost:8080/",
+        "width": 1920,
+        "height": 1200,
+        "keepLargerMediaQueries": true,
+        "strict": false,
+        "blockJSRequests": false,
+        "phantomJsOptions": {
+          "ssl-protocol": "any",
+          "ignore-ssl-errors": true
+        }
+      }
+    }]
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="gzip-configuration"> Gzip Configuration</h2>
+
+    The default Gzip configuration is defined as follows:
+    ```.gzip.json
+    {}
+    ```
+
+    You could see all available options [on gulp-gzip the npm page].
+
+    <h2 id="semver-configuration"> Semver Configuration</h2>
+
+    The default Semver configuration is defined as follows:
+    ```.bump.json
+    {
+      "src": ["helpers.proot/package.json"]
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="kss-configuration"> KSS Configuration</h2>
+
+    The default KSS configuration is defined as follows:
+    ```.kss.json
+    {
+      "title": "Starter Project",
+      "source": "helpers.source",
+      "destination": "helpers.dist/docs/styleguide/",
+      "css": [
+        "helpers.dist/config.css.dist/style.css",
+        "helpers.dist/config.css.dist/foft.css"
+      ],
+      "js": [
+        "helpers.dist/js/foftFontLoading.js"
+      ]
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="sassdoc-configuration"> SassDoc Configuration</h2>
+
+    The default SassDoc configuration is defined as follows:
+    ```.sassdoc.json
+    {
+      "dest": "/docs/sass/",
+      "package": "package.json",
+      "autofill": true,
+      "verbose": true,
+      "theme": "default",
+      "display": {
+        "access": ["public", "private"],
+        "alias": true,
+        "watermark": true
+      },
+      "groups": {
+        "undefined": "Misc"
+      },
+      "basePath": "https://starter.silvestarbistrovic.from.hr/docs/sass/"
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="jsdoc-configuration"> JSDoc Configuration</h2>
+
+    The default JSDoc configuration is defined as follows:
+    ```.jsdoc.json
+    {
+      "src": [
+        "helpers.source/config.js.src/homepage.md",
+        "helpers.source/config.js.src/"
+      ],
+      "settings": {
+        "tags": {
+          "allowUnknownTags": true
+        },
+        "opts": {
+          "destination": "helpers.dist/docs/js/"
+        },
+        "plugins": [
+          "plugins/markdown"
+        ],
+        "templates": {
+          "cleverLinks": true,
+          "monospaceLinks": false,
+          "default": {
+            "outputSourceFiles": true
+          },
+          "path": "ink-docstrap",
+          "theme": "simplex",
+          "navType": "vertical",
+          "linenums": true,
+          "dateFormat": "MMMM Do YYYY, h:mm:ss a"
+        }
+      }
+    }
+    ```
+
+    If you need more help understanding the configuration, please open [a new issue].
+
+    <h2 id="helpers-configuration"> Helpers Configuration</h2>
+
+    The default helpers configuration is defined as follows:
+    ```.helpers.json
+    {
+      "wait": 20000
+    }
+    ```
+
+    <h2 id="watch-configuration"> Watch Configuration</h2>
+
+    The default watch configuration is defined as follows:
+    ```.watch.json
+    {
+      "ignoreInitial": true
+    }
+    ```
+
+    This setting will tell Gulp when to terminate the build (watch) process.
+
+    <h2 id="questions">Questions</h2>
+
+    SPRO would ask you the following questions:
+    - [GENERAL] Do you want to override the project? Be sure to commit all changes before you proceed.',
+    - [GENERAL] What is the root folder of the project?',
+    - [GENERAL] Where is the folder with the source code of the project (relative to default path)?',
+    - [GENERAL] Where do you want to store compiled code of the project (relative to default path)?',
+    - [GENERAL] Are you sure that you want to override the project?',
+    - [BROWSERSYNC] Do you want to run BrowserSync to preview changes in the browser?',
+    - [HTML] Do you want to run HTML tasks?',
+    - [HTML] Are you using Pug as a template engine?',
+    - [HTML] Where is the folder with HTML source code (relative to default source path)?',
+    - [HTML] Where do you want to store compiled HTML code (relative to default destination path)?',
+    - [HTML] Do you want to minify HTML code?',
+    - [HTML] Do you want to run inline source tasks (inline CSS or SVG in HTML code)?',
+    - [HTML] Do you want to lint HTML code?',
+    - [CSS] Do you want to run CSS tasks?',
+    - [CSS] Are you using Sass?',
+    - [CSS] Where is the folder with CSS source code (relative to default source path)?',
+    - [CSS] Where do you want to store compiled CSS code (relative to default destination path)?',
+    - [CSS] Do you want to minify CSS code?',
+    - [CSS] Do you want to autoprefix CSS code?',
+    - [CSS] Do you want to add sourcemaps for CSS code?',
+    - [CSS] Do you want to lint CSS code?',
+    - [JS] Do you want to run JavaScript (es6) tasks?',
+    - [JS] Where is the folder with JavaScript source code (relative to default source path)?',
+    - [JS] Where do you want to store compiled JavaScript code (relative to default destination path)?',
+    - [JS] Do you want to minify JavaScript code?',
+    - [JS] Do you want to add sourcemaps for JavaScript code?',
+    - [JS] Do you want to lint JavaScript code?',
+    - [IMAGES] Do you want to run image optimization tasks?',
+    - [IMAGES] Where is the folder with images (relative to default source path)?',
+    - [IMAGES] Where do you want to store optimized images (relative to default destination path)?',
+    - [FONTS] Do you use local fonts? Do you want to run font tasks?',
+    - [FONTS] Where is the folder with local fonts (relative to default source path)?',
+    - [FONTS] Where do you want to store local fonts (relative to default destination path)?',
+    - [FAVICON] Do you want to run favicon tasks?',
+    - [CRITICAL] Do you want to extract Critical CSS?',
+    - [COMPRESS] Do you want to compress (gzip) all assets?',
+    - [KSS] Do you want to add KSS style guide?',
+    - [KSS] Where do you want to store KSS style guide (relative to default destination path)?',
+    - [SASSDOC] Do you want to add documentation for the SASS code (SassDoc)?',
+    - [SASSDOC] Where do you want to store SassDoc files (relative to default destination path)?',
+    - [JSDOC] Do you want to add documentation for the JS code (JSDoc)?',
+    - [JSDOC] Where do you want to store JSdoc files (relative to default destination path)?',
+    - [SEMVER] Do you want to add semver versioning tasks (for automatic bump of any version in any file which supports semver versioning, like package.json)?',
+    - [YARN] Do you use Yarn as your default dependency manager?',
+
+    <h2 id="Dependencies">Dependencies</h2>
+
+    Every possible package for Gulp tasks:
+    - @babel/core,
+    - @babel/preset-env,
+    - browser-sync,
+    - del,
+    - eslint,
+    - eslint-config-airbnb-base,
+    - eslint-config-standard,
+    - eslint-plugin-import,
+    - eslint-plugin-node,
+    - eslint-plugin-standard,
+    - gulp,
+    - gulp-autoprefixer,
+    - gulp-babel,
+    - gulp-bump,
+    - gulp-clean-css,
+    - gulp-cssimport,
+    - gulp-eslint,
+    - gulp-exit,
+    - gulp-gzip,
+    - gulp-htmllint,
+    - gulp-htmlmin,
+    - gulp-if,
+    - gulp-imagemin,
+    - gulp-include,
+    - gulp-inline-source,
+    - gulp-jsdoc3,
+    - gulp-penthouse,
+    - gulp-pug,
+    - gulp-real-favicon,
+    - gulp-rename,
+    - gulp-sass,
+    - gulp-sourcemaps,
+    - gulp-standard,
+    - gulp-stylelint,
+    - gulp-uglify,
+    - gulp-wait,
+    - imagemin-mozjpeg,
+    - imagemin-pngquant,
+    - kss,
+    - path,
+    - sassdoc,
+    - stylelint,
+    - stylelint-config-sass-guidelines,
+    - stylelint-order, and
+    - stylelint-scss.
+
+    <h2 id="support">Support</h2>
+
+    Show your support by starring the project on [GitHub], or by [sharing on Twitter]. 🙏
+
+    Contribute: create [a new issue] or create [a pull request].
+
+    <h2 id="todo">Todo</h2>
+
+    - Consider adding terminalizer https://github.com/faressoft/terminalizer
+    - Consider adding siteaudit https://github.com/thecreazy/siteaudit
+
+    [in the Task Configuration section]: #task-configuration
+    [on BrowserSync the npm page]: https://browsersync.io/docs/options
+    [RealFaviconGenerator]: https://realfavicongenerator.net/
+    [on gulp-gzip the npm page]: https://www.npmjs.com/package/gulp-gzip#options
+    [GitHub]: https://github.com/maliMirkec/starter-project-cli
+    [sharing on Twitter]: https://twitter.com/intent/tweet?url=https://github.com/maliMirkec/starter-project-cli/&text=Starter%20Project%20CLI%20creates%20a%20perfect%20Gulp%20development%20environment%20for%20everyone%20within%20a%20few%20minutes.%20🔥%20Try%20it%20today!%20💯&via=malimirkeccita
+    [a new issue]: https://github.com/maliMirkec/starter-project-cli/issues/new
+    [a pull request]: https://github.com/maliMirkec/starter-project-cli/compare
