@@ -1,6 +1,6 @@
 {
   "name": "starter-project",
-  "version": "2.0.4-rc2",
+  "version": "2.0.4-rc4",
   "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
@@ -59,9 +59,7 @@
     "normalize.css": "^8.0.1",
     "sass-mq": "^5.0.0",
     "starter-project-cli": "^1.0.32",
-    "yarn": "^1.13.0"
-  },
-  "devDependencies": {
+    "yarn": "^1.13.0",
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "browser-sync": "^2.26.3",
