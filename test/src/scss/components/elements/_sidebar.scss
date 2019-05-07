@@ -1,0 +1,44 @@
+.sidebar {
+  padding: rem(10px) rem(10px) 0;
+
+  @include mq($from: desktop) {
+    padding: rem(20px) rem(10px);
+    position: sticky;
+    top: 0;
+  }
+
+  ul {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  li {
+    font-size: ms(0);
+
+    &:before {
+      content: none;
+    }
+  }
+
+  .highlight {
+    &:before {
+      color: $color-beta;
+    }
+
+    a {
+      color: $color-beta;
+    }
+  }
+
+  span {
+    @include mq($until: desktop) {
+      &:first-child {
+        display: none;
+      }
+    }
+
+    @include mq($from: desktop) {
+      margin-right: 0.2em;
+    }
+  }
+}

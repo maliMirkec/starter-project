@@ -1,0 +1,19 @@
+{
+  "extends": ["airbnb-base", "standard"],
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-console": "off"
+  },
+  "globals": {
+    "requestAnimationFrame": true,
+    "sessionStorage": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "amd": true,
+    "commonjs": true
+  }
+}
