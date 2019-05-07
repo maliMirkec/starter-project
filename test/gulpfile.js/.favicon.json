@@ -1,0 +1,4 @@
+{
+  "src": "helpers.source/config.html.src/_assets/favicon.pug",
+  "dest": "helpers.source/config.html.src/_assets"
+}

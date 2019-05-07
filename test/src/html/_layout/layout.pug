@@ -1,0 +1,14 @@
+doctype
+html(lang="en")
+  include /_partials/head.pug
+  body
+    include /_partials/header.pug
+    main.main
+      include /_partials/sidebar.pug
+      .content
+        block content
+    include /_partials/footer.pug
+    include /_assets/deferred-styles.pug
+    include /_assets/foft-font-loading.pug
+    include /_assets/scripts.pug
+
