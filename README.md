@@ -28,7 +28,7 @@ npm install starter-project --save
 After the installation, run the following command to set up the project:
 
 ```
-node node_modules/starter-package/postinstall.js
+node node_modules/starter-project/postinstall.js
 ```
 
 Starter Project should have installed source files, Gulp files, and configuration files.
