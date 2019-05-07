@@ -35,6 +35,8 @@ Starter Project should have installed source files, Gulp files, and configuratio
 
 If you want to learn more about the project structure, jump to the [Structure section](#Structure). If you want to learn more about npm packages, jump to the [Packages section](#Packages).
 
+In case you want to update the project structure, you should update the SPRO config. [Learn more about SPRO here].
+
 ## Gulp tasks
 
 You should be able to run Gulp tasks now. In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
@@ -241,3 +243,4 @@ Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-proj
 
 [Starter Project CLI]: https://starter.silvestarbistrovic.from.hr/
 [Starter Project CLI docs]: https://starter.silvestarbistrovic.from.hr/
+[Learn more about SPRO here]: https://starter.silvestarbistrovic.from.hr/
