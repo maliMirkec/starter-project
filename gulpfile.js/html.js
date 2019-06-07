@@ -11,36 +11,36 @@ const { helpers } = require('./helpers')
 
 const htmlConfig = require('./.html.json')
 
+let thisPugConfig = {}
+
+if (global.config.html.pug) {
+  thisPugConfig = htmlConfig.pugConfig.basedir
+    ? htmlConfig.pugConfig
+    : Object.assign({}, htmlConfig.pugConfig, { basedir: helpers.trim(`${helpers.source()}/${global.config.html.src}/`) })
+}
+
+let thisHtmllintConfig = {}
+
+if (global.config.html.lint) {
+  thisHtmllintConfig = htmlConfig.htmllintConfig.config
+    ? htmlConfig.htmllintConfig.config
+    : Object.assign({}, htmlConfig.htmllintConfig, { config: `${helpers.proot()}.htmllintrc` })
+}
+
+let thisInlineConfig = {}
+
+if (global.config.html.inline) {
+  thisInlineConfig = htmlConfig.inlineConfig.rootpath
+    ? htmlConfig.inlineConfig
+    : Object.assign({}, htmlConfig.inlineConfig, { rootpath: path.resolve(helpers.dist()) })
+}
+
+const htmlSrc = global.config.html.pug
+  ? [helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/_**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/**/_**/*.pug`)]
+  : helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.html`)
+
 // Will process Pug files
 function htmlStart () {
-  let thisPugConfig = {}
-
-  if (global.config.html.pug) {
-    thisPugConfig = htmlConfig.pugConfig.basedir
-      ? htmlConfig.pugConfig
-      : Object.assign({}, htmlConfig.pugConfig, { basedir: helpers.trim(`${helpers.source()}/${global.config.html.src}/`) })
-  }
-
-  let thisHtmllintConfig = {}
-
-  if (global.config.html.lint) {
-    thisHtmllintConfig = htmlConfig.htmllintConfig.config
-      ? htmlConfig.htmllintConfig.config
-      : Object.assign({}, htmlConfig.htmllintConfig, { config: `${helpers.proot()}.htmllintrc` })
-  }
-
-  let thisInlineConfig = {}
-
-  if (global.config.html.inline) {
-    thisInlineConfig = htmlConfig.inlineConfig.rootpath
-      ? htmlConfig.inlineConfig
-      : Object.assign({}, htmlConfig.inlineConfig, { rootpath: path.resolve(helpers.dist()) })
-  }
-
-  const htmlSrc = global.config.html.pug
-    ? [helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/_**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/**/_**/*.pug`)]
-    : helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.html`)
-
   return src(htmlSrc)
     .pipe(gulpif(global.config.html.pug, pug(thisPugConfig)))
     .pipe(gulpif(global.config.html.lint, htmllint(thisHtmllintConfig)))

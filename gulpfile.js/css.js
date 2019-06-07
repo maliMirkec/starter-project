@@ -12,6 +12,12 @@ const { helpers } = require('./helpers')
 
 const cssConfig = require('./.css.json')
 
+const thisSassConfig = (global.config.css.sass)
+  ? Object.assign({}, cssConfig.sassConfig, {
+    includePaths: cssConfig.sassConfig.includePaths.map(path => helpers.parse(path))
+  })
+  : {}
+
 // gulp-if fix
 if (!global.config.css.sourcemaps) {
   sourcemaps.init = () => true
@@ -20,12 +26,6 @@ if (!global.config.css.sourcemaps) {
 
 // Will process Sass files
 function cssStart () {
-  const thisSassConfig = (global.config.css.sass)
-    ? Object.assign({}, cssConfig.sassConfig, {
-      includePaths: cssConfig.sassConfig.includePaths.map(path => helpers.parse(path))
-    })
-    : {}
-
   return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/*.scss`))
     .pipe(gulpif(global.config.css.sourcemaps, sourcemaps.init()))
     .pipe(gulpif(global.config.css.lint, gulpStylelint(cssConfig.styleLintConfig)))
@@ -42,12 +42,6 @@ function cssStart () {
 
 // Will process non Critical Sass files
 function cssStartListen () {
-  const thisSassConfig = (global.config.css.sass)
-    ? Object.assign({}, cssConfig.sassConfig, {
-      includePaths: cssConfig.sassConfig.includePaths.map(path => helpers.parse(path))
-    })
-    : {}
-
   return src([helpers.trim(`${helpers.source()}/${global.config.css.src}/*.scss`), helpers.trim(`!${helpers.source()}/${global.config.css.src}/*.critical.scss`)])
     .pipe(gulpif(global.config.css.sourcemaps, sourcemaps.init()))
     .pipe(gulpif(global.config.css.lint, gulpStylelint(cssConfig.styleLintConfig)))
