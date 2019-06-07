@@ -5,18 +5,18 @@ const { helpers } = require('./helpers')
 
 const kssConfig = require('./.kss.json')
 
+const thisCss = kssConfig.css.map(path => helpers.parse(path))
+const thisJs = kssConfig.js.map(path => helpers.parse(path))
+
+const thisKssConfig = Object.assign({}, kssConfig, {
+  source: helpers.parse(kssConfig.source),
+  destination: helpers.parse(kssConfig.destination),
+  css: thisCss,
+  js: thisJs
+})
+
 // Will process KSS docs
 function kssStart () {
-  const thisCss = kssConfig.css.map(path => helpers.parse(path))
-  const thisJs = kssConfig.js.map(path => helpers.parse(path))
-
-  const thisKssConfig = Object.assign({}, kssConfig, {
-    source: helpers.parse(kssConfig.source),
-    destination: helpers.parse(kssConfig.destination),
-    css: thisCss,
-    js: thisJs
-  })
-
   return kss(thisKssConfig)
 }
 

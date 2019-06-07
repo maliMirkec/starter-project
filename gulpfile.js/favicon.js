@@ -7,16 +7,16 @@ const { helpers } = require('./helpers')
 const faviconConfig = require('./.favicon.json')
 const faviconDataConfig = require('./.favicon-data.json')
 
+const thisFaviconDataConfig = Object.assign({}, faviconDataConfig, {
+  masterPicture: `${helpers.parse(faviconDataConfig.masterPicture)}`,
+  temp: `${helpers.parse(faviconDataConfig.temp)}`,
+  dest: `${helpers.parse(faviconDataConfig.dest)}`,
+  iconsPath: `${helpers.parse(faviconDataConfig.iconsPath)}`,
+  markupFile: `${helpers.parse(faviconDataConfig.markupFile)}`
+})
+
 // Will process favicon file
 function faviconStart (cb) {
-  const thisFaviconDataConfig = Object.assign({}, faviconDataConfig, {
-    masterPicture: `${helpers.parse(faviconDataConfig.masterPicture)}`,
-    temp: `${helpers.parse(faviconDataConfig.temp)}`,
-    dest: `${helpers.parse(faviconDataConfig.dest)}`,
-    iconsPath: `${helpers.parse(faviconDataConfig.iconsPath)}`,
-    markupFile: `${helpers.parse(faviconDataConfig.markupFile)}`
-  })
-
   if (fs.existsSync(helpers.trim(`${thisFaviconDataConfig.temp}/favicon.ico`))) {
     src(helpers.trim(`${thisFaviconDataConfig.temp}/*`))
       .pipe(dest(helpers.trim(`${thisFaviconDataConfig.dest}`)))
