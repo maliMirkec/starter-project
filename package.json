@@ -82,7 +82,7 @@
     "gulp-htmllint": "^0.0.16",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^5.0.3",
+    "gulp-imagemin": "^6.0.0",
     "gulp-include": "^2.3.1",
     "gulp-inline-source": "^4.0.0",
     "gulp-jsdoc3": "^2.0.0",
