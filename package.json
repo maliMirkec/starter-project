@@ -1,6 +1,6 @@
 {
   "name": "starter-project",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
