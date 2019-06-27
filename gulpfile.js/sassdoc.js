@@ -5,13 +5,13 @@ const { helpers } = require('./helpers')
 
 const sassdocConfig = require('./.sassdoc.json')
 
+const thisSassdocConfig = Object.assign({}, sassdocConfig, {
+  package: `${helpers.proot()}${sassdocConfig.package}`,
+  dest: helpers.parse(sassdocConfig.dest)
+})
+
 // Will process SassDoc docs
 function sassdocStart () {
-  const thisSassdocConfig = Object.assign({}, sassdocConfig, {
-    package: `${helpers.proot()}${sassdocConfig.package}`,
-    dest: helpers.parse(sassdocConfig.dest)
-  })
-
   return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`))
     .pipe(sassdoc(thisSassdocConfig))
 }

@@ -1,3 +1,5 @@
+import FontFaceObserver from 'fontfaceobserver'
+
 /**
  * A better font loading using FontFaceObserver.
  *
@@ -11,9 +13,6 @@
  * @author Zach Leatherman
  * @see https://www.zachleat.com/web/comprehensive-webfonts/#critical-foft
  */
-let FontFaceObserver;
-
-// =include fontfaceobserver/fontfaceobserver.js
 
 /**
  * @function

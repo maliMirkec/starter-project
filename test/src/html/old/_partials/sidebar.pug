@@ -1,9 +1,0 @@
-- var navData = [{ 'title': 'Version 2', 'href': '/' }, { 'title': 'Getting Started', 'href': '/old/' }, { 'title': 'Installation', 'href': '/old/installation/' }, { 'title': 'Commands', 'href': '/old/commands/' }, { 'title': 'Configuration', 'href': '/old/configuration/' }, { 'title': 'Features', 'href': '/old/features/' }, { 'title': 'Structure', 'href': '/old/structure/' }, { 'title': 'Examples', 'href': '/old/examples/' }, { 'title': 'GitHub', 'href': 'https://github.com/maliMirkec/starter-project' }, { 'title': 'NPM', 'href': 'https://www.npmjs.com/package/starter-project' }, { 'title': 'Contact', 'href': 'mailto:me@silvestarbistrovic.from.hr?Subject=Contact' }]
-
-aside.sidebar
-  nav
-    ul
-      each val, index in navData
-        - var currentClass = val.title === pageTitle ? 'highlight' : ''
-        li(class=currentClass)
-          a(href=val.href)= val.title

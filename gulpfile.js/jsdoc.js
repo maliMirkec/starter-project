@@ -5,18 +5,18 @@ const { helpers } = require('./helpers')
 
 const jsdocConfig = require('./.jsdoc.json')
 
+const thisSrc = jsdocConfig.src.map(path => helpers.parse(path))
+
+const thisOpts = Object.assign({}, jsdocConfig.settings.opts, {
+  destination: helpers.parse(jsdocConfig.settings.opts.destination)
+})
+
+const thisSettings = Object.assign({}, jsdocConfig.settings, {
+  opts: thisOpts
+})
+
 // Will process JSdoc docs
 function jsdocStart () {
-  const thisSrc = jsdocConfig.src.map(path => helpers.parse(path))
-
-  const thisOpts = Object.assign({}, jsdocConfig.settings.opts, {
-    destination: helpers.parse(jsdocConfig.settings.opts.destination)
-  })
-
-  const thisSettings = Object.assign({}, jsdocConfig.settings, {
-    opts: thisOpts
-  })
-
   return src(thisSrc)
     .pipe(jsdoc(thisSettings))
 }

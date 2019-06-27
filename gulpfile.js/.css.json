@@ -15,7 +15,6 @@
     }]
   },
   "autoprefixerConfig": {
-    "browsers": ["last 5 versions"],
     "cascade": false
   },
   "renameConfig": {
