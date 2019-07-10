@@ -33,7 +33,7 @@ ul {
 }
 
 li {
-  &:before {
+  ul &:before {
     color: $color-delta;
     content: '✔';
     font-size: ms(-1);
