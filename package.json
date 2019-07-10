@@ -52,6 +52,7 @@
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "chalk": "^2.4.2",
     "del": "^5.0.0",
@@ -104,10 +105,7 @@
     "stylelint-config-sass-guidelines": "^6.0.0",
     "stylelint-order": "^3.0.0",
     "stylelint-scss": "^3.8.0",
-    "yarn": "^1.13.0"
-  },
-  "devDependencies": {
-    "babel-loader": "^8.0.6",
+    "yarn": "^1.13.0",
     "webpack": "^4.35.0",
     "webpack-stream": "^5.2.1"
   }
