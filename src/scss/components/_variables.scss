@@ -1,6 +1,6 @@
 /// Media query definition for mobile devices, used in css-locks.
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 /// @group 1.1.Sizes
 /// @name mq--mobile
@@ -9,7 +9,7 @@ $mq--mobile: 480px;
 
 /// Media query definition for desktop devices, used in css-locks.
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 /// @group 1.1.Sizes
 /// @name mq--desktop
@@ -18,7 +18,7 @@ $mq--desktop: 960px;
 
 /// Default font size on mobile devices, used in css-locks.
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 /// @group 1.1.Sizes
 /// @name font-size--mobile
@@ -27,7 +27,7 @@ $font-size--mobile: 14px;
 
 /// Default font size on desktop devices, used in css-locks.
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 /// @group 1.1.Sizes
 /// @name font-size--desktop
@@ -36,7 +36,7 @@ $font-size--desktop: 16px;
 
 /// Default line-height
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example line-height: $line-height;
 /// @group 1.1.Sizes
 /// @name line-height
@@ -45,7 +45,7 @@ $line-height: 1.5;
 
 /// Configuration for modular scale
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include css-locks(font-size, $mq--mobile, $mq--desktop, $font-size--mobile, $font-size--desktop);
 /// @group 1.1.Sizes
 /// @name modularscale
@@ -58,7 +58,7 @@ $modularscale: (
 
 /// Configuration for media queries
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example
 ///   @include mq($from: mobile, $until: desktop) {
 ///     color: $color-alpha;
@@ -74,7 +74,7 @@ $mq-breakpoints: (
 
 /// Color from color palette
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example color: $color-alpha;
 /// @group 1.2.Colors
 /// @name color-alpha
@@ -83,7 +83,7 @@ $color-alpha: #ba1ada;
 
 /// Color from color palette
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example color: $color-beta;
 /// @group 1.2.Colors
 /// @name color-beta
@@ -92,7 +92,7 @@ $color-beta: #d91a79;
 
 /// Color from color palette
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example color: $color-gamma;
 /// @group 1.2.Colors
 /// @name color-gamma
@@ -101,7 +101,7 @@ $color-gamma: #138a8a;
 
 /// Color from color palette
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example color: $color-delta;
 /// @group 1.2.Colors
 /// @name color-delta
@@ -110,7 +110,7 @@ $color-delta: #137a8f;
 
 /// Color from color palette
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example color: $color-epsilon;
 /// @group 1.2.Colors
 /// @name color-epsilon
@@ -119,7 +119,7 @@ $color-epsilon: #ffe;
 
 /// Color for text
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example color: $color-text;
 /// @group 1.2.Colors
 /// @name color-text
@@ -128,7 +128,7 @@ $color-text: #383738;
 
 /// Transition duration
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example transition-duration: $tra;
 /// @group 1.3.Transitions
 /// @name trd
@@ -137,7 +137,7 @@ $trd: 0.175s;
 
 /// Transition animation
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example transition-duration: $tra;
 /// @group 1.3.Transitions
 /// @name tra
@@ -146,7 +146,7 @@ $tra: cubic-bezier(0.04, 0.88, 0.74, 1.04);
 
 /// Lato
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example font-family: $font-alpha;
 /// @group 1.4.Fonts
 /// @name font-alpha
@@ -155,7 +155,7 @@ $font-alpha: 'Lato';
 
 /// Lato Subset
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example font-family: $font-alpha-subset;
 /// @group 1.4.Fonts
 /// @name font-alpha-subset
