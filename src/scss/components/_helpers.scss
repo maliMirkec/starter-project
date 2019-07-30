@@ -1,6 +1,6 @@
 /// Function for converting a value to rem unit
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example font-size: rem(20px, 'mobile');
 /// @group 3.1.Helpers
 /// @name rem
@@ -22,7 +22,7 @@
 
 /// Function that calculates tracking
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example letter-spacing: tracking(200);
 /// @group 3.1.Helpers
 /// @name tracking
@@ -41,7 +41,7 @@
 
 /// Mixin for defining tracking
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include ls(100);
 /// @group 3.1.Helpers
 /// @name ls
@@ -53,7 +53,7 @@
 
 /// Mixin for reseting padding and margin to zero
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include zero-box;
 /// @group 3.1.Helpers
 /// @name zero-box
@@ -65,7 +65,7 @@
 
 /// Mixin for defining transition
 /// @access public
-/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @author Silvestar Bistrović <me@silvestar.codes>
 /// @example @include tra($trd, $tra);
 /// @group 3.1.Helpers
 /// @name tra

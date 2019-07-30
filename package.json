@@ -1,6 +1,6 @@
 {
   "name": "starter-project",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
@@ -43,12 +43,12 @@
     "JSDoc",
     "Styleguide"
   ],
-  "author": "Silvestar Bistrović <me@silvestarbistrovic.from.hr>",
+  "author": "Silvestar Bistrović <me@silvestar.codes>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/maliMirkec/starter-project/issues"
   },
-  "homepage": "https://starter.silvestarbistrovic.from.hr",
+  "homepage": "https://starter.silvestar.codes",
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
