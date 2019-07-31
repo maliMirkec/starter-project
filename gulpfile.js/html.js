@@ -3,15 +3,22 @@ const gulpif = require('gulp-if')
 const rename = require('gulp-rename')
 const path = require('path')
 const pug = global.config.html.pug ? require('gulp-pug') : () => true
+const data = global.config.html.pug ? require('gulp-data') : () => true
 const htmlmin = global.config.html.minify ? require('gulp-htmlmin') : () => true
 const htmllint = global.config.html.lint ? require('gulp-htmllint') : () => true
 const inlineSource = global.config.html.inline ? require('gulp-inline-source') : () => true
+const fs = global.config.html.inline ? require('fs') : () => true
 
 const { helpers } = require('./helpers')
 
 const htmlConfig = require('./.html.json')
 
 let thisPugConfig = {}
+
+const siteConfigs = [{
+  name: 'site',
+  path: helpers.trim(`${helpers.proot()}/data/site.json`)
+}]
 
 if (global.config.html.pug) {
   thisPugConfig = htmlConfig.pugConfig.basedir
@@ -42,6 +49,17 @@ const htmlSrc = global.config.html.pug
 // Will process Pug files
 function htmlStart () {
   return src(htmlSrc)
+    .pipe(gulpif(global.config.html.pug, data(() => {
+      const temp = {}
+
+      siteConfigs.forEach((siteConfig) => {
+        console.log(siteConfig)
+
+        temp[siteConfig.name] = JSON.parse(fs.readFileSync(siteConfig.path))
+      })
+
+      return temp
+    })))
     .pipe(gulpif(global.config.html.pug, pug(thisPugConfig)))
     .pipe(gulpif(global.config.html.lint, htmllint(thisHtmllintConfig)))
     .pipe(gulpif(global.config.html.inline, inlineSource(thisInlineConfig)))
@@ -51,9 +69,9 @@ function htmlStart () {
     .pipe(gulpif(global.config.sync.run, global.bs.stream()))
 }
 
-// When Pug file is changed, it will process Pug file, too
+// When Pug, md, or config file is changed, it will process Pug file, too
 function htmlListen () {
-  return watch(helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), global.config.watchConfig, htmlStart)
+  return watch([...siteConfigs.map(siteConfig => siteConfig.path), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.md`)], global.config.watchConfig, htmlStart)
 }
 
 // When Critical CSS file is changed, it will process HTML, too

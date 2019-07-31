@@ -4,10 +4,4 @@ block variables
   - pageTitle = "Content Not Found"
 
 block content
-  :markdown-it(html)
-
-    # Error 404
-
-    Content not found.
-
-    Go back to [homepage](/).
+  include:markdown-it(html) 404.md
