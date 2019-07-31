@@ -1,23 +1,23 @@
-# [Starter Project](https://starter.silvestarbistrovic.from.hr)
+## Starter Project
 
 [![Starter Project on NPM](https://img.shields.io/badge/starter--project-npm-blue.svg)](https://www.npmjs.com/package/starter-project)
 [![Starter Project CLI on NPM](https://img.shields.io/badge/starter--project--cli-npm-blue.svg)](https://www.npmjs.com/package/starter-project-cli)
 
 > Starter Package is the best starting point for your new project — achieve the maximum score on page speed testing tools.
 
-![Starter Project Logo - Folder with start button](https://raw.githubusercontent.com/maliMirkec/starter-project/master/src/gfx/png/starter-project-md.png)
+![Starter Project Logo - Folder with start button](/gfx/png/starter-project-md.png)
 
 Starter Package is a package with the latest best practices for your HTML (pug), CSS (Sass), JavaScript (es6), graphic, font, and favicon files.
 
-# Version 2
+## Version 2
 
-Version 2 is a major update! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
+> ###### Version 2 is a major update! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
 
 You could use `node_modules/.bin/spro start` command, if you want to reinitialize Starter Project CLI. See more at [Starter Project CLI docs].
 
-_Version 2 is not backward compatible with [version 1](https://starter.silvestarbistrovic.from.hr/old/)._
+_Version 2 is not backward compatible with [version 1](/old/)._
 
-## Installation
+### Installation
 
 The package is available on npm. To install Starter Package, create a new directory, enter it and run the following command to install the latest version:
 
@@ -28,27 +28,24 @@ npm install starter-project --save
 After the installation, run the following command to set up the project:
 
 ```
-node node_modules/starter-project/postinstall.js
+node node_modules/starter-package/postinstall.js
 npm i -S fontfaceobserver
 ```
 
 Starter Project should have installed source files, Gulp files, and configuration files.
 
-If you want to learn more about the project structure, jump to the [Structure section](#Structure). If you want to learn more about npm packages, jump to the [Packages section](#Packages).
+If you want to learn more about the project structure, jump to the Structure section. If you want to learn more about npm packages, jump to the Packages section.
 
-In case you want to update the project structure, you should update the SPRO config. [Learn more about SPRO here].
-
-## Gulp tasks
+### Gulp tasks
 
 You should be able to run Gulp tasks now. In the `gulpfile.js` folder you could find all Gulp task files and configuration files.
 
-There are three primary Gulp tasks:
-
-| Task      | Description                                                                                   |
-| --------- | --------------------------------------------------------------------------------------------- |
-| `default` | the task for running all the tasks (useful for more thorough development process)             |
-| `build`   | the task for running all tasks with the exit process (useful for Netlify builds, for example) |
-| `dev`     | the task for running only essential tasks (useful for basic development process)              |
+There are three available major Gulp tasks:
+| Task      | Description                                                                                     |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| `default` | the task for running and watching all the tasks (useful for more thorough development process)  |
+| `build`   | the task for running all tasks with the exit process (useful for Netlify builds)                |
+| `dev`     | the task for running and watching only essential tasks (useful for primary development process) |
 
 There are four other Gulp tasks:
 
@@ -61,18 +58,17 @@ There are four other Gulp tasks:
 
 Run `gulp --tasks` to see all available Gulp tasks.
 
-## Configuration
+### Configuration
 
-Site configuration is stored in the data/site.json file. Make sure to update the configuration file per your needs. If you want to access the data from pug templates, make sure to update the src/layout/variables.pug file with the correct configuration.
+If you want more control over your Gulp tasks, you could find the configuration files for every single Gulp task in the `gulpfile.js` folder.
 
-If you want more control over your Gulp tasks, you could find the Gulp configuration files for every single Gulp task in the gulpfile.js folder.
+`.starter-project.json` is the main configuration file in which you could find all global settings for Gulp tasks. Avoid editing this file manually. See [Starter Project CLI docs] for more details.
 
-`.starter-project.json` is the main Gulp configuration file in which you could find all global settings for Gulp tasks. Avoid editing this file manually. See [Starter Project CLI docs] for more details.
-
-## Structure
+### Structure
 
 ```
 |-- Workspace
+    |-- .browserslistrc
     |-- .editorconfig
     |-- .eslintignore
     |-- .eslintrc.json
@@ -188,62 +184,57 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
                     |-- _sig.scss
 ```
 
-## Packages
+### Packages
 
-Starter Package uses the following packages:
-- @babel/core,
-- @babel/preset-env,
-- browser-sync,
-- del,
-- eslint,
-- eslint-config-airbnb-base,
-- eslint-config-standard,
-- eslint-plugin-import,
-- eslint-plugin-node,
-- eslint-plugin-standard,
-- gulp,
-- gulp-autoprefixer,
-- gulp-babel,
-- gulp-bump,
-- gulp-clean-css,
-- gulp-cssimport,
-- gulp-eslint,
-- gulp-exit,
-- gulp-htmllint,
-- gulp-htmlmin,
-- gulp-if,
-- gulp-imagemin,
-- gulp-include,
-- gulp-inline-source,
-- gulp-penthouse,
-- gulp-pug,
-- gulp-real-favicon,
-- gulp-rename,
-- gulp-sass,
-- gulp-sourcemaps,
-- gulp-standard,
-- gulp-stylelint,
-- gulp-uglify,
-- gulp-wait,
-- imagemin-mozjpeg,
-- imagemin-pngquant,
-- kss,
-- path,
-- stylelint,
-- stylelint-config-sass-guidelines,
-- stylelint-order, and
-- stylelint-scss.
+Starter Package CLI uses the following packages:
+- `@babel/core`,
+- `@babel/preset-env`,
+- `browser-sync`,
+- `del`,
+- `eslint`,
+- `eslint-config-airbnb-base`,
+- `eslint-config-standard`,
+- `eslint-plugin-import`,
+- `eslint-plugin-node`,
+- `eslint-plugin-standard`,
+- `gulp`,
+- `gulp-autoprefixer`,
+- `gulp-babel`,
+- `gulp-bump`,
+- `gulp-clean-css`,
+- `gulp-cssimport`,
+- `gulp-eslint`,
+- `gulp-exit`,
+- `gulp-htmllint`,
+- `gulp-htmlmin`,
+- `gulp-if`,
+- `gulp-imagemin`,
+- `gulp-include`,
+- `gulp-inline-source`,
+- `gulp-penthouse`,
+- `gulp-pug`,
+- `gulp-real-favicon`,
+- `gulp-rename`,
+- `gulp-sass`,
+- `gulp-sourcemaps`,
+- `gulp-standard`,
+- `gulp-stylelint`,
+- `gulp-uglify`,
+- `gulp-wait`,
+- `imagemin-mozjpeg`,
+- `imagemin-pngquant`,
+- `kss`,
+- `path`,
+- `stylelint`,
+- `stylelint-config-sass-guidelines`,
+- `stylelint-order`, and
+- `stylelint-scss`.
 
-## Support
+### Support
 
 Show your support by starring the project on [Github](https://github.com/maliMirkec/starter-project), or by [sharing on Twitter](https://twitter.com/intent/tweet?url=https://starter.silvestarbistrovic.from.hr&text=Starter%20Project%20is%20the%20easiest%20way%20to%20implement%20the%20latest%20best%20practices%20in%20your%20project.%20💯%20Try%20it%20out%20today!%20🔥&via=malimirkeccita), please. 🙏
 
 Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/issues/new) or create [a pull request](https://github.com/maliMirkec/starter-project/compare).
 
-## Changelog
-
-Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-project/blob/master/CHANGELOG.md) file.
-
-[Starter Project CLI]: https://starter.silvestarbistrovic.from.hr/
-[Starter Project CLI docs]: https://starter.silvestarbistrovic.from.hr/
-[Learn more about SPRO here]: https://starter.silvestarbistrovic.from.hr/
+[Starter Project CLI]: /
+[Starter Project CLI docs]: /
