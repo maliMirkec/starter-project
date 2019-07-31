@@ -53,8 +53,6 @@ function htmlStart () {
       const temp = {}
 
       siteConfigs.forEach((siteConfig) => {
-        console.log(siteConfig)
-
         temp[siteConfig.name] = JSON.parse(fs.readFileSync(siteConfig.path))
       })
 
