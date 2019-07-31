@@ -1,9 +1,7 @@
-- var navData = [{ 'title': 'Home', 'href': '/' }, { 'title': 'About', 'href': '/about.html' }, { 'title': 'GitHub', 'href': 'https://github.com/maliMirkec/starter-project' }, { 'title': 'Contact', 'href': 'mailto:me@silvestar.codes?Subject=Contact[SP]' }]
-
 aside.sidebar
   nav
     ul
-      each val, index in navData
+      each val, index in nav
         - var currentClass = val.title == pageTitle ? 'highlight' : ''
         li(class=currentClass)
           a(href=val.href)
