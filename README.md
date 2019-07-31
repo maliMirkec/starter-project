@@ -32,6 +32,8 @@ node node_modules/starter-project/postinstall.js
 npm i -S fontfaceobserver
 ```
 
+_If you don't want to use [fontfaceobserver], skip the last command._
+
 Starter Project should have installed source files, Gulp files, and configuration files.
 
 If you want to learn more about the project structure, jump to the [Structure section](#Structure). If you want to learn more about npm packages, jump to the [Packages section](#Packages).
@@ -63,9 +65,11 @@ Run `gulp --tasks` to see all available Gulp tasks.
 
 ## Configuration
 
-If you want more control over your Gulp tasks, you could find the configuration files for every single Gulp task in the `gulpfile.js` folder.
+Site configuration is stored in the `data/site.json` file. Make sure to update the configuration file per your needs. If you want to access the data from pug templates, make sure to update the `src/layout/variables.pug` file with the correct configuration.
 
-`.starter-project.json` is the main configuration file in which you could find all global settings for Gulp tasks. Avoid editing this file manually. See [Starter Project CLI docs] for more details.
+If you want more control over your Gulp tasks, you could find the Gulp configuration files for every single Gulp task in the `gulpfile.js` folder.
+
+`.starter-project.json` is the main Gulp configuration file in which you could find all global settings for Gulp tasks. Avoid editing this file manually. See [Starter Project CLI docs] for more details.
 
 ## Structure
 
@@ -77,6 +81,8 @@ If you want more control over your Gulp tasks, you could find the configuration 
     |-- .gitignore
     |-- .htmllintrc
     |-- .stylelintrc
+    |-- data
+    |   |-- site.json
     |-- gulpfile.js
     |   |-- .critical.json
     |   |-- .css.json
@@ -245,3 +251,4 @@ Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-proj
 [Starter Project CLI]: https://starter.silvestar.codes/
 [Starter Project CLI docs]: https://starter.silvestar.codes/
 [Learn more about SPRO here]: https://starter.silvestar.codes/
+[fontfaceobserver]: https://github.com/bramstein/fontfaceobserver
