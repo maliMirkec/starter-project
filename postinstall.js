@@ -6,7 +6,7 @@ const chalk = require('chalk')
 
 ncp.limit = 16
 
-const helpers = ['gulpfile.js', 'src', '.editorconfig', '.htmllintrc', '.stylelintrc', '.eslintignore', '.eslintrc.json', '.browserslistrc']
+const helpers = ['gulpfile.js', 'src', 'data', '.editorconfig', '.htmllintrc', '.stylelintrc', '.eslintignore', '.eslintrc.json']
 const destinationPath = './'
 
 const message = (text, error = true) => (text ? console.log(chalk.hex(error ? '#e01258' : '#12e09f')(text)) : false)
