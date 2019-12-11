@@ -1,16 +1,15 @@
-const { helpers } = require('./helpers')
-const path = require('path')
+const path = require('path');
+const { helpers } = require('./helpers');
 
 module.exports = {
   mode: 'production',
   entry: {
     index: helpers.parse('helpers.source/config.js.src/index.js'),
-    deferredStyles: helpers.parse('helpers.source/config.js.src/deferredStyles.js'),
-    foftFontLoading: helpers.parse('helpers.source/config.js.src/foftFontLoading.js')
+    foftFontLoading: helpers.parse('helpers.source/config.js.src/foftFontLoading.js'),
   },
   output: {
     path: path.resolve(`${__dirname}/${helpers.parse('helpers.dist/config.js.dist/')}`),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -20,10 +19,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/env']
-          }
-        }
-      }
-    ]
-  }
-}
+            presets: ['@babel/env'],
+          },
+        },
+      },
+    ],
+  },
+};
