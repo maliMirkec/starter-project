@@ -1,13 +1,13 @@
 // const gulp = require('gulp')
-const del = require('del')
+const del = require('del');
 
-const { helpers } = require('./helpers')
+const { helpers } = require('./helpers');
 
 // Will delete dist folder
-function cleanStart () {
-  return del(helpers.dist())
+function cleanStart() {
+  return del(helpers.dist());
 }
 
 exports.clean = {
-  cleanStart
-}
+  cleanStart,
+};
