@@ -167,7 +167,6 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
         |   |-- structure
         |       |-- index.pug
         |-- js
-        |   |-- deferredStyles.js
         |   |-- foftFontLoading.js
         |   |-- homepage.md
         |   |-- index.js
