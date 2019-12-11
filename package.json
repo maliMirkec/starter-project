@@ -87,7 +87,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-standard": "^14.0.0",
-    "gulp-stylelint": "^9.0.0",
+    "gulp-stylelint": "^11.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-wait": "^0.0.2",
     "imagemin-mozjpeg": "^8.0.0",
