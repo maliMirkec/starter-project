@@ -13,16 +13,6 @@
   "babelConfig": {
     "presets": ["@babel/env"]
   },
-  "standardConfig": {
-    "breakOnError": false,
-    "showRuleNames": true,
-    "standard": {
-      "globals": [
-        "requestAnimationFrame",
-        "sessionStorage"
-      ]
-    }
-  },
   "renameConfig": {
     "suffix": ".min"
   }

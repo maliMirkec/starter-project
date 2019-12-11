@@ -222,7 +222,6 @@ Starter Package uses the following packages:
 - gulp-rename,
 - gulp-sass,
 - gulp-sourcemaps,
-- gulp-standard,
 - gulp-stylelint,
 - gulp-uglify,
 - gulp-wait,
