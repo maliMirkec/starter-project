@@ -1,5 +1,6 @@
 {
-  "extends": ["airbnb-base", "standard"],
+  "extends": ["airbnb-base"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6
   },

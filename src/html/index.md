@@ -342,16 +342,6 @@ The default JavaScript configuration is defined as follows:
   "babelConfig": {
     "presets": ["@babel/env"]
   },
-  "standardConfig": {
-    "breakOnError": false,
-    "showRuleNames": true,
-    "standard": {
-      "globals": [
-        "requestAnimationFrame",
-        "sessionStorage"
-      ]
-    }
-  },
   "renameConfig": {
     "suffix": ".min"
   }
@@ -711,14 +701,13 @@ SPRO would ask you the following questions:
 Every possible package for Gulp tasks:
 - @babel/core,
 - @babel/preset-env,
+- babel-eslint,
 - browser-sync,
 - del,
 - eslint,
 - eslint-config-airbnb-base,
-- eslint-config-standard,
 - eslint-plugin-import,
 - eslint-plugin-node,
-- eslint-plugin-standard,
 - gulp,
 - gulp-autoprefixer,
 - gulp-babel,
@@ -741,7 +730,6 @@ Every possible package for Gulp tasks:
 - gulp-rename,
 - gulp-sass,
 - gulp-sourcemaps,
-- gulp-standard,
 - gulp-stylelint,
 - gulp-uglify,
 - gulp-wait,

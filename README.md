@@ -1,4 +1,4 @@
-# [Starter Project](https://starter.silvestarbistrovic.from.hr)
+# [Starter Project](https://starter.silvestar.codes)
 
 [![Starter Project on NPM](https://img.shields.io/badge/starter--project-npm-blue.svg)](https://www.npmjs.com/package/starter-project)
 [![Starter Project CLI on NPM](https://img.shields.io/badge/starter--project--cli-npm-blue.svg)](https://www.npmjs.com/package/starter-project-cli)
@@ -15,7 +15,7 @@ Version 2 is a major update! This version uses the [Starter Project CLI] for cre
 
 You could use `node_modules/.bin/spro start` command, if you want to reinitialize Starter Project CLI. See more at [Starter Project CLI docs].
 
-_Version 2 is not backward compatible with [version 1](https://starter.silvestarbistrovic.from.hr/old/)._
+_Version 2 is not backward compatible with [version 1](https://starter.silvestar.codes/old/)._
 
 ## Installation
 
@@ -31,6 +31,8 @@ After the installation, run the following command to set up the project:
 node node_modules/starter-project/postinstall.js
 npm i -S fontfaceobserver
 ```
+
+_If you don't want to use [fontfaceobserver], skip the last command._
 
 Starter Project should have installed source files, Gulp files, and configuration files.
 
@@ -63,9 +65,9 @@ Run `gulp --tasks` to see all available Gulp tasks.
 
 ## Configuration
 
-Site configuration is stored in the data/site.json file. Make sure to update the configuration file per your needs. If you want to access the data from pug templates, make sure to update the src/layout/variables.pug file with the correct configuration.
+Site configuration is stored in the `data/site.json` file. Make sure to update the configuration file per your needs. If you want to access the data from pug templates, make sure to update the `src/layout/variables.pug` file with the correct configuration.
 
-If you want more control over your Gulp tasks, you could find the Gulp configuration files for every single Gulp task in the gulpfile.js folder.
+If you want more control over your Gulp tasks, you could find the Gulp configuration files for every single Gulp task in the `gulpfile.js` folder.
 
 `.starter-project.json` is the main Gulp configuration file in which you could find all global settings for Gulp tasks. Avoid editing this file manually. See [Starter Project CLI docs] for more details.
 
@@ -79,6 +81,8 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
     |-- .gitignore
     |-- .htmllintrc
     |-- .stylelintrc
+    |-- data
+    |   |-- site.json
     |-- gulpfile.js
     |   |-- .critical.json
     |   |-- .css.json
@@ -163,7 +167,6 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
         |   |-- structure
         |       |-- index.pug
         |-- js
-        |   |-- deferredStyles.js
         |   |-- foftFontLoading.js
         |   |-- homepage.md
         |   |-- index.js
@@ -197,10 +200,8 @@ Starter Package uses the following packages:
 - del,
 - eslint,
 - eslint-config-airbnb-base,
-- eslint-config-standard,
 - eslint-plugin-import,
 - eslint-plugin-node,
-- eslint-plugin-standard,
 - gulp,
 - gulp-autoprefixer,
 - gulp-babel,
@@ -221,7 +222,6 @@ Starter Package uses the following packages:
 - gulp-rename,
 - gulp-sass,
 - gulp-sourcemaps,
-- gulp-standard,
 - gulp-stylelint,
 - gulp-uglify,
 - gulp-wait,
@@ -236,7 +236,7 @@ Starter Package uses the following packages:
 
 ## Support
 
-Show your support by starring the project on [Github](https://github.com/maliMirkec/starter-project), or by [sharing on Twitter](https://twitter.com/intent/tweet?url=https://starter.silvestarbistrovic.from.hr&text=Starter%20Project%20is%20the%20easiest%20way%20to%20implement%20the%20latest%20best%20practices%20in%20your%20project.%20💯%20Try%20it%20out%20today!%20🔥&via=malimirkeccita), please. 🙏
+Show your support by starring the project on [Github](https://github.com/maliMirkec/starter-project), or by [sharing on Twitter](https://twitter.com/intent/tweet?url=https://starter.silvestar.codes&text=Starter%20Project%20is%20the%20easiest%20way%20to%20implement%20the%20latest%20best%20practices%20in%20your%20project.%20💯%20Try%20it%20out%20today!%20🔥&via=malimirkeccita), please. 🙏
 
 Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/issues/new) or create [a pull request](https://github.com/maliMirkec/starter-project/compare).
 
@@ -244,6 +244,7 @@ Contribute: create [a new issue](https://github.com/maliMirkec/starter-project/i
 
 Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-project/blob/master/CHANGELOG.md) file.
 
-[Starter Project CLI]: https://starter.silvestarbistrovic.from.hr/
-[Starter Project CLI docs]: https://starter.silvestarbistrovic.from.hr/
-[Learn more about SPRO here]: https://starter.silvestarbistrovic.from.hr/
+[Starter Project CLI]: https://starter.silvestar.codes/
+[Starter Project CLI docs]: https://starter.silvestar.codes/
+[Learn more about SPRO here]: https://starter.silvestar.codes/
+[fontfaceobserver]: https://github.com/bramstein/fontfaceobserver

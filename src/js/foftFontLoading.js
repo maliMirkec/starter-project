@@ -1,4 +1,4 @@
-import FontFaceObserver from 'fontfaceobserver'
+import FontFaceObserver from 'fontfaceobserver';
 
 /**
  * A better font loading using FontFaceObserver.
@@ -22,8 +22,8 @@ import FontFaceObserver from 'fontfaceobserver'
  */
 (function () {
   if (window.sessionStorage.criticalFoftDataUriFontsLoaded) {
-    document.documentElement.className += ' fonts-stage-1 fonts-stage-2'
-    return
+    document.documentElement.className += ' fonts-stage-1 fonts-stage-2';
+    return;
   }
 
   /**
@@ -33,7 +33,7 @@ import FontFaceObserver from 'fontfaceobserver'
    * @name fontASubset
    * @type {Object}
    */
-  const fontASubset = new FontFaceObserver('LatoSubset')
+  const fontASubset = new FontFaceObserver('LatoSubset');
 
   /**
    * A promise that adds 'fonts-stage-1' if {@link fontASubset}
@@ -43,7 +43,7 @@ import FontFaceObserver from 'fontfaceobserver'
    * @name Promise
    */
   Promise.all([fontASubset.load()]).then(() => {
-    document.documentElement.className += ' fonts-stage-1'
+    document.documentElement.className += ' fonts-stage-1';
 
     /**
      * Default font type.
@@ -52,7 +52,7 @@ import FontFaceObserver from 'fontfaceobserver'
      * @name fontA
      * @type {Object}
      */
-    const fontA = new FontFaceObserver('Lato')
+    const fontA = new FontFaceObserver('Lato');
 
     /**
      * A promise that adds 'fonts-stage-2' if
@@ -64,10 +64,10 @@ import FontFaceObserver from 'fontfaceobserver'
      * @name Promise
      */
     Promise.all([fontA.load()]).then(() => {
-      document.documentElement.className += ' fonts-stage-2'
+      document.documentElement.className += ' fonts-stage-2';
 
       // Optimization for Repeat Views
-      window.sessionStorage.criticalFoftDataUriFontsLoaded = true
-    })
-  })
-})()
+      window.sessionStorage.criticalFoftDataUriFontsLoaded = true;
+    });
+  });
+}());

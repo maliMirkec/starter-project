@@ -159,7 +159,6 @@ If you want more control over your Gulp tasks, you could find the configuration 
         |   |-- structure
         |       |-- index.pug
         |-- js
-        |   |-- deferredStyles.js
         |   |-- foftFontLoading.js
         |   |-- homepage.md
         |   |-- index.js
@@ -189,14 +188,13 @@ If you want more control over your Gulp tasks, you could find the configuration 
 Starter Package CLI uses the following packages:
 - `@babel/core`,
 - `@babel/preset-env`,
+- `babel-eslint`,
 - `browser-sync`,
 - `del`,
 - `eslint`,
 - `eslint-config-airbnb-base`,
-- `eslint-config-standard`,
 - `eslint-plugin-import`,
 - `eslint-plugin-node`,
-- `eslint-plugin-standard`,
 - `gulp`,
 - `gulp-autoprefixer`,
 - `gulp-babel`,
@@ -217,7 +215,6 @@ Starter Package CLI uses the following packages:
 - `gulp-rename`,
 - `gulp-sass`,
 - `gulp-sourcemaps`,
-- `gulp-standard`,
 - `gulp-stylelint`,
 - `gulp-uglify`,
 - `gulp-wait`,
