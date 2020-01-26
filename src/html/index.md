@@ -1,4 +1,4 @@
-## SPRO / Starter Project CLI
+# SPRO / Starter Project CLI
 
 [![Starter Project CLI on NPM](https://img.shields.io/badge/starter--project--cli-npm-blue.svg)](https://www.npmjs.com/package/starter-project-cli)
 [![Starter Project on NPM](https://img.shields.io/badge/starter--project-npm-blue.svg)](https://www.npmjs.com/package/starter-project)
@@ -10,6 +10,7 @@
 Starter Project CLI, or **SPRO** (pronounces es-pro), is a command line interface that could save you a vast amount of time that you usually spend on configuring your project. SPRO's mission is to set up a perfect development environment by learning about your project architecture and then setting up Gulp tasks for all your needs.
 
 SPRO should be considered as a boilerplate of predefined Gulp tasks. SPRO would install Gulp tasks for processing the following file types:
+
 * HTML (pug)
 * CSS (Sass)
 * JavaScript (es6)
@@ -21,56 +22,57 @@ The tasks include compiling, lintering, formatting, compressing, and transformin
 
 __Info: If you would like to add a Gulp task, feel free to open [a pull request], or request a feature by creating [a new issue].__
 
-### Table of Contents
+## Table of Contents
 
-- [Resources](#resources)
-- [Installation](#installation)
-- [Getting started](#getting-started)
-- [Gulp tasks](#gulp-tasks)
-- [Configuration file](#configuration-files)
-- [Path Placeholders](#path-placeholders)
-- [Command](#command)
-- [Task Configuration](#task-configuration)
-  - [BrowserSync Configuration](#browsersync-configuration)
-  - [Favicon Configuration](#favicon-configuration)
-  - [HTML Configuration](#html-configuration)
-  - [CSS Configuration](#css-configuration)
-  - [JavaScript Configuration](#javascript-configuration)
-  - [Images Configuration](#images-configuration)
-  - [Critical CSS Configuration](#critical-css-configuration)
-  - [Gzip Configuration](#gzip-configuration)
-  - [Semver Configuration](#semver-configuration)
-  - [KSS Configuration](#kss-configuration)
-  - [SassDoc Configuration](#sassdoc-configuration)
-  - [JSDoc Configuration](#jsdoc-configuration)
-  - [Helpers Configuration](#helpers-configuration)
-  - [Watch Configuration](#watch-configuration)
-- [Questions](#questions)
-- [Dependenciest](#Dependencies)
-- [Support](#support)
-- [ToDo](#todo)
+* [Resources](#resources)
+* [Installation](#installation)
+* [Getting started](#getting-started)
+* [Gulp tasks](#gulp-tasks)
+* [Configuration file](#configuration-files)
+* [Path Placeholders](#path-placeholders)
+* [Command](#command)
+* [Task Configuration](#task-configuration)
+  * [BrowserSync Configuration](#browsersync-configuration)
+  * [Favicon Configuration](#favicon-configuration)
+  * [HTML Configuration](#html-configuration)
+  * [CSS Configuration](#css-configuration)
+  * [JavaScript Configuration](#javascript-configuration)
+  * [Images Configuration](#images-configuration)
+  * [Critical CSS Configuration](#critical-css-configuration)
+  * [Semver Configuration](#semver-configuration)
+  * [KSS Configuration](#kss-configuration)
+  * [SassDoc Configuration](#sassdoc-configuration)
+  * [JSDoc Configuration](#jsdoc-configuration)
+  * [Helpers Configuration](#helpers-configuration)
+  * [Watch Configuration](#watch-configuration)
+* [Questions](#questions)
+* [Dependenciest](#Dependencies)
+* [Support](#support)
+* [ToDo](#todo)
 
 <h3 id="resources">Resources</h3>
 
 Besides this documentation, you could learn more about SPRO by reading the following articles:
 
-- [Introducing SPRO](https://www.silvestarbistrovic.from.hr/articles/introducing-spro/), and
-- [Custom WordPress Theme Development with SPRO](https://www.silvestarbistrovic.from.hr/articles/custom-wordpress-theme-development-with-spro/).
+* [Introducing SPRO](https://www.silvestarbistrovic.from.hr/articles/introducing-spro/), and
+* [Custom WordPress Theme Development with SPRO](https://www.silvestarbistrovic.from.hr/articles/custom-wordpress-theme-development-with-spro/).
 
 Also, you could watch the full course about SPRO on Skillshare (registration required):
 
-- [Setting up development environment with Gulp](https://skl.sh/2EcUlRt)
+* [Setting up development environment with Gulp](https://skl.sh/2EcUlRt)
 
 <h3 id="installation">Installation</h3>
 
 You could use SPRO as a global or local package.
 
 To install the package locally, run:
+
 ```bash
 npm install starter-project-cli --save
 ```
 
 To install the package globally, run:
+
 ```bash
 npm install --global starter-project-cli --save
 ```
@@ -78,11 +80,13 @@ npm install --global starter-project-cli --save
 <h3 id="getting-started">Getting started</h3>
 
 After successful installation, you could run the `spro` command. If you have installed the package locally, you could initialize the package by running the following command:
+
 ```bash
 node_modules/.bin/spro start
 ```
 
 If you have installed the package globally, you could initialize the package by running the following command:
+
 ```bash
 spro start
 ```
@@ -92,8 +96,9 @@ SPRO would prompt you to ask a few questions about the project structure.
 ![Starter Project CLI in action](/gfx/png/starter-project-questions.png)
 
 Once you answer all questions, SPRO would do two things:
-- copy all required files (Gulp task files and configuration files), and
-- prepare a command for installation of dependencies required for the project.
+
+* copy all required files (Gulp task files and configuration files), and
+* prepare a command for installation of dependencies required for the project.
 
 _Warning: Note that the installation process could last a few minutes._
 
@@ -180,9 +185,6 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
   "critical": {
     "run": true
   },
-  "gzip": {
-    "run": true
-  },
   "kss": {
     "run": true,
     "dist": "docs/styleguide"
@@ -221,7 +223,7 @@ Here is the list of all available path placeholders:
 | `config.html.src`  | project HTML source path            |
 | `config.html.dist` | project HTML source path            |
 | `config.css.src`   | project CSS source path             |
-| `config.css.dist ` | project CSS destination path        |
+| `config.css.dist`  | project CSS destination path        |
 | `config.js.src`    | project JavaScript source path      |
 | `config.js.dist`   | project JavaScript destination path |
 
@@ -239,9 +241,10 @@ Every task has its own configuration file.
 <h3 id="browsersync-configuration"> BrowserSync Configuration</h3>
 
 The default BrowserSync configuration is defined as follows:
+
 ```.sync.json
 {
-  "port": 8080,
+  "port": 8088,
   "server": {
     "baseDir": ""
   }
@@ -253,6 +256,7 @@ You could see all available options [on BrowserSync the npm page].
 <h3 id="favicon-configuration"> Favicon Configuration</h3>
 
 The default favicon configuration is defined as follows:
+
 ```.favicon.json
 {
   "run": true,
@@ -268,6 +272,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="html-configuration"> HTML Configuration</h3>
 
 The default HTML configuration is defined as follows:
+
 ```.html.json
 {
   "pugConfig": {
@@ -295,6 +300,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="css-configuration"> CSS Configuration</h3>
 
 The default CSS configuration is defined as follows:
+
 ```.css.json
 {
   "sassConfig": {
@@ -326,6 +332,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="javascript-configuration"> JavaScript Configuration</h3>
 
 The default JavaScript configuration is defined as follows:
+
 ```.js.json
 {
   "eslintConfig": {
@@ -353,6 +360,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="images-configuration"> Images Configuration</h3>
 
 The default images configuration is defined as follows:
+
 ```.gfx.json
 {
   "gifConfig": {
@@ -506,12 +514,13 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="critical-css-configuration"> Critical CSS Configuration</h3>
 
 The default Critical CSS configuration is defined as follows:
+
 ```.critical.json
 [{
   "src": "style.css",
   "settings": {
     "out": "style.critical.css",
-    "url": "http://localhost:8080/",
+    "url": "http://localhost:8088/",
     "width": 1920,
     "height": 1200,
     "keepLargerMediaQueries": true,
@@ -527,18 +536,10 @@ The default Critical CSS configuration is defined as follows:
 
 If you need more help understanding the configuration, please open [a new issue].
 
-<h3 id="gzip-configuration"> Gzip Configuration</h3>
-
-The default Gzip configuration is defined as follows:
-```.gzip.json
-{}
-```
-
-You could see all available options [on gulp-gzip the npm page].
-
 <h3 id="semver-configuration"> Semver Configuration</h3>
 
 The default Semver configuration is defined as follows:
+
 ```.bump.json
 {
   "src": ["helpers.proot/package.json"]
@@ -550,6 +551,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="kss-configuration"> KSS Configuration</h3>
 
 The default KSS configuration is defined as follows:
+
 ```.kss.json
 {
   "title": "Starter Project",
@@ -570,6 +572,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="sassdoc-configuration"> SassDoc Configuration</h3>
 
 The default SassDoc configuration is defined as follows:
+
 ```.sassdoc.json
 {
   "dest": "/docs/sass/",
@@ -594,6 +597,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="jsdoc-configuration"> JSDoc Configuration</h3>
 
 The default JSDoc configuration is defined as follows:
+
 ```.jsdoc.json
 {
   "src": [
@@ -631,6 +635,7 @@ If you need more help understanding the configuration, please open [a new issue]
 <h3 id="helpers-configuration"> Helpers Configuration</h3>
 
 The default helpers configuration is defined as follows:
+
 ```.helpers.json
 {
   "wait": 20000
@@ -640,6 +645,7 @@ The default helpers configuration is defined as follows:
 <h3 id="watch-configuration"> Watch Configuration</h3>
 
 The default watch configuration is defined as follows:
+
 ```.watch.json
 {
   "ignoreInitial": true
@@ -651,97 +657,97 @@ This setting will tell Gulp when to terminate the build (watch) process.
 <h3 id="questions">Questions</h3>
 
 SPRO would ask you the following questions:
-- [GENERAL] Do you want to override the project? Be sure to commit all changes before you proceed.',
-- [GENERAL] What is the root folder of the project?',
-- [GENERAL] Where is the folder with the source code of the project (relative to default path)?',
-- [GENERAL] Where do you want to store compiled code of the project (relative to default path)?',
-- [GENERAL] Are you sure that you want to override the project?',
-- [BROWSERSYNC] Do you want to run BrowserSync to preview changes in the browser?',
-- [HTML] Do you want to run HTML tasks?',
-- [HTML] Are you using Pug as a template engine?',
-- [HTML] Where is the folder with HTML source code (relative to default source path)?',
-- [HTML] Where do you want to store compiled HTML code (relative to default destination path)?',
-- [HTML] Do you want to minify HTML code?',
-- [HTML] Do you want to run inline source tasks (inline CSS or SVG in HTML code)?',
-- [HTML] Do you want to lint HTML code?',
-- [CSS] Do you want to run CSS tasks?',
-- [CSS] Are you using Sass?',
-- [CSS] Where is the folder with CSS source code (relative to default source path)?',
-- [CSS] Where do you want to store compiled CSS code (relative to default destination path)?',
-- [CSS] Do you want to minify CSS code?',
-- [CSS] Do you want to autoprefix CSS code?',
-- [CSS] Do you want to add sourcemaps for CSS code?',
-- [CSS] Do you want to lint CSS code?',
-- [JS] Do you want to run JavaScript (es6) tasks?',
-- [JS] Where is the folder with JavaScript source code (relative to default source path)?',
-- [JS] Where do you want to store compiled JavaScript code (relative to default destination path)?',
-- [JS] Do you want to minify JavaScript code?',
-- [JS] Do you want to add sourcemaps for JavaScript code?',
-- [JS] Do you want to lint JavaScript code?',
-- [IMAGES] Do you want to run image optimization tasks?',
-- [IMAGES] Where is the folder with images (relative to default source path)?',
-- [IMAGES] Where do you want to store optimized images (relative to default destination path)?',
-- [FONTS] Do you use local fonts? Do you want to run font tasks?',
-- [FONTS] Where is the folder with local fonts (relative to default source path)?',
-- [FONTS] Where do you want to store local fonts (relative to default destination path)?',
-- [FAVICON] Do you want to run favicon tasks?',
-- [CRITICAL] Do you want to extract Critical CSS?',
-- [COMPRESS] Do you want to compress (gzip) all assets?',
-- [KSS] Do you want to add KSS style guide?',
-- [KSS] Where do you want to store KSS style guide (relative to default destination path)?',
-- [SASSDOC] Do you want to add documentation for the SASS code (SassDoc)?',
-- [SASSDOC] Where do you want to store SassDoc files (relative to default destination path)?',
-- [JSDOC] Do you want to add documentation for the JS code (JSDoc)?',
-- [JSDOC] Where do you want to store JSdoc files (relative to default destination path)?',
-- [SEMVER] Do you want to add semver versioning tasks (for automatic bump of any version in any file which supports semver versioning, like package.json)?',
-- [YARN] Do you use Yarn as your default dependency manager?',
+
+* [GENERAL] Do you want to override the project? Be sure to commit all changes before you proceed.',
+* [GENERAL] What is the root folder of the project?',
+* [GENERAL] Where is the folder with the source code of the project (relative to default path)?',
+* [GENERAL] Where do you want to store compiled code of the project (relative to default path)?',
+* [GENERAL] Are you sure that you want to override the project?',
+* [BROWSERSYNC] Do you want to run BrowserSync to preview changes in the browser?',
+* [HTML] Do you want to run HTML tasks?',
+* [HTML] Are you using Pug as a template engine?',
+* [HTML] Where is the folder with HTML source code (relative to default source path)?',
+* [HTML] Where do you want to store compiled HTML code (relative to default destination path)?',
+* [HTML] Do you want to minify HTML code?',
+* [HTML] Do you want to run inline source tasks (inline CSS or SVG in HTML code)?',
+* [HTML] Do you want to lint HTML code?',
+* [CSS] Do you want to run CSS tasks?',
+* [CSS] Are you using Sass?',
+* [CSS] Where is the folder with CSS source code (relative to default source path)?',
+* [CSS] Where do you want to store compiled CSS code (relative to default destination path)?',
+* [CSS] Do you want to minify CSS code?',
+* [CSS] Do you want to autoprefix CSS code?',
+* [CSS] Do you want to add sourcemaps for CSS code?',
+* [CSS] Do you want to lint CSS code?',
+* [JS] Do you want to run JavaScript (es6) tasks?',
+* [JS] Where is the folder with JavaScript source code (relative to default source path)?',
+* [JS] Where do you want to store compiled JavaScript code (relative to default destination path)?',
+* [JS] Do you want to minify JavaScript code?',
+* [JS] Do you want to add sourcemaps for JavaScript code?',
+* [JS] Do you want to lint JavaScript code?',
+* [IMAGES] Do you want to run image optimization tasks?',
+* [IMAGES] Where is the folder with images (relative to default source path)?',
+* [IMAGES] Where do you want to store optimized images (relative to default destination path)?',
+* [FONTS] Do you use local fonts? Do you want to run font tasks?',
+* [FONTS] Where is the folder with local fonts (relative to default source path)?',
+* [FONTS] Where do you want to store local fonts (relative to default destination path)?',
+* [FAVICON] Do you want to run favicon tasks?',
+* [CRITICAL] Do you want to extract Critical CSS?',
+* [KSS] Do you want to add KSS style guide?',
+* [KSS] Where do you want to store KSS style guide (relative to default destination path)?',
+* [SASSDOC] Do you want to add documentation for the SASS code (SassDoc)?',
+* [SASSDOC] Where do you want to store SassDoc files (relative to default destination path)?',
+* [JSDOC] Do you want to add documentation for the JS code (JSDoc)?',
+* [JSDOC] Where do you want to store JSdoc files (relative to default destination path)?',
+* [SEMVER] Do you want to add semver versioning tasks (for automatic bump of any version in any file which supports semver versioning, like package.json)?',
+* [YARN] Do you use Yarn as your default dependency manager?',
 
 <h3 id="Dependencies">Dependencies</h3>
 
 Every possible package for Gulp tasks:
-- @babel/core,
-- @babel/preset-env,
-- babel-eslint,
-- browser-sync,
-- del,
-- eslint,
-- eslint-config-airbnb-base,
-- eslint-plugin-import,
-- eslint-plugin-node,
-- gulp,
-- gulp-autoprefixer,
-- gulp-babel,
-- gulp-bump,
-- gulp-clean-css,
-- gulp-cssimport,
-- gulp-eslint,
-- gulp-exit,
-- gulp-gzip,
-- gulp-htmllint,
-- gulp-htmlmin,
-- gulp-if,
-- gulp-imagemin,
-- gulp-include,
-- gulp-inline-source,
-- gulp-jsdoc3,
-- gulp-penthouse,
-- gulp-pug,
-- gulp-real-favicon,
-- gulp-rename,
-- gulp-sass,
-- gulp-sourcemaps,
-- gulp-stylelint,
-- gulp-uglify,
-- gulp-wait,
-- imagemin-mozjpeg,
-- imagemin-pngquant,
-- kss,
-- path,
-- sassdoc,
-- stylelint,
-- stylelint-config-sass-guidelines,
-- stylelint-order, and
-- stylelint-scss.
+
+* @babel/core,
+* @babel/preset-env,
+* babel-eslint,
+* browser-sync,
+* del,
+* eslint,
+* eslint-config-airbnb-base,
+* eslint-plugin-import,
+* eslint-plugin-node,
+* gulp,
+* gulp-autoprefixer,
+* gulp-babel,
+* gulp-bump,
+* gulp-clean-css,
+* gulp-cssimport,
+* gulp-eslint,
+* gulp-exit,
+* gulp-htmllint,
+* gulp-htmlmin,
+* gulp-if,
+* gulp-imagemin,
+* gulp-include,
+* gulp-inline-source,
+* gulp-jsdoc3,
+* gulp-penthouse,
+* gulp-pug,
+* gulp-real-favicon,
+* gulp-rename,
+* gulp-sass,
+* gulp-sourcemaps,
+* gulp-stylelint,
+* gulp-uglify,
+* gulp-wait,
+* imagemin-mozjpeg,
+* imagemin-pngquant,
+* kss,
+* path,
+* sassdoc,
+* stylelint,
+* stylelint-config-sass-guidelines,
+* stylelint-order, and
+* stylelint-scss.
 
 <h3 id="support">Support</h3>
 
@@ -751,13 +757,12 @@ Contribute: create [a new issue] or create [a pull request].
 
 <h3 id="todo">Todo</h3>
 
-- Consider adding terminalizer https://github.com/faressoft/terminalizer
-- Consider adding siteaudit https://github.com/thecreazy/siteaudit
+* Consider adding terminalizer https://github.com/faressoft/terminalizer
+* Consider adding siteaudit https://github.com/thecreazy/siteaudit
 
 [in the Task Configuration section]: #task-configuration
 [on BrowserSync the npm page]: https://browsersync.io/docs/options
 [RealFaviconGenerator]: https://realfavicongenerator.net/
-[on gulp-gzip the npm page]: https://www.npmjs.com/package/gulp-gzip#options
 [GitHub]: https://github.com/maliMirkec/starter-project-cli
 [sharing on Twitter]: https://twitter.com/intent/tweet?url=https://github.com/maliMirkec/starter-project-cli/&text=Starter%20Project%20CLI%20creates%20a%20perfect%20Gulp%20development%20environment%20for%20everyone%20within%20a%20few%20minutes.%20🔥%20Try%20it%20today!%20💯&via=malimirkeccita
 [a new issue]: https://github.com/maliMirkec/starter-project-cli/issues/new

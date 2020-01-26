@@ -9,7 +9,7 @@
 
 Starter Package is a package with the latest best practices for your HTML (pug), CSS (Sass), JavaScript (es6), graphic, font, and favicon files.
 
-# Version 2
+## Version 2
 
 Version 2 is a major update! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
 
@@ -21,13 +21,13 @@ _Version 2 is not backward compatible with [version 1](https://starter.silvestar
 
 The package is available on npm. To install Starter Package, create a new directory, enter it and run the following command to install the latest version:
 
-```
+```console
 npm install starter-project --save
 ```
 
 After the installation, run the following command to set up the project:
 
-```
+```console
 node node_modules/starter-project/postinstall.js
 npm i -S fontfaceobserver
 ```
@@ -73,7 +73,7 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
 
 ## Structure
 
-```
+```md
 |-- Workspace
     |-- .editorconfig
     |-- .eslintignore
@@ -89,7 +89,6 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
     |   |-- .favicon-data.json
     |   |-- .favicon.json
     |   |-- .gfx.json
-    |   |-- .gzip.json
     |   |-- .helpers.json
     |   |-- .html.json
     |   |-- .js.json
@@ -106,7 +105,6 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
     |   |-- favicon.js
     |   |-- fonts.js
     |   |-- gfx.js
-    |   |-- gzip.js
     |   |-- helpers.js
     |   |-- html.js
     |   |-- index.js
@@ -194,6 +192,7 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
 ## Packages
 
 Starter Package uses the following packages:
+
 - @babel/core,
 - @babel/preset-env,
 - browser-sync,

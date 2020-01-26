@@ -8,7 +8,10 @@ critical.DEBUG = process.env.NODE_ENV !== 'production';
 const { helpers } = require('./helpers');
 
 const criticalConfig = require('./.critical.json');
+
 const cssConfig = require('./.css.json');
+
+const ext = global.config.css.sass ? 'scss' : 'css';
 
 // Will minify Critical CSS files
 function criticalMinify(cb) {
@@ -43,7 +46,7 @@ function criticalStart(cb) {
 
 // When CSS file is changed, it will update Critical CSS, too
 function criticalListen() {
-  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`), global.config.watchConfig, criticalStart);
+  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${ext}`), global.config.watchConfig, criticalStart);
 }
 
 // When Critical CSS file is changed, it will process Critical CSS file, too

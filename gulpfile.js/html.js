@@ -15,6 +15,8 @@ const htmlConfig = require('./.html.json');
 
 let thisPugConfig = {};
 
+const ext = global.config.html.pug ? 'pug' : 'html';
+
 const siteConfigs = [{
   name: 'site',
   path: helpers.trim(`${helpers.proot()}/data/site.json`),
@@ -43,7 +45,7 @@ if (global.config.html.inline) {
 }
 
 const htmlSrc = global.config.html.pug
-  ? [helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/_**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/**/_**/*.pug`)]
+  ? [helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.${ext}`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/_**/*.${ext}`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/**/_**/*.${ext}`)]
   : helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.html`);
 
 // Will process Pug files
@@ -69,7 +71,7 @@ function htmlStart() {
 
 // When Pug, md, or config file is changed, it will process Pug file, too
 function htmlListen() {
-  return watch([...siteConfigs.map((siteConfig) => siteConfig.path), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.md`)], global.config.watchConfig, htmlStart);
+  return watch([...siteConfigs.map((siteConfig) => siteConfig.path), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.${ext}`), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.md`)], global.config.watchConfig, htmlStart);
 }
 
 // When Critical CSS file is changed, it will process HTML, too

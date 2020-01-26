@@ -12,6 +12,8 @@ const { helpers } = require('./helpers');
 
 const cssConfig = require('./.css.json');
 
+const ext = global.config.css.sass ? 'scss' : 'css';
+
 const thisSassConfig = (global.config.css.sass)
   ? ({
     ...cssConfig.sassConfig,
@@ -27,7 +29,7 @@ if (!global.config.css.sourcemaps) {
 
 // Will process Sass files
 function cssStart() {
-  return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/*.scss`))
+  return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/*.${ext}`))
     .pipe(gulpif(global.config.css.sourcemaps, sourcemaps.init()))
     .pipe(gulpif(global.config.css.lint, gulpStylelint(cssConfig.styleLintConfig)))
     .pipe(gulpif(global.config.css.sass, sass(thisSassConfig).on('error', sass.logError)))
@@ -43,7 +45,7 @@ function cssStart() {
 
 // Will process non Critical Sass files
 function cssStartListen() {
-  return src([helpers.trim(`${helpers.source()}/${global.config.css.src}/*.scss`), helpers.trim(`!${helpers.source()}/${global.config.css.src}/*.critical.scss`)])
+  return src([helpers.trim(`${helpers.source()}/${global.config.css.src}/*.${ext}`), helpers.trim(`!${helpers.source()}/${global.config.css.src}/*.critical.${ext}`)])
     .pipe(gulpif(global.config.css.sourcemaps, sourcemaps.init()))
     .pipe(gulpif(global.config.css.lint, gulpStylelint(cssConfig.styleLintConfig)))
     .pipe(gulpif(global.config.css.sass, sass(thisSassConfig).on('error', sass.logError)))
@@ -59,7 +61,7 @@ function cssStartListen() {
 
 // When Sass file is changed, it will process Sass file, too
 function cssListen() {
-  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`), global.config.watchConfig, cssStartListen, global.bs.reload);
+  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${ext}`), global.config.watchConfig, cssStartListen, global.bs.reload);
 }
 
 exports.css = {

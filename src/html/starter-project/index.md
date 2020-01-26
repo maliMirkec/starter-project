@@ -1,4 +1,4 @@
-## Starter Project
+# Starter Project
 
 [![Starter Project on NPM](https://img.shields.io/badge/starter--project-npm-blue.svg)](https://www.npmjs.com/package/starter-project)
 [![Starter Project CLI on NPM](https://img.shields.io/badge/starter--project--cli-npm-blue.svg)](https://www.npmjs.com/package/starter-project-cli)
@@ -21,13 +21,13 @@ _Version 2 is not backward compatible with [version 1](/old/)._
 
 The package is available on npm. To install Starter Package, create a new directory, enter it and run the following command to install the latest version:
 
-```
+```console
 npm install starter-project --save
 ```
 
 After the installation, run the following command to set up the project:
 
-```
+```console
 node node_modules/starter-package/postinstall.js
 npm i -S fontfaceobserver
 ```
@@ -66,7 +66,7 @@ If you want more control over your Gulp tasks, you could find the configuration 
 
 ### Structure
 
-```
+```md
 |-- Workspace
     |-- .browserslistrc
     |-- .editorconfig
@@ -81,7 +81,6 @@ If you want more control over your Gulp tasks, you could find the configuration 
     |   |-- .favicon-data.json
     |   |-- .favicon.json
     |   |-- .gfx.json
-    |   |-- .gzip.json
     |   |-- .helpers.json
     |   |-- .html.json
     |   |-- .js.json
@@ -98,7 +97,6 @@ If you want more control over your Gulp tasks, you could find the configuration 
     |   |-- favicon.js
     |   |-- fonts.js
     |   |-- gfx.js
-    |   |-- gzip.js
     |   |-- helpers.js
     |   |-- html.js
     |   |-- index.js
@@ -186,6 +184,7 @@ If you want more control over your Gulp tasks, you could find the configuration 
 ### Packages
 
 Starter Package CLI uses the following packages:
+
 - `@babel/core`,
 - `@babel/preset-env`,
 - `babel-eslint`,
