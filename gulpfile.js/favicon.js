@@ -7,11 +7,14 @@ const { helpers } = require('./helpers');
 const faviconConfig = require('./.favicon.json');
 const faviconDataConfig = require('./.favicon-data.json');
 
-const thisFaviconDataConfig = { ...faviconDataConfig, masterPicture: `${helpers.parse(faviconDataConfig.masterPicture)}`,
+const thisFaviconDataConfig = {
+  ...faviconDataConfig,
+  masterPicture: `${helpers.parse(faviconDataConfig.masterPicture)}`,
   temp: `${helpers.parse(faviconDataConfig.temp)}`,
   dest: `${helpers.parse(faviconDataConfig.dest)}`,
   iconsPath: `${helpers.parse(faviconDataConfig.iconsPath)}`,
-  markupFile: `${helpers.parse(faviconDataConfig.markupFile)}`};
+  markupFile: `${helpers.parse(faviconDataConfig.markupFile)}`,
+};
 
 // Will process favicon file
 function faviconStart(cb) {

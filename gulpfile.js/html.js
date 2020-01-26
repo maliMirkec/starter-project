@@ -13,6 +13,8 @@ const { helpers } = require('./helpers');
 
 const htmlConfig = require('./.html.json');
 
+const ext = global.config.html.pug ? 'pug' : 'html';
+
 let thisPugConfig = {};
 
 const siteConfigs = [{
@@ -23,7 +25,7 @@ const siteConfigs = [{
 if (global.config.html.pug) {
   thisPugConfig = htmlConfig.pugConfig.basedir
     ? htmlConfig.pugConfig
-    : ({ ...htmlConfig.pugConfig, basedir: helpers.trim(`${helpers.source()}/${global.config.html.src}/`)});
+    : ({ ...htmlConfig.pugConfig, basedir: helpers.trim(`${helpers.source()}/${global.config.html.src}/`) });
 }
 
 let thisHtmllintConfig = {};
@@ -31,7 +33,7 @@ let thisHtmllintConfig = {};
 if (global.config.html.lint) {
   thisHtmllintConfig = htmlConfig.htmllintConfig.config
     ? htmlConfig.htmllintConfig.config
-    : ({ ...htmlConfig.htmllintConfig, config: `${helpers.proot()}.htmllintrc`});
+    : ({ ...htmlConfig.htmllintConfig, config: `${helpers.proot()}.htmllintrc` });
 }
 
 let thisInlineConfig = {};
@@ -39,11 +41,11 @@ let thisInlineConfig = {};
 if (global.config.html.inline) {
   thisInlineConfig = htmlConfig.inlineConfig.rootpath
     ? htmlConfig.inlineConfig
-    : ({ ...htmlConfig.inlineConfig, rootpath: path.resolve(helpers.dist())});
+    : ({ ...htmlConfig.inlineConfig, rootpath: path.resolve(helpers.dist()) });
 }
 
 const htmlSrc = global.config.html.pug
-  ? [helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/_**/*.pug`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/**/_**/*.pug`)]
+  ? [helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.${ext}`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/_**/*.${ext}`), helpers.trim(`!${helpers.source()}/${global.config.html.src}/**/_**/*.${ext}`)]
   : helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.html`);
 
 // Will process Pug files
@@ -69,7 +71,7 @@ function htmlStart() {
 
 // When Pug, md, or config file is changed, it will process Pug file, too
 function htmlListen() {
-  return watch([...siteConfigs.map((siteConfig) => siteConfig.path), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.pug`), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.md`)], global.config.watchConfig, htmlStart);
+  return watch([...siteConfigs.map((siteConfig) => siteConfig.path), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.${ext}`), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.md`)], global.config.watchConfig, htmlStart);
 }
 
 // When Critical CSS file is changed, it will process HTML, too

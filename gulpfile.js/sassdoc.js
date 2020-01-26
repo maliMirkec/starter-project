@@ -5,12 +5,17 @@ const { helpers } = require('./helpers');
 
 const sassdocConfig = require('./.sassdoc.json');
 
-const thisSassdocConfig = { ...sassdocConfig, package: `${helpers.proot()}${sassdocConfig.package}`,
-  dest: helpers.parse(sassdocConfig.dest)};
+const cssExt = global.config.css.sass ? 'scss' : 'css';
+
+const thisSassdocConfig = {
+  ...sassdocConfig,
+  package: `${helpers.proot()}${sassdocConfig.package}`,
+  dest: helpers.parse(sassdocConfig.dest),
+};
 
 // Will process SassDoc docs
 function sassdocStart() {
-  return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`))
+  return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${cssExt}`))
     .pipe(sassdoc(thisSassdocConfig));
 }
 

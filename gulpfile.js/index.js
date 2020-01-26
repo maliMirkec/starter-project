@@ -18,7 +18,6 @@ const { fonts } = global.config.fonts.run ? require('./fonts') : false;
 const { favicon } = global.config.favicon.run ? require('./favicon') : false;
 const { html } = global.config.html.run ? require('./html') : false;
 const { critical } = global.config.critical.run ? require('./critical') : false;
-const { gzip } = global.config.gzip.run ? require('./gzip') : false;
 const { kss } = global.config.kss.run ? require('./kss') : false;
 const { sassdoc } = global.config.sassdoc.run ? require('./sassdoc') : false;
 const { jsdoc } = global.config.jsdoc.run ? require('./jsdoc') : false;
@@ -78,7 +77,6 @@ exports.build = series(
     global.config.html.run && global.config.critical.run ? html.htmlListenCritical : helpers.skip,
     global.config.critical.run ? helpers.kill : helpers.skip,
   ),
-  global.config.gzip.run ? gzip.gzipStart : helpers.skip,
 );
 
 exports.default = series(

@@ -5,13 +5,18 @@ const { helpers } = require('./helpers');
 
 const kssConfig = require('./.kss.json');
 
+const cssExt = global.config.css.sass ? 'scss' : 'css';
+
 const thisCss = kssConfig.css.map((path) => helpers.parse(path));
 const thisJs = kssConfig.js.map((path) => helpers.parse(path));
 
-const thisKssConfig = { ...kssConfig, source: helpers.parse(kssConfig.source),
+const thisKssConfig = {
+  ...kssConfig,
+  source: helpers.parse(kssConfig.source),
   destination: helpers.parse(kssConfig.destination),
   css: thisCss,
-  js: thisJs};
+  js: thisJs,
+};
 
 // Will process KSS docs
 function kssStart() {
@@ -20,7 +25,7 @@ function kssStart() {
 
 // When Sass file is changed, it will process KSS docs, too
 function kssListen() {
-  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`), global.config.watchConfig, kssStart, global.bs.reload);
+  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${cssExt}`), global.config.watchConfig, kssStart, global.bs.reload);
 }
 
 exports.kss = {

@@ -48,9 +48,6 @@
   "critical": {
     "run": true
   },
-  "gzip": {
-    "run": false
-  },
   "kss": {
     "run": true,
     "dist": "docs/styleguide"
