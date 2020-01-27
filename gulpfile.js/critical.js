@@ -9,6 +9,10 @@ const { helpers } = require('./helpers');
 
 const criticalConfig = require('./.critical.json');
 
+if(criticalConfig.length > 9) {
+  process.setMaxListeners(0);
+}
+
 const cssConfig = require('./.css.json');
 
 const ext = global.config.css.sass ? 'scss' : 'css';
@@ -28,7 +32,10 @@ function criticalMinify(cb) {
 // Will extract Critical CSS
 function criticalStart(cb) {
   criticalConfig.forEach((config) => {
-    const thisSettings = { ...config.settings, out: helpers.trim(`/${global.config.css.dist}/${config.settings.out}`) };
+    const thisSettings = {
+      ...config.settings,
+      out: helpers.trim(`/${global.config.css.dist}/${config.settings.out}`),
+    };
 
     const thisConfig = {
       ...config,

@@ -2,9 +2,7 @@
 /node_modules/
 .DS_Store
 npm-debug.log
-package-lock.json
 .yarnclean
-yarn.lock
 yarn-error.log
 gulpfile.js/.favicon-data-generated.json
 starter-project-*.tgz
