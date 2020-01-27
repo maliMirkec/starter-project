@@ -8,13 +8,22 @@ function syncStart(cb) {
     let thisConfig = {};
 
     if (syncConfig.proxy) {
-      thisConfig = { ...syncConfig, proxy: syncConfig.proxy };
+      thisConfig = {
+        ...syncConfig,
+        proxy: syncConfig.proxy,
+      };
     } else {
       const thisServer = syncConfig.server.baseDir
         ? helpers.parse(syncConfig.server.baseDir)
-        : ({ ...syncConfig.server, baseDir: helpers.dist() });
+        : ({
+          ...syncConfig.server,
+          baseDir: helpers.dist(),
+        });
 
-      thisConfig = { ...syncConfig, server: thisServer };
+      thisConfig = {
+        ...syncConfig,
+        server: thisServer,
+      };
     }
 
     global.bs.init(thisConfig);
