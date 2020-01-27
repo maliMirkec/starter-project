@@ -6,15 +6,17 @@ const helpersConfig = require('./.helpers.json');
 
 // Will remove end slash from path
 const trim = (p) => {
-  while (p.indexOf('..') !== -1) {
-    p = p.replace('..', '');
+  let r = p;
+
+  while (r.indexOf('..') !== -1) {
+    r = r.replace('..', '');
   }
 
-  while (p.indexOf('//') !== -1) {
-    p = p.replace('//', '/');
+  while (r.indexOf('//') !== -1) {
+    r = r.replace('//', '/');
   }
 
-  return p;
+  return r;
 };
 
 // Will return root folder

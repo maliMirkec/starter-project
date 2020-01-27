@@ -5,7 +5,7 @@ const { helpers } = require('./helpers');
 
 const sassdocConfig = require('./.sassdoc.json');
 
-const cssExt = global.config.css.sass ? 'scss' : 'css';
+const ext = global.config.css.sass ? 'scss' : 'css';
 
 const thisSassdocConfig = {
   ...sassdocConfig,
@@ -15,13 +15,13 @@ const thisSassdocConfig = {
 
 // Will process SassDoc docs
 function sassdocStart() {
-  return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${cssExt}`))
+  return src(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${ext}`))
     .pipe(sassdoc(thisSassdocConfig));
 }
 
 // When Sass file is changed, it will process SassDoc docs, too
 function sassdocListen() {
-  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`), global.config.watchConfig, sassdocStart, global.bs.reload);
+  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${ext}`), global.config.watchConfig, sassdocStart, global.bs.reload);
 }
 
 exports.sassdoc = {

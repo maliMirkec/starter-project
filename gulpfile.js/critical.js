@@ -8,7 +8,14 @@ critical.DEBUG = process.env.NODE_ENV !== 'production';
 const { helpers } = require('./helpers');
 
 const criticalConfig = require('./.critical.json');
+
+if(criticalConfig.length > 9) {
+  process.setMaxListeners(0);
+}
+
 const cssConfig = require('./.css.json');
+
+const ext = global.config.css.sass ? 'scss' : 'css';
 
 // Will minify Critical CSS files
 function criticalMinify(cb) {
@@ -25,10 +32,16 @@ function criticalMinify(cb) {
 // Will extract Critical CSS
 function criticalStart(cb) {
   criticalConfig.forEach((config) => {
-    const thisSettings = { ...config.settings, out: helpers.trim(`/${global.config.css.dist}/${config.settings.out}`)};
+    const thisSettings = {
+      ...config.settings,
+      out: helpers.trim(`/${global.config.css.dist}/${config.settings.out}`),
+    };
 
-    const thisConfig = { ...config, src: helpers.trim(`${helpers.dist()}/${global.config.css.dist}/${config.src}`),
-      settings: thisSettings};
+    const thisConfig = {
+      ...config,
+      src: helpers.trim(`${helpers.dist()}/${global.config.css.dist}/${config.src}`),
+      settings: thisSettings,
+    };
 
     src(thisConfig.src)
       .pipe(critical(thisConfig.settings))
@@ -40,7 +53,7 @@ function criticalStart(cb) {
 
 // When CSS file is changed, it will update Critical CSS, too
 function criticalListen() {
-  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.scss`), global.config.watchConfig, criticalStart);
+  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${ext}`), global.config.watchConfig, criticalStart);
 }
 
 // When Critical CSS file is changed, it will process Critical CSS file, too
