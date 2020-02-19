@@ -32,8 +32,16 @@ function syncStart(cb) {
   cb();
 }
 
+// Start static dev server
+function syncStartBuild(cb) {
+  syncConfig.open = false;
+
+  syncStart(cb);
+}
+
 // Stop static server
 function syncStop(cb) {
+  global.bs.cleanup();
   global.bs.exit();
 
   cb();
@@ -41,5 +49,6 @@ function syncStop(cb) {
 
 exports.sync = {
   syncStart,
+  syncStartBuild,
   syncStop,
 };

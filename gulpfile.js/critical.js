@@ -1,7 +1,8 @@
-const { src, dest, watch } = require('gulp');
+const { src, dest } = require('gulp');
 const critical = require('gulp-penthouse');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
+const fs = require('fs');
 
 critical.DEBUG = process.env.NODE_ENV !== 'production';
 
@@ -9,62 +10,63 @@ const { helpers } = require('./helpers');
 
 const criticalConfig = require('./.critical.json');
 
-if(criticalConfig.length > 9) {
+if (criticalConfig.length > 9) {
   process.setMaxListeners(0);
 }
 
 const cssConfig = require('./.css.json');
 
-const ext = global.config.css.sass ? 'scss' : 'css';
-
-// Will minify Critical CSS files
-function criticalMinify(cb) {
-  if (global.config.css.minify) {
-    src(helpers.trim(`${helpers.dist()}/${global.config.css.dist}/*.critical.css`))
-      .pipe(cleanCSS())
-      .pipe(rename(cssConfig.renameConfig))
-      .pipe(dest(helpers.trim(`${helpers.dist()}/${global.config.css.dist}`)));
-  }
-
-  cb();
-}
+const thisCriticalConfig = { ...criticalConfig, temp: `${helpers.parse(criticalConfig.temp)}` };
 
 // Will extract Critical CSS
 function criticalStart(cb) {
-  criticalConfig.forEach((config) => {
-    const thisSettings = {
-      ...config.settings,
-      out: helpers.trim(`/${global.config.css.dist}/${config.settings.out}`),
-    };
+  const files = [];
 
-    const thisConfig = {
-      ...config,
-      src: helpers.trim(`${helpers.dist()}/${global.config.css.dist}/${config.src}`),
-      settings: thisSettings,
-    };
+  thisCriticalConfig.configs.forEach((config) => {
+    const thisSettings = { ...config.settings, out: helpers.trim(`/${config.settings.out}`) };
 
-    src(thisConfig.src)
-      .pipe(critical(thisConfig.settings))
-      .pipe(dest(helpers.dist()));
+    const thisFile = helpers.trim(`${thisCriticalConfig.temp}/${thisSettings.out}`);
+
+    files.push(thisFile);
+
+    if (fs.existsSync(thisFile)) {
+      src(thisFile.replace('.css', '*.css'))
+        .pipe(dest(helpers.trim(`${helpers.dist()}/${global.config.css.dist}`)));
+    } else {
+      const thisConfig = {
+        ...config,
+        src: helpers.trim(`${helpers.dist()}/${global.config.css.dist}/${config.src}`),
+        settings: thisSettings,
+      };
+
+      src(thisConfig.src)
+        .pipe(critical(thisConfig.settings))
+        .pipe(dest(helpers.trim(`${thisCriticalConfig.temp}`)))
+        .pipe(cleanCSS())
+        .pipe(rename(cssConfig.renameConfig))
+        .pipe(dest(helpers.trim(`${thisCriticalConfig.temp}`)))
+        .pipe(dest(helpers.trim(`${helpers.dist()}/${global.config.css.dist}`)));
+    }
   });
 
-  cb();
-}
+  const checkInterval = setInterval(() => {
+    let checkFile = true;
 
-// When CSS file is changed, it will update Critical CSS, too
-function criticalListen() {
-  return watch(helpers.trim(`${helpers.source()}/${global.config.css.src}/**/*.${ext}`), global.config.watchConfig, criticalStart);
-}
+    files.forEach((file) => {
+      if (!fs.existsSync(file)) {
+        checkFile = false;
+      }
+    });
 
-// When Critical CSS file is changed, it will process Critical CSS file, too
-function criticalListenMinify(cb) {
-  watch(helpers.trim(`${helpers.dist()}/${global.config.css.dist}/*.critical.css`), global.config.watchConfig, criticalMinify, global.bs.reload);
+    if (checkFile) {
+      clearInterval(checkInterval);
+      cb();
+    }
+  }, 250);
 
-  cb();
+  return checkInterval;
 }
 
 exports.critical = {
   criticalStart,
-  criticalListen,
-  criticalListenMinify,
 };
