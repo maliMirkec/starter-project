@@ -54,8 +54,8 @@ __Info: If you would like to add a Gulp task, feel free to open [a pull request]
 
 Besides this documentation, you could learn more about SPRO by reading the following articles:
 
-* [Introducing SPRO](https://www.silvestarbistrovic.from.hr/articles/introducing-spro/), and
-* [Custom WordPress Theme Development with SPRO](https://www.silvestarbistrovic.from.hr/articles/custom-wordpress-theme-development-with-spro/).
+* [Introducing SPRO](https://www.silvestar.codes/articles/introducing-spro/), and
+* [Custom WordPress Theme Development with SPRO](https://www.silvestar.codes/articles/custom-wordpress-theme-development-with-spro/).
 
 Also, you could watch the full course about SPRO on Skillshare (registration required):
 
@@ -516,22 +516,25 @@ If you need more help understanding the configuration, please open [a new issue]
 The default Critical CSS configuration is defined as follows:
 
 ```.critical.json
-[{
-  "src": "style.css",
-  "settings": {
-    "out": "style.critical.css",
-    "url": "http://localhost:8088/",
-    "width": 1920,
-    "height": 1200,
-    "keepLargerMediaQueries": true,
-    "strict": false,
-    "blockJSRequests": false,
-    "phantomJsOptions": {
-      "ssl-protocol": "any",
-      "ignore-ssl-errors": true
+{
+  "temp": "helpers.source/critical/",
+  "configs": [{
+    "src": "style.css",
+    "settings": {
+      "out": "style.critical.css",
+      "url": "http://localhost:8088/",
+      "width": 1920,
+      "height": 1200,
+      "keepLargerMediaQueries": true,
+      "strict": false,
+      "blockJSRequests": false,
+      "phantomJsOptions": {
+        "ssl-protocol": "any",
+        "ignore-ssl-errors": true
+      }
     }
-  }
-}]
+  }]
+}
 ```
 
 If you need more help understanding the configuration, please open [a new issue].
@@ -588,7 +591,7 @@ The default SassDoc configuration is defined as follows:
   "groups": {
     "undefined": "Misc"
   },
-  "basePath": "https://starter.silvestarbistrovic.from.hr/docs/sass/"
+  "basePath": "https://starter.silvestar.codes/docs/sass/"
 }
 ```
 
