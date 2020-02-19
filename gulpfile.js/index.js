@@ -107,3 +107,13 @@ exports.default = series(
     global.config.jsdoc.run ? jsdoc.jsdocListen : helpers.skip,
   ),
 );
+
+
+// user warnings
+console.log(`IMPORTANT NOTICE!
+Since version 2.2.7, Starter Project is using updated Critical tasks and config.
+See more here: https://starter.silvestar.codes/#critical-css-configuration.
+
+Project homepage: https://starter.silvestar.codes.
+Developed by Silvestar: https://www.silvestar.codes.
+`);

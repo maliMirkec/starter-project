@@ -4,7 +4,6 @@ const syncConfig = require('./.sync.json');
 
 // Start static server
 function syncStart(cb) {
-  console.log('sync', syncConfig);
   if (global.config.sync.run) {
     let thisConfig = {};
 
