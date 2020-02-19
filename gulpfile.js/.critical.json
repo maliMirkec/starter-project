@@ -1,31 +1,34 @@
-[{
-  "src": "style.css",
-  "settings": {
-    "out": "style.critical.css",
-    "url": "http://localhost:8088/",
-    "width": 1920,
-    "height": 1200,
-    "keepLargerMediaQueries": true,
-    "strict": false,
-    "blockJSRequests": false,
-    "phantomJsOptions": {
-      "ssl-protocol": "any",
-      "ignore-ssl-errors": true
+{
+  "temp": "helpers.source/critical/",
+  "configs": [{
+    "src": "style.css",
+    "settings": {
+      "out": "style.critical.css",
+      "url": "http://localhost:8088/",
+      "width": 1920,
+      "height": 1200,
+      "keepLargerMediaQueries": true,
+      "strict": false,
+      "blockJSRequests": false,
+      "phantomJsOptions": {
+        "ssl-protocol": "any",
+        "ignore-ssl-errors": true
+      }
     }
-  }
-}, {
-  "src": "style.css",
-  "settings": {
-    "out": "style2.critical.css",
-    "url": "http://localhost:8088/old/",
-    "width": 1920,
-    "height": 1200,
-    "keepLargerMediaQueries": true,
-    "strict": false,
-    "blockJSRequests": false,
-    "phantomJsOptions": {
-      "ssl-protocol": "any",
-      "ignore-ssl-errors": true
+  }, {
+    "src": "style.css",
+    "settings": {
+      "out": "style2.critical.css",
+      "url": "http://localhost:8088/old/",
+      "width": 1920,
+      "height": 1200,
+      "keepLargerMediaQueries": true,
+      "strict": false,
+      "blockJSRequests": false,
+      "phantomJsOptions": {
+        "ssl-protocol": "any",
+        "ignore-ssl-errors": true
+      }
     }
-  }
-}]
+  }]
+}

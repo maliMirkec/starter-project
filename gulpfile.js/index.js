@@ -18,6 +18,7 @@ const { fonts } = global.config.fonts.run ? require('./fonts') : false;
 const { favicon } = global.config.favicon.run ? require('./favicon') : false;
 const { html } = global.config.html.run ? require('./html') : false;
 const { critical } = global.config.critical.run ? require('./critical') : false;
+
 const { kss } = global.config.kss.run ? require('./kss') : false;
 const { sassdoc } = global.config.sassdoc.run ? require('./sassdoc') : false;
 const { jsdoc } = global.config.jsdoc.run ? require('./jsdoc') : false;
@@ -45,8 +46,8 @@ exports.dev = series(
     global.config.fonts.run ? fonts.fontsStart : helpers.skip,
   ),
   global.config.html.run ? html.htmlStart : helpers.skip,
+  global.config.sync.run ? sync.syncStart : helpers.skip,
   parallel(
-    global.config.sync.run ? sync.syncStart : helpers.skip,
     global.config.css.run ? css.cssListen : helpers.skip,
     global.config.js.run ? js.jsListen : helpers.skip,
     global.config.gfx.run ? gfx.gfxListen : helpers.skip,
@@ -68,15 +69,13 @@ exports.build = series(
   global.config.kss.run ? kss.kssStart : helpers.skip,
   global.config.sassdoc.run ? sassdoc.sassdocStart : helpers.skip,
   global.config.jsdoc.run ? jsdoc.jsdocStart : helpers.skip,
-  global.config.sync.run ? sync.syncStart : helpers.skip,
-  parallel(
-    global.config.critical.run ? critical.criticalStart : helpers.skip,
-    global.config.critical.run && global.config.css.minify
-      ? critical.criticalListenMinify
-      : helpers.skip,
-    global.config.html.run && global.config.critical.run ? html.htmlListenCritical : helpers.skip,
-    global.config.critical.run ? helpers.kill : helpers.skip,
-  ),
+  global.config.sync.run && global.config.critical.run ? sync.syncStartBuild : helpers.skip,
+  global.config.critical.run ? critical.criticalStart : helpers.skip,
+  global.config.sync.run && global.config.critical.run ? sync.syncStop : helpers.skip,
+  global.config.html.run
+    && global.config.html.pug
+    && global.config.critical.run ? html.htmlStart : helpers.skip,
+  helpers.killNow,
 );
 
 exports.default = series(
@@ -92,21 +91,29 @@ exports.default = series(
   global.config.kss.run ? kss.kssStart : helpers.skip,
   global.config.sassdoc.run ? sassdoc.sassdocStart : helpers.skip,
   global.config.jsdoc.run ? jsdoc.jsdocStart : helpers.skip,
+  global.config.sync.run && global.config.critical.run ? sync.syncStart : helpers.skip,
+  global.config.critical.run ? critical.criticalStart : helpers.skip,
+  global.config.html.run
+    && global.config.html.pug
+    && global.config.critical.run ? html.htmlStart : helpers.skip,
   parallel(
-    global.config.sync.run ? sync.syncStart : helpers.skip,
     global.config.css.run ? css.cssListen : helpers.skip,
     global.config.js.run ? js.jsListen : helpers.skip,
     global.config.gfx.run ? gfx.gfxListen : helpers.skip,
     global.config.fonts.run ? fonts.fontsListen : helpers.skip,
     global.config.html.run ? html.htmlListen : helpers.skip,
-    global.config.html.run && global.config.critical.run ? html.htmlListenCritical : helpers.skip,
-    global.config.critical.run ? critical.criticalStart : helpers.skip,
-    global.config.critical.run ? critical.criticalListen : helpers.skip,
-    global.config.critical.run && global.config.css.minify
-      ? critical.criticalListenMinify
-      : helpers.skip,
     global.config.kss.run ? kss.kssListen : helpers.skip,
     global.config.sassdoc.run ? sassdoc.sassdocListen : helpers.skip,
     global.config.jsdoc.run ? jsdoc.jsdocListen : helpers.skip,
   ),
 );
+
+
+// user warnings
+console.log(`IMPORTANT NOTICE!
+Since version 2.2.7, Starter Project is using updated Critical tasks and config.
+See more here: https://starter.silvestar.codes/#critical-css-configuration.
+
+Project homepage: https://starter.silvestar.codes.
+Developed by Silvestar: https://www.silvestar.codes.
+`);

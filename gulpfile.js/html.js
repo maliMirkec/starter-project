@@ -13,9 +13,9 @@ const { helpers } = require('./helpers');
 
 const htmlConfig = require('./.html.json');
 
-let thisPugConfig = {};
-
 const ext = global.config.html.pug ? 'pug' : 'html';
+
+let thisPugConfig = {};
 
 const siteConfigs = [{
   name: 'site',
@@ -74,15 +74,7 @@ function htmlListen() {
   return watch([...siteConfigs.map((siteConfig) => siteConfig.path), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.${ext}`), helpers.trim(`${helpers.source()}/${global.config.html.src}/**/*.md`)], global.config.watchConfig, htmlStart);
 }
 
-// When Critical CSS file is changed, it will process HTML, too
-function htmlListenCritical(cb) {
-  watch(helpers.trim(`${helpers.dist()}/${global.config.css.dist}/*.critical.min.css`), global.config.watchConfig, htmlStart);
-
-  cb();
-}
-
 exports.html = {
   htmlStart,
   htmlListen,
-  htmlListenCritical,
 };

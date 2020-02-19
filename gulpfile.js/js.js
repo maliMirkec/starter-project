@@ -18,10 +18,7 @@ if (!global.config.css.sourcemaps) {
 }
 
 const thisEslintConfig = (global.config.js.lint)
-  ? ({
-    ...jsConfig.eslintConfig,
-    configFile: helpers.parse(jsConfig.eslintConfig.configFile),
-  })
+  ? ({ ...jsConfig.eslintConfig, configFile: helpers.parse(jsConfig.eslintConfig.configFile) })
   : {};
 
 if (!global.config.js.lint) {

@@ -1,5 +1,5 @@
-const path = require('path')
-const { helpers } = require('./helpers')
+const path = require('path');
+const { helpers } = require('./helpers');
 
 module.exports = {
   mode: 'production',

@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+a {
+  background-color: transparent;
+}
+
+code {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+img {
+  border-style: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+html {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 480px) {
+  html {
+    font-size: calc(14px + 2 * (100vw - 480px) / 480);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 2.02729rem;
+}
+
+h2 {
+  font-size: 1.80203rem;
+}
+
+h4 {
+  font-size: 1.42383rem;
+}
+
+h5 {
+  font-size: 1.26562rem;
+}
+
+.header {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#138a8a), to(#13768a));
+  background-image: -o-linear-gradient(top left, #138a8a, #13768a);
+  background-image: linear-gradient(to bottom right, #138a8a, #13768a);
+  color: #ffe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: calc(0.625 * 1rem);
+}
+
+.header h1 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.header img {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 calc(3.125 * 1rem);
+  flex: 0 0 calc(3.125 * 1rem);
+  height: auto;
+  margin-right: calc(0.625 * 1rem);
+  margin-top: calc(-0.3125 * 1rem);
+  max-width: 100%;
+  width: calc(3.125 * 1rem);
+}
+
+.header h5 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  margin-bottom: calc(1.25 * 1rem);
+  margin-top: 0;
+  text-align: center;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #383738;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: #137a8f;
+}
+
+a:visited {
+  color: #137a8f;
+}
+
+ul {
+  border-left: 1px solid #fbdeec;
+  list-style: none;
+}
+
+li:before {
+  color: #137a8f;
+  content: '✔';
+  font-size: 0.88889rem;
+  margin-left: -3px;
+  margin-right: calc(0.625 * 1rem);
+}
+
+li a {
+  text-decoration: none;
+}
+
+code {
+  background-color: #daf5fa;
+}
+
+.main {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  display: grid;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(60 * 1rem);
+  padding-bottom: calc(1.875 * 1rem);
+  padding-top: calc(1.875 * 1rem);
+  width: 100%;
+}
+
+@media (min-width: 30em) {
+  .main {
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.main *:first-child {
+  margin-top: 0;
+}
+
+.content {
+  min-width: calc(100% - calc(1.25 * 1rem));
+  padding: calc(0.625 * 1rem);
+}
+
+@media (min-width: 60em) {
+  .content {
+    grid-column: 2 / 3;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a[href*="npmjs"] {
+  margin-right: calc(0.3125 * 1rem);
+}
+
+.sidebar {
+  padding: calc(0.625 * 1rem) calc(0.625 * 1rem) 0;
+}
+
+@media (min-width: 60em) {
+  .sidebar {
+    padding: calc(1.25 * 1rem) calc(0.625 * 1rem);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.sidebar ul {
+  border-left: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  font-size: 1rem;
+}
+
+.sidebar li:before {
+  content: none;
+}
+
+.sidebar .highlight:before {
+  color: #d91a79;
+}
+
+.sidebar .highlight a {
+  color: #d91a79;
+}
+
+.banner {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ba1ada), to(#7a1ada));
+  background-image: -o-linear-gradient(top left, #ba1ada, #7a1ada);
+  background-image: linear-gradient(to bottom right, #ba1ada, #7a1ada);
+  color: #ffe;
+  padding: calc(0.9375 * 1rem) calc(0.625 * 1rem);
+  text-align: center;
+}
+
+.banner p {
+  margin: 0;
+}
+
+.banner a {
+  color: inherit;
+}
