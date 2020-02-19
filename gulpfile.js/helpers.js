@@ -7,7 +7,6 @@ const helpersConfig = require('./.helpers.json');
 // Will remove end slash from path
 const trim = (p) => {
   let r = p;
-
   while (r.indexOf('..') !== -1) {
     r = r.replace('..', '');
   }
@@ -44,10 +43,18 @@ const parse = (p) => p.replace('helpers.proot/', proot())
 // Will skip the task
 const skip = (cb) => cb();
 
-// Will kill all tasks
+// Will kill all tasks after delay
 const kill = (cb) => {
   src(proot())
     .pipe(wait(helpersConfig.wait))
+    .pipe(exit());
+
+  cb();
+};
+
+// Will kill all tasks immidiately
+const killNow = (cb) => {
+  src(proot())
     .pipe(exit());
 
   cb();
@@ -60,5 +67,6 @@ exports.helpers = {
   dist,
   skip,
   kill,
+  killNow,
   parse,
 };
