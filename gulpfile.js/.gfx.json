@@ -45,7 +45,7 @@
         "removeEmptyAttrs": true
       },
       {
-        "removeHiddenElems": true
+        "removeHiddenElems": false
       },
       {
         "removeEditorsNSData": true

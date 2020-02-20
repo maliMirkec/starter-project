@@ -10,7 +10,7 @@ const { helpers } = require('./helpers');
 
 const criticalConfig = require('./.critical.json');
 
-if (criticalConfig.length > 9) {
+if (criticalConfig.configs.length > 9) {
   process.setMaxListeners(0);
 }
 
