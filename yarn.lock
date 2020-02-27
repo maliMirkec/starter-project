@@ -10559,10 +10559,10 @@ stack-trace@0.0.10:
   resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
   integrity sha1-VHxws0fo0ytOEI6hoqFZ5f3eGcA=
 
-starter-project-cli@^1.1.11-rc7:
-  version "1.1.11-rc7"
-  resolved "https://registry.yarnpkg.com/starter-project-cli/-/starter-project-cli-1.1.11-rc7.tgz#3220d50c4419d127300f707252fcf6a50a6369ab"
-  integrity sha512-oj6JLC2c7lW0SATw+QJFcW4hl07N4ij+NWd37tHuFtxW2rJtabTKRWIxvITNevYjLlUf8IuGbbtXsFiuw5Yqhw==
+starter-project-cli@^1.1.11-rc8:
+  version "1.1.11-rc8"
+  resolved "https://registry.yarnpkg.com/starter-project-cli/-/starter-project-cli-1.1.11-rc8.tgz#7a21c33cc64f242b4e0be2c15a3fe616fcd5f78d"
+  integrity sha512-q0DJK3+zLQSDfu2Y+wAKNrZYNgkGAXP4D3hzfA6A6Z0sAv/nzBMkWDHfCT6/MQx1Y8Yb+3Q84eW4mHbO85D+6g==
   dependencies:
     babel-eslint "^10.0.3"
     chalk "^3.0.0"

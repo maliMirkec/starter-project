@@ -3,7 +3,7 @@ const gulpif = require('gulp-if');
 const rename = require('gulp-rename');
 const path = require('path');
 const pug = global.config.html.pug ? require('gulp-pug') : () => true;
-const data = global.config.html.pug ? require('gulp-data') : () => true;
+const data = global.config.html.data ? require('gulp-data') : () => true;
 const htmlmin = global.config.html.minify ? require('gulp-htmlmin') : () => true;
 const htmllint = global.config.html.lint ? require('gulp-htmllint') : () => true;
 const inlineSource = global.config.html.inline ? require('gulp-inline-source') : () => true;
