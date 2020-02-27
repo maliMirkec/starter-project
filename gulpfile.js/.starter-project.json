@@ -8,10 +8,11 @@
   "html": {
     "run": true,
     "pug": true,
+    "data": true,
+    "inline": true,
     "src": "html",
     "dist": "",
     "minify": true,
-    "inline": true,
     "lint": true
   },
   "css": {
@@ -62,6 +63,9 @@
   },
   "bump": {
     "run": true
+  },
+  "gzip": {
+    "run": false
   },
   "yarn": true
 }

@@ -1,4 +1,4 @@
 block variables
-- var siteName = locals.site.siteName ? locals.site.siteName : 'Starter Project'
-- var siteDesc = locals.site.siteDescription ? locals.site.siteDescription : 'Default site description.'
-- var nav = locals.site.nav ? locals.site.nav : []
+- var siteName = locals.site && locals.site.siteName ? locals.site.siteName : 'Starter Project'
+- var siteDesc = locals.site && locals.site.siteDescription ? locals.site.siteDescription : 'Default site description.'
+- var nav = locals.site && locals.site.nav ? locals.site.nav : [{title:"Home",href:"/"},{title:"About",href:"/about.html"},{title:"GitHub",href:"https://github.com/maliMirkec/starter-project"},{title:"Contact",href:"mailto:me@silvestar.codes?Subject=Contact[SP]"}]
