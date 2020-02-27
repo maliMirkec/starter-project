@@ -91,7 +91,7 @@ exports.default = series(
   global.config.kss.run ? kss.kssStart : helpers.skip,
   global.config.sassdoc.run ? sassdoc.sassdocStart : helpers.skip,
   global.config.jsdoc.run ? jsdoc.jsdocStart : helpers.skip,
-  global.config.sync.run && global.config.critical.run ? sync.syncStart : helpers.skip,
+  global.config.sync.run ? sync.syncStart : helpers.skip,
   global.config.critical.run ? critical.criticalStart : helpers.skip,
   global.config.html.run
     && global.config.html.pug

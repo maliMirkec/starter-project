@@ -10,12 +10,12 @@ const thisSrc = jsdocConfig.src.map((path) => helpers.parse(path));
 const thisOpts = {
   ...jsdocConfig.settings.opts,
   destination: helpers.parse(jsdocConfig.settings.opts.destination),
-};
+}
 
 const thisSettings = {
   ...jsdocConfig.settings,
   opts: thisOpts,
-};
+}
 
 // Will process JSdoc docs
 function jsdocStart() {
