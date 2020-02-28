@@ -145,10 +145,11 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
   "html": {
     "run": true,
     "src": "html",
+    "data": true,
+    "inline": true,
     "dist": "",
     "pug": false,
     "minify": true,
-    "inline": true,
     "lint": true
   },
   "css": {
