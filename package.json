@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp dev",
     "default": "gulp default",
-    "build": "npm rebuild node-sass && gulp build"
+    "build": "npm rebuild node-sass && node node_modules/jpegtran-bin/lib/install.js && node node_modules/optipng-bin/lib/install.js && gulp build"
   },
   "repository": {
     "type": "git",
