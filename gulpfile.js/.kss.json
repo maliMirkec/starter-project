@@ -3,8 +3,7 @@
   "source": "helpers.source",
   "destination": "helpers.dist/config.kss.dist/",
   "css": [
-    "helpers.dist/config.css.dist/style.css",
-    "helpers.dist/config.css.dist/fonts.css"
+    "helpers.dist/config.css.dist/style.css"
   ],
   "js": []
 }

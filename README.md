@@ -29,10 +29,7 @@ After the installation, run the following command to set up the project:
 
 ```node
 node node_modules/starter-project/postinstall.js
-npm i -S fontfaceobserver
 ```
-
-_If you don't want to use [fontfaceobserver], skip the last command._
 
 Starter Project should have installed source files, Gulp files, and configuration files.
 
@@ -167,13 +164,12 @@ If you want more control over your Gulp tasks, you could find the Gulp configura
         |   |-- homepage.md
         |   |-- index.js
         |-- scss
-            |-- fonts.scss
             |-- homepage.md
             |-- style.critical.scss
             |-- style.scss
             |-- components
                 |-- _font-face.scss
-                |-- _fonts.scss
+                |-- _font-style.scss
                 |-- _helpers.scss
                 |-- _locks.scss
                 |-- _theme.scss
@@ -244,4 +240,3 @@ Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-proj
 [Starter Project CLI]: https://starter.silvestar.codes/
 [Starter Project CLI docs]: https://starter.silvestar.codes/
 [Learn more about SPRO here]: https://starter.silvestar.codes/
-[fontfaceobserver]: https://github.com/bramstein/fontfaceobserver
