@@ -31,17 +31,17 @@
 }
 
 .sig__link {
+  @include tra;
   align-items: baseline;
   display: inline-flex;
   text-decoration: none;
-  transition: all $trd $tra;
 }
 
 .sig__icon {
+  @include tra;
   height: rem(20px);
   margin-right: rem(2px);
   transform: translateY(rem(4px));
   transform-origin: center;
-  transition: all $trd $tra forwards;
   width: rem(20px);
 }

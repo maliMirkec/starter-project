@@ -10,7 +10,7 @@ body {
 }
 
 a {
-  @include tra;
+  @include tra(color);
   color: $color-delta;
 
   &:visited {

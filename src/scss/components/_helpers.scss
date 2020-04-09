@@ -66,12 +66,13 @@
 /// Mixin for defining transition
 /// @access public
 /// @author Silvestar Bistrović <me@silvestar.codes>
-/// @example @include tra($trd, $tra);
+/// @example @include tra(all, $trd, $tra);
 /// @group 3.1.Helpers
 /// @name tra
 /// @since 1.0.0
+/// @param {String} $transition-property [all] A property to transition (e.g. all or color)
 /// @param {Unit} $transition-duration [$trd] A duration of the transition (e.g. 1s)
 /// @param {String} $transition-animation [$tra] An easing function of the transition (e.g. linear or cubic-bezier(0.04, 0.88, 0.74, 1.04))
-@mixin tra($transition-duration: $trd, $transition-animation: $tra) {
-  transition: all $transition-duration $transition-animation;
+@mixin tra($transition-property: all, $transition-duration: $trd, $transition-animation: $tra) {
+  transition: $transition-property $transition-duration $transition-animation;
 }
