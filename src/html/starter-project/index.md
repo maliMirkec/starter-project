@@ -29,7 +29,6 @@ After the installation, run the following command to set up the project:
 
 ```console
 node node_modules/starter-package/postinstall.js
-npm i -S fontfaceobserver
 ```
 
 Starter Project should have installed source files, Gulp files, and configuration files.

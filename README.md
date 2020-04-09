@@ -29,10 +29,7 @@ After the installation, run the following command to set up the project:
 
 ```console
 node node_modules/starter-project/postinstall.js
-npm i -S fontfaceobserver
 ```
-
-_If you don't want to use [fontfaceobserver], skip the last command._
 
 Starter Project should have installed source files, Gulp files, and configuration files.
 
@@ -243,4 +240,3 @@ Changelog available in [CHANGELOG.md](https://github.com/maliMirkec/starter-proj
 [Starter Project CLI]: https://starter.silvestar.codes/
 [Starter Project CLI docs]: https://starter.silvestar.codes/
 [Learn more about SPRO here]: https://starter.silvestar.codes/
-[fontfaceobserver]: https://github.com/bramstein/fontfaceobserver
