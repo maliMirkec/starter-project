@@ -4,8 +4,7 @@ const { helpers } = require('./helpers');
 module.exports = {
   mode: 'production',
   entry: {
-    index: helpers.parse('helpers.source/config.js.src/index.js'),
-    foftFontLoading: helpers.parse('helpers.source/config.js.src/foftFontLoading.js'),
+    index: helpers.parse('helpers.source/config.js.src/index.js')
   },
   output: {
     path: path.resolve(`${__dirname}/${helpers.parse('helpers.dist/config.js.dist/')}`),
