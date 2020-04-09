@@ -3,10 +3,7 @@
   "source": "helpers.source",
   "destination": "helpers.dist/config.kss.dist/",
   "css": [
-    "helpers.dist/config.css.dist/style.css",
-    "helpers.dist/config.css.dist/foft.css"
+    "helpers.dist/config.css.dist/style.css"
   ],
-  "js": [
-    "helpers.dist/js/foftFontLoading.js"
-  ]
+  "js": []
 }

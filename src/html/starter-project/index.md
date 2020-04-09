@@ -144,7 +144,6 @@ If you want more control over your Gulp tasks, you could find the configuration 
         |   |   |-- critical-css.pug
         |   |   |-- deferred-styles.pug
         |   |   |-- favicon.pug
-        |   |   |-- foft-font-loading.pug
         |   |   |-- scripts.pug
         |   |-- _layout
         |   |   |-- layout.pug
@@ -157,17 +156,15 @@ If you want more control over your Gulp tasks, you could find the configuration 
         |   |-- structure
         |       |-- index.pug
         |-- js
-        |   |-- foftFontLoading.js
         |   |-- homepage.md
         |   |-- index.js
         |-- scss
-            |-- foft.scss
             |-- homepage.md
             |-- style.critical.scss
             |-- style.scss
             |-- components
                 |-- _font-face.scss
-                |-- _fonts.scss
+                |-- _font-style.scss
                 |-- _helpers.scss
                 |-- _locks.scss
                 |-- _theme.scss

@@ -562,12 +562,9 @@ The default KSS configuration is defined as follows:
   "source": "helpers.source",
   "destination": "helpers.dist/docs/styleguide/",
   "css": [
-    "helpers.dist/config.css.dist/style.css",
-    "helpers.dist/config.css.dist/foft.css"
+    "helpers.dist/config.css.dist/style.css"
   ],
-  "js": [
-    "helpers.dist/js/foftFontLoading.js"
-  ]
+  "js": []
 }
 ```
 

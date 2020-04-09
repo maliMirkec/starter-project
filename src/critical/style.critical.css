@@ -39,6 +39,21 @@ img {
   /* 2 */
 }
 
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/lato/Lato-Regular.woff2") format("woff2"), url("/fonts/lato/Lato-Regular.woff") format("woff");
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  line-height: 1.5;
+}
+
 html {
   font-size: 14px;
 }
