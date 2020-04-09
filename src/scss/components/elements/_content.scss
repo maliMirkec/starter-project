@@ -10,7 +10,7 @@ body {
 }
 
 a {
-  @include tra;
+  @include tra(color);
   color: $color-delta;
 
   &:visited {
@@ -33,7 +33,7 @@ ul {
 }
 
 li {
-  &:before {
+  ul &:before {
     color: $color-delta;
     content: '✔';
     font-size: ms(-1);

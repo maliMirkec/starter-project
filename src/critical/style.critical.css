@@ -165,7 +165,7 @@ ul {
   list-style: none;
 }
 
-li:before {
+ul li:before {
   color: #137a8f;
   content: '✔';
   font-size: 0.88889rem;
