@@ -36,6 +36,8 @@ const parse = (p) => p.replace('helpers.proot/', proot())
   .replace('config.js.dist', global.config.js.dist)
   .replace('config.html.src', global.config.html.src)
   .replace('config.html.dist', global.config.html.dist)
+  .replace('config.gfx.src', global.config.gfx.src)
+  .replace('config.gfx.dist', global.config.gfx.dist)
   .replace('config.kss.dist', global.config.kss.dist)
   .replace('config.sassdoc.dist', global.config.sassdoc.dist)
   .replace('config.jsdoc.dist', global.config.jsdoc.dist);
