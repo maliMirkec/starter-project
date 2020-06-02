@@ -83,7 +83,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-wait": "^0.0.2",
     "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^8.0.0",
+    "imagemin-pngquant": "^9.0.0",
     "jstransformer-markdown-it": "^2.1.0",
     "kss": "^3.0.1",
     "modularscale-sass": "^3.0.10",
