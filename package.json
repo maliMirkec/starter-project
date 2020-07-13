@@ -95,7 +95,7 @@
     "path": "^0.12.7",
     "sass-mq": "^5.0.0",
     "sassdoc": "^2.7.2",
-    "starter-project-cli": "^1.1.11-rc9",
+    "starter-project-cli": "^1.1.12",
     "stylelint": "^13.6.1",
     "stylelint-config-sass-guidelines": "^7.0.0",
     "stylelint-order": "^4.1.0",
