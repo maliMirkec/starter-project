@@ -9,6 +9,10 @@
 
 Starter Package is a package with the latest best practices for your HTML (pug), CSS (Sass), JavaScript (es6), graphic, font, and favicon files.
 
+## Supporters
+
+[![Stargazers repo roster for @maliMirkec/starter-project](https://reporoster.com/stars/maliMirkec/starter-project)](https://github.com/maliMirkec/starter-project/stargazers)
+
 ## Version 2
 
 Version 2 is a major update! This version uses the [Starter Project CLI] for creating a perfect Gulp development environment within a few minutes.
