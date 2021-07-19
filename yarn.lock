@@ -11370,9 +11370,9 @@ stylelint-order@^4.1.0:
     postcss-sorting "^5.0.1"
 
 stylelint-scss@^3.18.0:
-  version "3.18.0"
-  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.18.0.tgz#8f06371c223909bf3f62e839548af1badeed31e9"
-  integrity sha512-LD7+hv/6/ApNGt7+nR/50ft7cezKP2HM5rI8avIdGaUWre3xlHfV4jKO/DRZhscfuN+Ewy9FMhcTq0CcS0C/SA==
+  version "3.20.0"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.20.0.tgz#2f1d66449c8995dda9e2cca616c1f2342a2d5289"
+  integrity sha512-9as9UX3mUTVCktzgzmj36/jEV56QLSnpp4GsDN2Egi8vwJbA94WlrB3IFMpekmqFsLyp/Dor3GRUHVoPbfhJDg==
   dependencies:
     lodash "^4.17.15"
     postcss-media-query-parser "^0.2.3"
