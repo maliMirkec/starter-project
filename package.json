@@ -4,9 +4,10 @@
   "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
   "main": "index.html",
   "scripts": {
+    "cp_redirects": "cp extras/_redirects public/_redirects",
     "dev": "gulp dev",
     "default": "gulp default",
-    "build": "gulp build"
+    "build": "gulp build && npm run cp_redirects"
   },
   "repository": {
     "type": "git",
